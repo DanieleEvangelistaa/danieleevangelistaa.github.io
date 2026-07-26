@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
@@ -121,6 +122,9 @@
       margin: 0;
       min-width: 320px;
       min-height: 100vh;
+      position: relative;
+      isolation: isolate;
+      --scroll-shift: 0px;
       color: var(--ink);
       background: var(--bg);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -148,6 +152,9 @@
         radial-gradient(circle at 10% 8%, var(--route-a, rgba(126,230,215,.14)), transparent 31rem),
         radial-gradient(circle at 90% 18%, var(--route-b, rgba(142,188,243,.10)), transparent 34rem),
         var(--bg);
+      transform: translate3d(0, var(--scroll-shift), 0) scale(1.035);
+      transform-origin: center top;
+      will-change: transform;
       transition: background .45s ease;
     }
 
@@ -197,6 +204,37 @@
       background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--coral));
       box-shadow: 0 0 16px rgba(var(--accent-rgb), .55);
       transition: width .08s linear;
+    }
+
+    .pointer-aura {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      width: 460px;
+      height: 460px;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate3d(-600px, -600px, 0) translate3d(-50%, -50%, 0);
+      background:
+        radial-gradient(circle at center,
+          rgba(var(--accent-rgb), .16) 0%,
+          rgba(var(--accent-2-rgb), .075) 31%,
+          transparent 68%);
+      filter: blur(2px);
+      mix-blend-mode: screen;
+      will-change: transform, opacity;
+      transition: opacity .24s ease;
+    }
+    body.pointer-active .pointer-aura { opacity: .9; }
+    html[data-theme="light"] .pointer-aura {
+      background:
+        radial-gradient(circle at center,
+          rgba(var(--accent-rgb), .10) 0%,
+          rgba(var(--accent-2-rgb), .045) 32%,
+          transparent 69%);
+      mix-blend-mode: multiply;
     }
 
     .container { width: min(var(--container), calc(100% - 44px)); margin-inline: auto; }
@@ -286,7 +324,7 @@
     .menu-button.open span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
     .mobile-nav { display: none; }
 
-    .app-main { min-height: 100svh; padding-top: var(--header-h); }
+    .app-main { position: relative; z-index: 2; min-height: 100svh; padding-top: var(--header-h); }
     .view { display: block; min-height: calc(100svh - var(--header-h)); }
     .js .view { display: none; opacity: 0; transform: translateY(12px); }
     .js .view.active { display: block; animation: viewIn .45s var(--ease) forwards; }
@@ -340,6 +378,7 @@
       gap: 10px;
       margin-top: 42px;
     }
+    .counter-strip--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .counter-card {
       min-width: 0;
       padding: 19px 20px;
@@ -354,6 +393,33 @@
     [data-reveal] { opacity: 1; transform: none; }
     .js [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity .55s ease, transform .55s var(--ease); }
     .js [data-reveal].is-visible { opacity: 1; transform: none; }
+
+    .pointer-shadow {
+      --pointer-shadow-x: 0px;
+      --pointer-shadow-y: 16px;
+      --pointer-shadow-alpha: .13;
+      --pointer-base-shadow: var(--shadow-soft);
+      will-change: box-shadow;
+    }
+    .pointer-shadow:hover,
+    .pointer-shadow:focus-within {
+      box-shadow:
+        var(--pointer-base-shadow),
+        var(--pointer-shadow-x) var(--pointer-shadow-y) 44px rgba(var(--accent-rgb), var(--pointer-shadow-alpha));
+    }
+    .visual-stage.pointer-shadow,
+    .research-panel.pointer-shadow {
+      --pointer-base-shadow: var(--shadow);
+      --pointer-shadow-alpha: .16;
+    }
+    .portrait-card.pointer-shadow {
+      --pointer-base-shadow: 0 30px 70px rgba(0, 0, 0, .34);
+      --pointer-shadow-alpha: .18;
+    }
+    .profile-link.pointer-shadow {
+      --pointer-base-shadow: 0 12px 30px rgba(0, 0, 0, .10);
+      --pointer-shadow-alpha: .11;
+    }
 
     /* HOME */
     .home-hero { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(390px, .92fr); gap: clamp(52px, 7.5vw, 104px); align-items: center; }
@@ -595,7 +661,7 @@
     .form-status { min-height: 1.3em; margin: 0; color: var(--success); font-size: .68rem; font-weight: 780; }
     .form-status.error { color: var(--danger); }
 
-    .persistent-footer { padding: 24px 0 35px; }
+    .persistent-footer { position: relative; z-index: 2; padding: 24px 0 35px; }
     .footer-layout { display: grid; grid-template-columns: 1fr 1.25fr auto; gap: 25px; align-items: center; padding-top: 24px; border-top: 1px solid var(--line); }
     .footer-layout strong { font-size: .73rem; }
     .footer-layout p { margin: 4px 0 0; color: var(--muted-2); font-size: .6rem; }
@@ -693,13 +759,20 @@
       .panel-visual { min-height: 300px; padding: 17px; }
     }
 
+    @media (pointer: coarse) {
+      .pointer-aura { display: none; }
+      .pointer-shadow:hover,
+      .pointer-shadow:focus-within { box-shadow: var(--pointer-base-shadow); }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
+      .pointer-aura { display: none; }
       *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
     }
 
     @media print {
-      .site-header, .progress, .home-actions, .fellowship-actions, .persistent-footer, .toast, .visual-badge, .publication-tools, .form-actions { display: none !important; }
+      .site-header, .progress, .pointer-aura, .home-actions, .fellowship-actions, .persistent-footer, .toast, .visual-badge, .publication-tools, .form-actions { display: none !important; }
       body { color: #111; background: #fff; }
       .app-main { padding-top: 0; }
       .js .view { display: none !important; }
@@ -712,6 +785,7 @@
 <body data-route="home">
   <a class="skip-link" href="#appMain">Skip to main content</a>
   <div class="progress" aria-hidden="true"><span id="pageProgress"></span></div>
+  <div class="pointer-aura" id="pointerAura" aria-hidden="true"></div>
 
   <header class="site-header" id="siteHeader">
     <div class="container nav-shell">
@@ -787,7 +861,7 @@
 
         <div class="container counter-strip" aria-label="Profile at a glance" data-reveal>
           <div class="counter-card"><span class="counter-number" data-count="4">4</span><span class="counter-label">Connected research pillars</span></div>
-          <div class="counter-card"><span class="counter-number" data-count="12">12</span><span class="counter-label">Verified scholarly works displayed</span></div>
+          <div class="counter-card"><span class="counter-number" data-count="12">12</span><span class="counter-label">Scholarly works featured</span></div>
           <div class="counter-card"><span class="counter-number" data-count="3">3</span><span class="counter-label">Completed academic degrees</span></div>
           <div class="counter-card"><span class="counter-number" data-count="1">1</span><span class="counter-label">Current ISHLT fellowship project</span></div>
         </div>
@@ -1167,11 +1241,10 @@
             <p>Shared interests include EVLP, targeted therapeutic delivery, lung regeneration, transplantation biology and extracellular-matrix biomaterials.</p>
           </header>
 
-          <div class="counter-strip" aria-label="Contact overview" data-reveal>
+          <div class="counter-strip counter-strip--three" aria-label="Contact overview" data-reveal>
             <div class="counter-card"><span class="counter-number" data-count="5">5</span><span class="counter-label">Professional profile links</span></div>
-            <div class="counter-card"><span class="counter-number" data-count="1">1</span><span class="counter-label">Direct public email route</span></div>
-            <div class="counter-card"><span class="counter-number" data-count="6">6</span><span class="counter-label">Core collaboration topics</span></div>
-            <div class="counter-card"><span class="counter-number" data-count="0">0</span><span class="counter-label">Messages stored by this website</span></div>
+            <div class="counter-card"><span class="counter-number" data-count="6">6</span><span class="counter-label">Collaboration topics</span></div>
+            <div class="counter-card"><span class="counter-number" data-count="1">1</span><span class="counter-label">Professional email form</span></div>
           </div>
 
           <div class="contact-grid">
@@ -1190,7 +1263,7 @@
 
             <div class="card contact-panel" data-reveal>
               <h3>Compose an email</h3>
-              <p>Complete the form to open a prepared message in your email application. Nothing entered here is stored by the website.</p>
+              <p>Complete the form to prepare a professional message in your default email application.</p>
               <form class="contact-form" id="contactForm" novalidate>
                 <div class="form-grid">
                   <div class="field"><label for="contactName">Your name</label><input id="contactName" name="name" type="text" autocomplete="name" required placeholder="Full name"></div>
@@ -1205,7 +1278,7 @@
                   <button class="button button-secondary" id="copyMessageButton" type="button">Copy message</button>
                   <a class="button button-secondary" href="mailto:devangelsilva@gmail.com">Email directly</a>
                 </div>
-                <p class="form-note">The form uses your device’s email application and does not transmit or retain form data on this website.</p>
+                <p class="form-note">The message opens in your email application for final review and sending.</p>
                 <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
               </form>
             </div>
@@ -1248,6 +1321,7 @@
       const menuButton = document.getElementById('menuButton');
       const themeToggle = document.getElementById('themeToggle');
       const toast = document.getElementById('toast');
+      const pointerAura = document.getElementById('pointerAura');
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       function showToast(message) {
@@ -1303,12 +1377,10 @@
         })}${suffix}`;
       }
 
-      function animateCounters(route) {
-        const view = document.querySelector(`.view[data-route="${route}"]`);
-        if (!view) return;
-        const counters = [...view.querySelectorAll('[data-count]')];
+      function animateCounterGroup(group, storageKey) {
+        const counters = [...group.querySelectorAll('[data-count]')];
         let alreadyViewed = false;
-        try { alreadyViewed = sessionStorage.getItem(`daniele-counter-${route}`) === '1'; } catch {}
+        try { alreadyViewed = sessionStorage.getItem(storageKey) === '1'; } catch {}
 
         counters.forEach(counter => {
           const end = Number(counter.dataset.count || 0);
@@ -1317,19 +1389,52 @@
             setCounterValue(counter, end);
             return;
           }
-          const duration = Math.min(1100, Math.max(650, Math.abs(end - start) * 36));
+          const duration = Math.min(1150, Math.max(680, Math.abs(end - start) * 36));
           const startTime = performance.now();
           const frame = now => {
             const elapsed = Math.min(1, (now - startTime) / duration);
             const eased = 1 - Math.pow(1 - elapsed, 3);
-            const current = start + (end - start) * eased;
-            setCounterValue(counter, current);
+            setCounterValue(counter, start + (end - start) * eased);
             if (elapsed < 1) requestAnimationFrame(frame);
             else setCounterValue(counter, end);
           };
           requestAnimationFrame(frame);
         });
-        try { sessionStorage.setItem(`daniele-counter-${route}`, '1'); } catch {}
+        try { sessionStorage.setItem(storageKey, '1'); } catch {}
+      }
+
+      const counterObservers = new WeakMap();
+
+      function observeCounterGroups(route) {
+        const view = document.querySelector(`.view[data-route="${route}"]`);
+        if (!view) return;
+        const groups = [...view.querySelectorAll('.counter-strip')];
+
+        groups.forEach((group, index) => {
+          const storageKey = `daniele-counter-${route}-${index}`;
+          let alreadyViewed = false;
+          try { alreadyViewed = sessionStorage.getItem(storageKey) === '1'; } catch {}
+
+          if (alreadyViewed || reduceMotion || !('IntersectionObserver' in window)) {
+            animateCounterGroup(group, storageKey);
+            return;
+          }
+          if (counterObservers.has(group)) return;
+
+          group.querySelectorAll('[data-count]').forEach(counter => {
+            setCounterValue(counter, Number(counter.dataset.start || 0));
+          });
+
+          const observer = new IntersectionObserver(entries => {
+            if (!entries.some(entry => entry.isIntersecting)) return;
+            animateCounterGroup(group, storageKey);
+            observer.disconnect();
+            counterObservers.delete(group);
+          }, { threshold: .32, rootMargin: '0px 0px -5% 0px' });
+
+          observer.observe(group);
+          counterObservers.set(group, observer);
+        });
       }
 
       function revealRoute(route) {
@@ -1369,7 +1474,7 @@
         closeMenu();
         window.scrollTo({ top: 0, behavior: 'auto' });
         requestAnimationFrame(() => {
-          animateCounters(route);
+          observeCounterGroups(route);
           revealRoute(route);
           onScroll();
         });
@@ -1380,6 +1485,7 @@
         header.classList.toggle('scrolled', y > 22);
         const max = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         progress.style.width = `${max > 0 ? Math.min(100, (y / max) * 100) : 0}%`;
+        body.style.setProperty('--scroll-shift', `${-Math.min(42, y * .035)}px`);
       };
       window.addEventListener('scroll', onScroll, { passive: true });
       window.addEventListener('resize', onScroll, { passive: true });
@@ -1387,6 +1493,59 @@
       window.addEventListener('hashchange', () => applyRoute(getRoute()));
       if (!location.hash) history.replaceState(null, '', '#/home');
       applyRoute(getRoute());
+
+      const finePointer = window.matchMedia('(pointer: fine)').matches;
+      if (finePointer && !reduceMotion && pointerAura) {
+        let targetX = window.innerWidth * .5;
+        let targetY = window.innerHeight * .4;
+        let currentX = targetX;
+        let currentY = targetY;
+        let pointerFrame = 0;
+
+        const renderPointer = () => {
+          currentX += (targetX - currentX) * .18;
+          currentY += (targetY - currentY) * .18;
+          pointerAura.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate3d(-50%, -50%, 0)`;
+          if (Math.abs(targetX - currentX) > .15 || Math.abs(targetY - currentY) > .15) {
+            pointerFrame = requestAnimationFrame(renderPointer);
+          } else {
+            pointerFrame = 0;
+          }
+        };
+
+        const requestPointerFrame = () => {
+          if (!pointerFrame) pointerFrame = requestAnimationFrame(renderPointer);
+        };
+
+        window.addEventListener('pointermove', event => {
+          targetX = event.clientX;
+          targetY = event.clientY;
+          body.classList.add('pointer-active');
+          requestPointerFrame();
+        }, { passive: true });
+        window.addEventListener('blur', () => body.classList.remove('pointer-active'));
+        document.addEventListener('pointerout', event => {
+          if (!event.relatedTarget) body.classList.remove('pointer-active');
+        });
+
+        const pointerSurfaces = document.querySelectorAll(
+          '.card, .counter-card, .visual-stage, .research-panel, .profile-link, .portrait-card'
+        );
+        pointerSurfaces.forEach(surface => {
+          surface.classList.add('pointer-shadow');
+          surface.addEventListener('pointermove', event => {
+            const rect = surface.getBoundingClientRect();
+            const normalX = (event.clientX - rect.left - rect.width / 2) / Math.max(rect.width / 2, 1);
+            const normalY = (event.clientY - rect.top - rect.height / 2) / Math.max(rect.height / 2, 1);
+            surface.style.setProperty('--pointer-shadow-x', `${(-normalX * 15).toFixed(1)}px`);
+            surface.style.setProperty('--pointer-shadow-y', `${(16 - normalY * 9).toFixed(1)}px`);
+          }, { passive: true });
+          surface.addEventListener('pointerleave', () => {
+            surface.style.setProperty('--pointer-shadow-x', '0px');
+            surface.style.setProperty('--pointer-shadow-y', '16px');
+          });
+        });
+      }
 
       const tabs = [...document.querySelectorAll('.research-tab')];
       const panels = [...document.querySelectorAll('.research-panel')];
