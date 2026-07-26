@@ -1,0 +1,13 @@
+{
+  "name": "Daniele Evangelista — Lung Transplantation Research",
+  "short_name": "Daniele Evangelista",
+  "description": "Physician-scientist advancing lung transplantation through EVLP, targeted mRNA delivery and regenerative medicine.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f0e8",
+  "theme_color": "#f4f0e8",
+  "icons": [
+    {"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}
