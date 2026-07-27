@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en-CA" data-theme="dark">
 <head>
@@ -25,6 +24,7 @@
   <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https:; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://api.crossref.org https://eutils.ncbi.nlm.nih.gov https://api.web3forms.com https://formsubmit.co; form-action https://api.web3forms.com https://formsubmit.co; upgrade-insecure-requests">
   <link rel="canonical" href="https://danieleevangelistaa.github.io/">
   <link rel="alternate" hreflang="en-CA" href="https://danieleevangelistaa.github.io/">
   <link rel="alternate" hreflang="x-default" href="https://danieleevangelistaa.github.io/">
@@ -58,11 +58,7 @@
       "honorificSuffix": "MD, PhD",
       "url": "https://danieleevangelistaa.github.io/",
       "image": "https://www.ishlt.org/images/default-source/headshots/evangelistaleitedasilva-daniele_headshot_square.jpg?sfvrsn=2c141cea_1",
-      "email": [
-        "mailto:daniele.evangelista@uhn.ca",
-        "mailto:devangelsilva@gmail.com"
-      ],
-      "telephone": "+1-416-951-6923",
+      "email": "mailto:devangelsilva@gmail.com",
       "jobTitle": "Postdoctoral Research Fellow",
       "description": "Physician-scientist and postdoctoral research fellow working in lung transplantation, lipid nanoparticle-based donor-lung engineering, regenerative medicine, tissue engineering and translational thoracic research.",
       "worksFor": {
@@ -123,13 +119,7 @@
         "Extracellular matrix hydrogels",
         "Pulmonary fibrosis",
         "Organ engineering"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Toronto",
-        "addressRegion": "Ontario",
-        "addressCountry": "Canada"
-      }
+      ]
     },
     {
       "@type": "WebSite",
@@ -390,6 +380,11 @@ html[data-theme="light"] .button-primary{color:#fff;background:linear-gradient(1
 .button-secondary{border-color:var(--line);color:var(--ink);background:var(--surface-soft)}
 .button-secondary:hover{border-color:rgba(var(--accent-rgb),.42);background:rgba(var(--accent-rgb),.075)}
 .button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.button:disabled{cursor:wait;opacity:.72;transform:none!important;box-shadow:none!important}
+.button-spinner{display:none;width:16px;height:16px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:buttonSpin .72s linear infinite}
+.button.is-sending .button-spinner{display:block}
+.button.is-sending .button-send-icon{display:none}
+@keyframes buttonSpin{to{transform:rotate(360deg)}}
 .tag-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
 .tag{padding:5px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:var(--surface-soft);font-size:.57rem;font-weight:780}
 .clean-list{display:grid;gap:7px;margin:14px 0 0;padding:0;list-style:none}
@@ -620,6 +615,26 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 .publication-card[hidden]{display:none!important}
 .publication-empty{display:none;padding:42px 0;color:var(--muted);text-align:center}
 .publication-empty.visible{display:block}
+.publication-sync{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:14px 0 24px;padding:14px 16px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(135deg,rgba(var(--accent-rgb),.07),rgba(var(--blue-rgb),.035)),var(--surface);box-shadow:var(--shadow-soft)}
+.sync-copy{display:flex;align-items:center;gap:12px;min-width:0}
+.sync-copy>span:last-child{display:grid;gap:2px;min-width:0}
+.sync-copy strong{font-size:.72rem;letter-spacing:.01em}
+.sync-copy small{color:var(--muted-2);font-size:.62rem;line-height:1.45}
+.sync-indicator{width:11px;height:11px;flex:0 0 auto;border-radius:50%;background:var(--muted-2);box-shadow:0 0 0 6px rgba(var(--accent-rgb),.06)}
+.publication-sync[data-state="loading"] .sync-indicator{background:var(--accent);animation:syncPulse 1.25s ease-in-out infinite}
+.publication-sync[data-state="success"] .sync-indicator{background:var(--success);box-shadow:0 0 0 6px color-mix(in srgb,var(--success) 12%,transparent)}
+.publication-sync[data-state="error"] .sync-indicator{background:var(--warm);box-shadow:0 0 0 6px rgba(var(--warm-rgb),.11)}
+@keyframes syncPulse{50%{transform:scale(1.22);opacity:.62}}
+.sync-button{min-height:38px;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;padding:8px 12px;border:1px solid var(--line);border-radius:12px;color:var(--ink);background:var(--surface-soft);font-size:.63rem;font-weight:850;cursor:pointer;transition:transform .2s var(--ease),border-color .2s ease,background .2s ease,opacity .2s ease}
+.sync-button:hover{transform:translateY(-2px);border-color:rgba(var(--accent-rgb),.38);background:rgba(var(--accent-rgb),.075)}
+.sync-button:disabled{opacity:.58;cursor:wait;transform:none}
+.sync-button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sync-button.is-loading svg{animation:syncRotate 1s linear infinite}
+@keyframes syncRotate{to{transform:rotate(360deg)}}
+.live-record-badge{display:inline-flex!important;align-items:center;gap:5px;width:max-content;padding:4px 7px;border:1px solid rgba(var(--accent-rgb),.28);border-radius:999px;color:var(--accent)!important;background:rgba(var(--accent-rgb),.08);font-size:.51rem!important;font-weight:900!important;letter-spacing:.07em!important;text-transform:uppercase}
+.live-record-badge::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}
+.publication-live-detail{margin:7px 0 0;color:var(--muted-2);font-size:.61rem}
+.publication-source-note{max-width:900px;margin:20px 0 0;color:var(--muted-2);font-size:.61rem;line-height:1.55}
 /* Events */
 .event-groups{display:grid;gap:16px}
 .event-group{padding:24px}
@@ -667,6 +682,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 .profile-link small{display:block;margin-top:2px;color:var(--muted-2);font-size:.61rem}
 .profile-link>span{flex:0 0 auto;color:var(--accent)}
 .contact-block{margin-top:20px;padding:17px;border:1px solid var(--line);border-radius:16px;background:rgba(var(--accent-rgb),.045)}
+.contact-block-primary{border-color:rgba(var(--accent-rgb),.28);background:linear-gradient(135deg,rgba(var(--accent-rgb),.09),rgba(var(--blue-rgb),.04))}
 .contact-block small{display:block;color:var(--muted-2);font-size:.55rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
 .contact-value-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:7px}
 .contact-value-row a{font-family:Georgia,"Times New Roman",serif;font-size:1.1rem;text-decoration:none}
@@ -674,6 +690,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 .copy-button{padding:7px 10px;border:1px solid var(--line);border-radius:10px;color:var(--muted);background:var(--surface-soft);font-size:.6rem;font-weight:820;cursor:pointer}
 .copy-button:hover{color:var(--accent);border-color:rgba(var(--accent-rgb),.36)}
 .contact-form{display:grid;gap:16px}
+.form-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
 .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .field{display:grid;gap:7px;min-width:0}
 .field.full{grid-column:1/-1}
@@ -686,7 +703,10 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 .field select option{color:#102b31;background:#fff}
 .form-actions{display:flex;flex-wrap:wrap;gap:10px}
 .form-note{margin:0;color:var(--muted-2);font-size:.61rem;line-height:1.5}
-.form-status{min-height:22px;margin:0;color:var(--accent);font-size:.66rem;font-weight:790}
+.form-status{min-height:22px;margin:0;color:var(--accent);font-size:.66rem;font-weight:790;line-height:1.5}
+.form-status[data-state="sending"]{color:var(--muted)}
+.form-status[data-state="success"]{color:var(--success)}
+.form-status[data-state="error"]{color:var(--coral)}
 /* Footer and utility */
 .site-footer{position:relative;z-index:2;padding:28px 0 38px}
 .footer-layout{display:grid;grid-template-columns:1fr 1.25fr auto;gap:25px;align-items:center;padding-top:25px;border-top:1px solid var(--line)}
@@ -704,7 +724,6 @@ html[data-theme="light"] .filter-button.active{color:#fff}
   font-size:.72rem;font-weight:780;opacity:0;transform:translate(-50%,80px);transition:opacity .3s ease,transform .3s var(--ease)
 }
 .toast.show{opacity:1;transform:translate(-50%,0)}
-.privacy-note{margin-top:18px;color:var(--muted-2);font-size:.59rem}
 .noscript{margin:calc(var(--header-h) + 20px) auto 0;padding:12px 16px;border:1px solid var(--line);border-radius:13px;color:var(--muted);background:var(--surface);font-size:.7rem}
 @media(max-width:1120px){
   .desktop-nav{display:none}
@@ -756,6 +775,8 @@ html[data-theme="light"] .filter-button.active{color:#fff}
   .recognition-column{display:block}
   .recognition-column-header{border-right:0;border-bottom:1px solid var(--line);padding:0 0 19px}
   .publication-card{grid-template-columns:48px minmax(0,1fr) 42px;gap:13px}
+  .publication-sync{align-items:flex-start;flex-direction:column}
+  .sync-button{width:100%}
   .event-cards,.skills-layout{grid-template-columns:1fr}
   .form-grid{grid-template-columns:1fr}
   .field.full{grid-column:auto}
@@ -831,6 +852,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 </head>
 
 <body>
+  <!-- Public contact is intentionally limited to devangelsilva@gmail.com. For direct form delivery without recipient activation, paste the Web3Forms access key in SITE_CONFIG.web3FormsAccessKey. -->
   <a class="skip-link" href="#mainContent">Skip to main content</a>
   <div class="scroll-progress" aria-hidden="true"><span id="pageProgress"></span></div>
   <div class="cursor-aura" id="cursorAura" aria-hidden="true"></div>
@@ -891,7 +913,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
             <a class="award-pill" href="https://www.ishlt.org/grants-and-awards/grants-awards/ishlt-research-fellowship-grant" target="_blank" rel="noopener noreferrer">
               <i aria-hidden="true"></i>2026 ISHLT Research Fellowship recipient
             </a>
-            <p class="kicker">Lung transplantation · Toronto, Canada</p>
+            <p class="kicker">Lung transplantation · Regenerative medicine</p>
             <h1 class="hero-title" id="homeTitle">Daniele<br><em>Evangelista</em></h1>
             <p class="hero-role">MD, PhD · Postdoctoral Research Fellow · Physician-scientist</p>
             <p class="hero-summary">Daniele Evangelista Leite da Silva is a physician-scientist at University Health Network. Her current research focuses on lipid nanoparticle-based strategies for genetic engineering of donor lungs, building on training in transplantation, regenerative medicine, tissue engineering, organ bioengineering and clinical surgery.</p>
@@ -916,7 +938,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
           <div class="portrait-stage interactive" id="portraitStage" data-reveal>
             <figure class="portrait-card" id="portraitCard">
               <div class="portrait-frame">
-                <img src="data:image/jpeg;base64,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" alt="Daniele Evangelista, MD, PhD" width="350" height="350" fetchpriority="high" decoding="async">
+                <img src="data:image/jpeg;base64,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" alt="Daniele Evangelista, MD, PhD" width="350" height="350" fetchpriority="high" decoding="async">
                 <a class="photo-credit" href="https://www.ishlt.org/grants-and-awards/grants-awards/ishlt-research-fellowship-grant" target="_blank" rel="noopener noreferrer">Professional headshot · ISHLT profile</a>
               </div>
               <figcaption>
@@ -930,8 +952,8 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         </div>
 
         <div class="stats-grid" aria-label="Professional profile highlights" data-reveal>
-          <article class="stat-card interactive"><span class="stat-number" data-count="13">13</span><span class="stat-label">Publications and conference abstracts listed in the CV</span></article>
-          <article class="stat-card interactive"><span class="stat-number" data-count="5">5</span><span class="stat-label">Education milestones across four countries</span></article>
+          <article class="stat-card interactive"><span class="stat-number" id="homePublicationCount" data-count="13">13</span><span class="stat-label">Verified and live-synchronised scholarly works</span></article>
+          <article class="stat-card interactive"><span class="stat-number" data-count="4">4</span><span class="stat-label">Selected education milestones across Brazil, the United States and Costa Rica</span></article>
           <article class="stat-card interactive"><span class="stat-number" data-count="4">4</span><span class="stat-label">Languages: Portuguese, English, Spanish and Japanese</span></article>
           <article class="stat-card interactive"><span class="stat-number" data-count="2025" data-start="2000" data-grouping="false">2025</span><span class="stat-label">Start of current UHN postdoctoral appointment</span></article>
         </div>
@@ -1108,22 +1130,8 @@ html[data-theme="light"] .filter-button.active{color:#fff}
             <ul class="clean-list"><li>Graduated with honours.</li><li>Received two academic achievement awards in anaesthesia and surgery.</li></ul>
           </div>
         </article>
-        
-
-        <article class="education-card glass interactive" data-reveal>
+<article class="education-card glass interactive" data-reveal>
           <div class="education-marker" aria-hidden="true"><span>02</span></div>
-          <div class="education-main">
-            <div class="meta-row"><span>Medical education</span><time>02/2018 – 12/2021</time></div>
-            <h3>Medical studies</h3>
-            <p class="institution">University Center FMABC</p>
-            <p class="subline">Department of Medical Sciences · Santo André, São Paulo, Brazil</p>
-            <ul class="clean-list"><li>Completed four years of medical studies before transferring to the University of Campinas to continue medical education.</li></ul>
-          </div>
-        </article>
-        
-
-        <article class="education-card glass interactive" data-reveal>
-          <div class="education-marker" aria-hidden="true"><span>03</span></div>
           <div class="education-main">
             <div class="meta-row"><span>Degree</span><time>05/2018 – 07/2022</time></div>
             <h3>Doctorate degree (PhD)</h3>
@@ -1135,7 +1143,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         
 
         <article class="education-card glass interactive" data-reveal>
-          <div class="education-marker" aria-hidden="true"><span>04</span></div>
+          <div class="education-marker" aria-hidden="true"><span>03</span></div>
           <div class="education-main">
             <div class="meta-row"><span>Degree</span><time>08/2010 – 05/2014</time></div>
             <h3>Bachelor of Arts (BA)</h3>
@@ -1147,7 +1155,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         
 
         <article class="education-card glass interactive" data-reveal>
-          <div class="education-marker" aria-hidden="true"><span>05</span></div>
+          <div class="education-marker" aria-hidden="true"><span>04</span></div>
           <div class="education-main">
             <div class="meta-row"><span>Secondary education</span><time>09/2008 – 05/2010</time></div>
             <h3>International Baccalaureate Bilingual High School Diploma</h3>
@@ -1667,14 +1675,14 @@ html[data-theme="light"] .filter-button.active{color:#fff}
             <p class="kicker">Scholarly record</p>
             <h2 class="display-title" id="publicationsTitle">Research grounded in <em>mechanism and application.</em></h2>
           </div>
-          <p>Thirteen works listed in the CV spanning lung regeneration, extracellular-matrix biomaterials, tissue engineering, fibrosis, developmental biology and clinical scholarship.</p>
+          <p>The verified CV record is preserved locally, while new DOI- and PubMed-indexed works are checked periodically using Daniele’s ORCID and author record.</p>
         </header>
 
         <div class="stats-grid" aria-label="Publication overview" data-reveal>
-          <article class="stat-card interactive"><span class="stat-number" data-count="13">13</span><span class="stat-label">Total works listed in the CV</span></article>
-          <article class="stat-card interactive"><span class="stat-number" data-count="10">10</span><span class="stat-label">Journal articles and reviews</span></article>
-          <article class="stat-card interactive"><span class="stat-number" data-count="3">3</span><span class="stat-label">Conference abstracts</span></article>
-          <article class="stat-card interactive"><span class="stat-number" data-count="5">5</span><span class="stat-label">Articles published in Biomaterials</span></article>
+          <article class="stat-card interactive"><span class="stat-number" id="publicationTotalCount" data-count="13">13</span><span class="stat-label">Scholarly works currently shown</span></article>
+          <article class="stat-card interactive"><span class="stat-number" id="publicationJournalCount" data-count="10">10</span><span class="stat-label">Journal articles and reviews</span></article>
+          <article class="stat-card interactive"><span class="stat-number" id="publicationConferenceCount" data-count="3">3</span><span class="stat-label">Conference papers and abstracts</span></article>
+          <article class="stat-card interactive"><span class="stat-number" id="publicationBiomaterialsCount" data-count="5">5</span><span class="stat-label">Works associated with Biomaterials</span></article>
         </div>
 
         <div class="publication-tools" data-reveal>
@@ -1692,9 +1700,23 @@ html[data-theme="light"] .filter-button.active{color:#fff}
           </label>
         </div>
 
+        <div class="publication-sync glass" id="publicationSync" data-state="idle" data-reveal>
+          <div class="sync-copy">
+            <span class="sync-indicator" aria-hidden="true"></span>
+            <span>
+              <strong>Live scholarly synchronisation</strong>
+              <small id="publicationSyncStatus" role="status" aria-live="polite">The CV record is ready. Live sources will be checked automatically.</small>
+            </span>
+          </div>
+          <button class="sync-button" id="refreshPublications" type="button" aria-label="Check Crossref and PubMed for updated publications">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6v5h-5M4 18v-5h5"/><path d="M18.1 9A7 7 0 0 0 6.3 6.3L4 8M5.9 15A7 7 0 0 0 17.7 17.7L20 16"/></svg>
+            <span>Refresh record</span>
+          </button>
+        </div>
+
         <div class="publication-list" id="publicationList" data-reveal>
           
-        <article class="publication-card interactive" data-kind="journal article" data-topics="journal lung biomaterials fibrosis" data-search="2023 journal article journal lung biomaterials fibrosis the molecular mechanisms of extracellular matrix-derived hydrogel therapy in idiopathic pulmonary fibrosis models evangelista-leite d, carreira aco, nishiyama my, gilpin se, miglino ma. biomaterials. 2023;302:122338. 10.1016/j.biomaterials.2023.122338">
+        <article class="publication-card interactive" data-kind="journal article" data-topics="journal lung biomaterials fibrosis" data-search="2023 journal article journal lung biomaterials fibrosis the molecular mechanisms of extracellular matrix-derived hydrogel therapy in idiopathic pulmonary fibrosis models evangelista-leite d, carreira aco, nishiyama my, gilpin se, miglino ma. biomaterials. 2023;302:122338. 10.1016/j.biomaterials.2023.122338" data-doi="10.1016/j.biomaterials.2023.122338">
           <div class="publication-number">01</div>
           <div class="publication-copy">
             <div class="meta-row"><span>Biomaterials</span><time>2023</time></div>
@@ -1708,7 +1730,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         </article>
         
 
-        <article class="publication-card interactive" data-kind="journal article / review" data-topics="journal review lung biomaterials fibrosis" data-search="2021 journal article / review journal review lung biomaterials fibrosis protective effects of extracellular matrix-derived hydrogels in idiopathic pulmonary fibrosis evangelista-leite d, carreira aco, gilpin se, miglino ma. tissue engineering part b: reviews. listed in the cv as 2021. 10.1089/ten.teb.2020.0357">
+        <article class="publication-card interactive" data-kind="journal article / review" data-topics="journal review lung biomaterials fibrosis" data-search="2021 journal article / review journal review lung biomaterials fibrosis protective effects of extracellular matrix-derived hydrogels in idiopathic pulmonary fibrosis evangelista-leite d, carreira aco, gilpin se, miglino ma. tissue engineering part b: reviews. listed in the cv as 2021. 10.1089/ten.teb.2020.0357" data-doi="10.1089/ten.teb.2020.0357">
           <div class="publication-number">02</div>
           <div class="publication-copy">
             <div class="meta-row"><span>Tissue Engineering Part B: Reviews</span><time>2021</time></div>
@@ -1722,7 +1744,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         </article>
         
 
-        <article class="publication-card interactive" data-kind="journal article" data-topics="journal clinical systematic-review" data-search="2021 journal article journal clinical systematic-review treating chronic diarrhea: a systematic review on immunoproliferative small intestinal disease (ipsid) evangelista-leite d, affonso madaloso b, shouta yamashita b, enrico aloise f, polito verdasca l, lopes de mello m, et al. plos one. 2021;16(7):e0253695. 10.1371/journal.pone.0253695">
+        <article class="publication-card interactive" data-kind="journal article" data-topics="journal clinical systematic-review" data-search="2021 journal article journal clinical systematic-review treating chronic diarrhea: a systematic review on immunoproliferative small intestinal disease (ipsid) evangelista-leite d, affonso madaloso b, shouta yamashita b, enrico aloise f, polito verdasca l, lopes de mello m, et al. plos one. 2021;16(7):e0253695. 10.1371/journal.pone.0253695" data-doi="10.1371/journal.pone.0253695">
           <div class="publication-number">03</div>
           <div class="publication-copy">
             <div class="meta-row"><span>PLOS ONE</span><time>2021</time></div>
@@ -1736,7 +1758,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         </article>
         
 
-        <article class="publication-card interactive" data-kind="journal article" data-topics="journal tissue-engineering biomaterials" data-search="2020 journal article journal tissue-engineering biomaterials creation of laryngeal grafts from primary human cells and decellularized laryngeal scaffolds moser pt, gerli m, diercks gr, evangelista-leite d, charest jm, gershlak jr, et al. tissue engineering part a. 2020;26(9–10):543–555. 10.1089/ten.tea.2019.0128">
+        <article class="publication-card interactive" data-kind="journal article" data-topics="journal tissue-engineering biomaterials" data-search="2020 journal article journal tissue-engineering biomaterials creation of laryngeal grafts from primary human cells and decellularized laryngeal scaffolds moser pt, gerli m, diercks gr, evangelista-leite d, charest jm, gershlak jr, et al. tissue engineering part a. 2020;26(9–10):543–555. 10.1089/ten.tea.2019.0128" data-doi="10.1089/ten.tea.2019.0128">
           <div class="publication-number">04</div>
           <div class="publication-copy">
             <div class="meta-row"><span>Tissue Engineering Part A</span><time>2020</time></div>
@@ -1750,7 +1772,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         </article>
         
 
-        <article class="publication-card interactive" data-kind="journal article / review" data-topics="journal review development" data-search="2019 journal article / review journal review development lipids: role in embryonic development león m, rodrigues a, turquetti a, cereta a, melo l, durand l, delgado a, evangelista-leite d, miglino m. annual research &amp; review in biology. 2019;33(3):1–9. 10.9734/arrb/2019/v33i330120">
+        <article class="publication-card interactive" data-kind="journal article / review" data-topics="journal review development" data-search="2019 journal article / review journal review development lipids: role in embryonic development león m, rodrigues a, turquetti a, cereta a, melo l, durand l, delgado a, evangelista-leite d, miglino m. annual research &amp; review in biology. 2019;33(3):1–9. 10.9734/arrb/2019/v33i330120" data-doi="10.9734/arrb/2019/v33i330120">
           <div class="publication-number">05</div>
           <div class="publication-copy">
             <div class="meta-row"><span>Annual Research &amp; Review in Biology</span><time>2019</time></div>
@@ -1764,7 +1786,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         </article>
         
 
-        <article class="publication-card interactive" data-kind="conference abstract" data-topics="conference abstract lung bioengineering" data-search="2019 conference abstract conference abstract lung bioengineering engineering distal pulmonary epithelium from induced pluripotent stem cell (ipsc)-derived alveolar cells gilpin s, wu t, gorman d, zhu l, evangelista-leite d, vedaie m, et al. european respiratory society. european respiratory journal. 2019;54(suppl 63):pa587. 10.1183/13993003.congress-2019.pa587">
+        <article class="publication-card interactive" data-kind="conference abstract" data-topics="conference abstract lung bioengineering" data-search="2019 conference abstract conference abstract lung bioengineering engineering distal pulmonary epithelium from induced pluripotent stem cell (ipsc)-derived alveolar cells gilpin s, wu t, gorman d, zhu l, evangelista-leite d, vedaie m, et al. european respiratory society. european respiratory journal. 2019;54(suppl 63):pa587. 10.1183/13993003.congress-2019.pa587" data-doi="10.1183/13993003.congress-2019.pa587">
           <div class="publication-number">06</div>
           <div class="publication-copy">
             <div class="meta-row"><span>European Respiratory Society</span><time>2019</time></div>
@@ -1778,7 +1800,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         </article>
         
 
-        <article class="publication-card interactive" data-kind="journal article" data-topics="journal bioengineering biomaterials" data-search="2019 journal article journal bioengineering biomaterials biofabrication of a vascularized islet organ for type 1 diabetes citro a, moser pt, dugnani e, rajab tk, ren x, evangelista-leite d, et al. biomaterials. 2019;199:40–51. 10.1016/j.biomaterials.2019.01.035">
+        <article class="publication-card interactive" data-kind="journal article" data-topics="journal bioengineering biomaterials" data-search="2019 journal article journal bioengineering biomaterials biofabrication of a vascularized islet organ for type 1 diabetes citro a, moser pt, dugnani e, rajab tk, ren x, evangelista-leite d, et al. biomaterials. 2019;199:40–51. 10.1016/j.biomaterials.2019.01.035" data-doi="10.1016/j.biomaterials.2019.01.035">
           <div class="publication-number">07</div>
           <div class="publication-copy">
             <div class="meta-row"><span>Biomaterials</span><time>2019</time></div>
@@ -1792,7 +1814,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         </article>
         
 
-        <article class="publication-card interactive" data-kind="journal article" data-topics="journal biomaterials chemistry" data-search="2018 journal article journal biomaterials chemistry metabolic glycan labeling and chemoselective functionalization of native biomaterials ren x, evangelista-leite d, wu t, rajab tk, moser pt, kitano k, et al. biomaterials. 2018;182:127–134. 10.1016/j.biomaterials.2018.08.012">
+        <article class="publication-card interactive" data-kind="journal article" data-topics="journal biomaterials chemistry" data-search="2018 journal article journal biomaterials chemistry metabolic glycan labeling and chemoselective functionalization of native biomaterials ren x, evangelista-leite d, wu t, rajab tk, moser pt, kitano k, et al. biomaterials. 2018;182:127–134. 10.1016/j.biomaterials.2018.08.012" data-doi="10.1016/j.biomaterials.2018.08.012">
           <div class="publication-number">08</div>
           <div class="publication-copy">
             <div class="meta-row"><span>Biomaterials</span><time>2018</time></div>
@@ -1806,7 +1828,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         </article>
         
 
-        <article class="publication-card interactive" data-kind="journal article" data-topics="journal tissue-engineering biomaterials" data-search="2018 journal article journal tissue-engineering biomaterials perfusion decellularization of a human limb: a novel platform for composite tissue engineering and reconstructive surgery gerli mfm, guyette jp, evangelista-leite d, ghoshhajra bb, ott hc. plos one. 2018;13(1):e0191497. 10.1371/journal.pone.0191497">
+        <article class="publication-card interactive" data-kind="journal article" data-topics="journal tissue-engineering biomaterials" data-search="2018 journal article journal tissue-engineering biomaterials perfusion decellularization of a human limb: a novel platform for composite tissue engineering and reconstructive surgery gerli mfm, guyette jp, evangelista-leite d, ghoshhajra bb, ott hc. plos one. 2018;13(1):e0191497. 10.1371/journal.pone.0191497" data-doi="10.1371/journal.pone.0191497">
           <div class="publication-number">09</div>
           <div class="publication-copy">
             <div class="meta-row"><span>PLOS ONE</span><time>2018</time></div>
@@ -1820,7 +1842,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         </article>
         
 
-        <article class="publication-card interactive" data-kind="conference abstract" data-topics="conference abstract lung regeneration" data-search="2017 conference abstract conference abstract lung regeneration distal pneumocyte differentiation of basal epithelial stem cells by inhibition of notch signaling during ex vivo lung regeneration gilpin se, wu t, ren x, evangelista-leite d, ott hc. american thoracic society international conference. d108 cell fate decisions: senescence, repair, and regeneration. 2017:a7509. 10.1164/ajrccm-conference.2017.195.1_meetingabstracts.a7509">
+        <article class="publication-card interactive" data-kind="conference abstract" data-topics="conference abstract lung regeneration" data-search="2017 conference abstract conference abstract lung regeneration distal pneumocyte differentiation of basal epithelial stem cells by inhibition of notch signaling during ex vivo lung regeneration gilpin se, wu t, ren x, evangelista-leite d, ott hc. american thoracic society international conference. d108 cell fate decisions: senescence, repair, and regeneration. 2017:a7509. 10.1164/ajrccm-conference.2017.195.1_meetingabstracts.a7509" data-doi="10.1164/ajrccm-conference.2017.195.1_meetingabstracts.a7509">
           <div class="publication-number">10</div>
           <div class="publication-copy">
             <div class="meta-row"><span>American Thoracic Society International Conference</span><time>2017</time></div>
@@ -1834,7 +1856,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         </article>
         
 
-        <article class="publication-card interactive" data-kind="journal article" data-topics="journal lung regeneration biomaterials" data-search="2017 journal article journal lung regeneration biomaterials fibrillin-2 and tenascin-c bridge the age gap in lung epithelial regeneration gilpin se, li q, evangelista-leite d, ren x, reinhardt dp, frey bl, et al. biomaterials. 2017;140:212–219. 10.1016/j.biomaterials.2017.06.027">
+        <article class="publication-card interactive" data-kind="journal article" data-topics="journal lung regeneration biomaterials" data-search="2017 journal article journal lung regeneration biomaterials fibrillin-2 and tenascin-c bridge the age gap in lung epithelial regeneration gilpin se, li q, evangelista-leite d, ren x, reinhardt dp, frey bl, et al. biomaterials. 2017;140:212–219. 10.1016/j.biomaterials.2017.06.027" data-doi="10.1016/j.biomaterials.2017.06.027">
           <div class="publication-number">11</div>
           <div class="publication-copy">
             <div class="meta-row"><span>Biomaterials</span><time>2017</time></div>
@@ -1848,7 +1870,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         </article>
         
 
-        <article class="publication-card interactive" data-kind="conference abstract" data-topics="conference abstract lung regeneration extracellular-matrix" data-search="2017 conference abstract conference abstract lung regeneration extracellular-matrix enhanced epithelial regeneration on human neonatal lung-derived scaffolds is mediated by tenascin-c gilpin se, li q, evangelista-leite d, frey bl, ott hc. american thoracic society international conference. a19 the extracellular matrix: a sticky situation. 2017:a1052. 10.1164/ajrccm-conference.2017.195.1_meetingabstracts.a1052">
+        <article class="publication-card interactive" data-kind="conference abstract" data-topics="conference abstract lung regeneration extracellular-matrix" data-search="2017 conference abstract conference abstract lung regeneration extracellular-matrix enhanced epithelial regeneration on human neonatal lung-derived scaffolds is mediated by tenascin-c gilpin se, li q, evangelista-leite d, frey bl, ott hc. american thoracic society international conference. a19 the extracellular matrix: a sticky situation. 2017:a1052. 10.1164/ajrccm-conference.2017.195.1_meetingabstracts.a1052" data-doi="10.1164/ajrccm-conference.2017.195.1_meetingabstracts.a1052">
           <div class="publication-number">12</div>
           <div class="publication-copy">
             <div class="meta-row"><span>American Thoracic Society International Conference</span><time>2017</time></div>
@@ -1862,7 +1884,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         </article>
         
 
-        <article class="publication-card interactive" data-kind="journal article" data-topics="journal lung bioengineering biomaterials" data-search="2016 journal article journal lung bioengineering biomaterials regenerative potential of human airway stem cells in lung epithelial engineering gilpin se, charest jm, ren x, tapias lf, wu t, evangelista-leite d, et al. biomaterials. 2016;108:111–119. 10.1016/j.biomaterials.2016.08.055">
+        <article class="publication-card interactive" data-kind="journal article" data-topics="journal lung bioengineering biomaterials" data-search="2016 journal article journal lung bioengineering biomaterials regenerative potential of human airway stem cells in lung epithelial engineering gilpin se, charest jm, ren x, tapias lf, wu t, evangelista-leite d, et al. biomaterials. 2016;108:111–119. 10.1016/j.biomaterials.2016.08.055" data-doi="10.1016/j.biomaterials.2016.08.055">
           <div class="publication-number">13</div>
           <div class="publication-copy">
             <div class="meta-row"><span>Biomaterials</span><time>2016</time></div>
@@ -1877,6 +1899,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         
         </div>
         <p class="publication-empty" id="publicationEmpty">No publications match that search.</p>
+        <p class="publication-source-note">The embedded CV record remains available if a live source is temporarily unavailable. Automatically added records are matched through ORCID-linked Crossref metadata or an exact PubMed author query and are labelled as live records.</p>
       </div>
     </section>
 
@@ -2118,42 +2141,37 @@ html[data-theme="light"] .filter-button.active{color:#fff}
               </a>
             </div>
 
-            <div class="contact-block">
-              <small>University Health Network email</small>
-              <div class="contact-value-row">
-                <a href="mailto:daniele.evangelista@uhn.ca">daniele.evangelista@uhn.ca</a>
-                <button class="copy-button" type="button" data-copy="daniele.evangelista@uhn.ca" data-copy-message="UHN email copied">Copy</button>
-              </div>
-            </div>
-            <div class="contact-block">
-              <small>Secondary email</small>
+            <div class="contact-block contact-block-primary">
+              <small>Email</small>
               <div class="contact-value-row">
                 <a href="mailto:devangelsilva@gmail.com">devangelsilva@gmail.com</a>
-                <button class="copy-button" type="button" data-copy="devangelsilva@gmail.com" data-copy-message="Secondary email copied">Copy</button>
+                <button class="copy-button" type="button" data-copy="devangelsilva@gmail.com" data-copy-message="Email address copied">Copy</button>
               </div>
             </div>
-            <div class="contact-block">
-              <small>Telephone</small>
-              <div class="contact-value-row">
-                <a href="tel:+14169516923">+1 416-951-6923</a>
-                <button class="copy-button" type="button" data-copy="+1 416-951-6923" data-copy-message="Telephone number copied">Copy</button>
-              </div>
-            </div>
-            <p class="privacy-note">Location shown publicly as Toronto, Ontario, Canada. The residential street address from the curriculum vitae is intentionally not published.</p>
           </article>
 
           <article class="contact-card glass interactive" data-reveal>
-            <h3>Prepare an email</h3>
-            <p>Complete the form to open a professional message in your preferred email application. No form data is stored by this website.</p>
-            <form class="contact-form" id="contactForm" novalidate>
+            <h3>Send a message</h3>
+            <p>Submit a professional message from this page. It is delivered to Daniele’s Gmail address without requiring the visitor to open a separate email application.</p>
+            <form class="contact-form" id="contactForm"
+                  action="https://formsubmit.co/devangelsilva@gmail.com"
+                  data-ajax-endpoint="https://formsubmit.co/ajax/devangelsilva@gmail.com"
+                  method="POST" novalidate>
+              <input class="form-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <input class="form-honeypot" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_subject" value="New message from Daniele Evangelista’s website">
+              <input type="hidden" name="_next" value="https://danieleevangelistaa.github.io/#contact">
+              <input type="hidden" name="source" value="Daniele Evangelista professional portfolio">
               <div class="form-grid">
                 <div class="field">
                   <label for="contactName">Your name</label>
-                  <input id="contactName" name="name" type="text" autocomplete="name" maxlength="90" required placeholder="Full name">
+                  <input id="contactName" name="name" type="text" autocomplete="name" maxlength="90" minlength="2" required placeholder="Full name">
                 </div>
                 <div class="field">
                   <label for="contactEmail">Your email</label>
-                  <input id="contactEmail" name="email" type="email" autocomplete="email" maxlength="140" required placeholder="name@example.com">
+                  <input id="contactEmail" name="email" type="email" autocomplete="email" maxlength="140" inputmode="email" required placeholder="name@example.com">
                 </div>
                 <div class="field">
                   <label for="contactOrganisation">Organisation <span aria-hidden="true">(optional)</span></label>
@@ -2171,22 +2189,23 @@ html[data-theme="light"] .filter-button.active{color:#fff}
                 </div>
                 <div class="field full">
                   <label for="contactSubject">Subject</label>
-                  <input id="contactSubject" name="subject" type="text" maxlength="160" required placeholder="Brief subject">
+                  <input id="contactSubject" name="subject" type="text" maxlength="160" minlength="3" required placeholder="Brief subject">
                 </div>
                 <div class="field full">
                   <label for="contactMessage">Message</label>
-                  <textarea id="contactMessage" name="message" maxlength="2500" required placeholder="Write your message"></textarea>
+                  <textarea id="contactMessage" name="message" maxlength="2500" minlength="10" required placeholder="Write your message"></textarea>
                 </div>
               </div>
               <div class="form-actions">
-                <button class="button button-primary" type="submit">Open email draft
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                <button class="button button-primary" id="contactSubmit" type="submit">
+                  <span class="button-label">Send message</span>
+                  <span class="button-spinner" aria-hidden="true"></span>
+                  <svg class="button-send-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m4 4 17 8-17 8 3-8-3-8Z"/><path d="M7 12h14"/></svg>
                 </button>
                 <button class="button button-secondary" id="copyMessageButton" type="button">Copy prepared message</button>
-                <a class="button button-secondary" href="mailto:daniele.evangelista@uhn.ca">Email directly</a>
               </div>
-              <p class="form-note">A single static HTML file cannot securely send mail by itself without an external form service. This form reliably prepares the complete message in the visitor’s email application.</p>
-              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+              <p class="form-note">Messages are transmitted over HTTPS to Daniele’s Gmail through the configured delivery service. Do not include confidential patient, clinical or health information.</p>
+              <p class="form-status" id="formStatus" role="status" aria-live="polite" aria-atomic="true"></p>
             </form>
           </article>
         </div>
@@ -2199,7 +2218,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     <div class="container footer-layout">
       <div>
         <strong>Daniele Evangelista Leite da Silva, MD, PhD</strong>
-        <p>Physician-scientist · Lung transplantation · Toronto, Canada</p>
+        <p>Physician-scientist · Lung transplantation · Regenerative medicine</p>
       </div>
       <p>Professional research portfolio · Latner Thoracic Research Laboratories · University Health Network</p>
       <div class="footer-links">
@@ -2231,6 +2250,40 @@ html[data-theme="light"] .filter-button.active{color:#fff}
   const portraitCard = document.getElementById("portraitCard");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = window.matchMedia("(pointer: fine)").matches;
+
+  const SITE_CONFIG = Object.freeze({
+    contactEmail: "devangelsilva@gmail.com",
+    // Replace the value below with the Web3Forms access key created for
+    // devangelsilva@gmail.com. The rest of the website remains a single file.
+    web3FormsAccessKey: "PASTE_WEB3FORMS_ACCESS_KEY_HERE",
+    web3FormsEndpoint: "https://api.web3forms.com/submit",
+    formSubmitEndpoint: "https://formsubmit.co/ajax/devangelsilva@gmail.com",
+    orcid: "0000-0002-2755-0091",
+    publicationCacheKey: "daniele-scholar-record-v5",
+    publicationRefreshMs: 7 * 24 * 60 * 60 * 1000
+  });
+
+  const enhanceInteractiveSurface = (surface) => {
+    if (!finePointer || reduceMotion || !surface || surface.dataset.pointerEnhanced === "true") return;
+    surface.dataset.pointerEnhanced = "true";
+    surface.addEventListener("pointermove", (event) => {
+      const rect = surface.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      surface.style.setProperty("--surface-x", `${x}px`);
+      surface.style.setProperty("--surface-y", `${y}px`);
+      const dx = ((x / Math.max(rect.width, 1)) - 0.5) * -22;
+      const dy = ((y / Math.max(rect.height, 1)) - 0.5) * -22;
+      surface.style.setProperty("--shadow-x", `${dx}px`);
+      surface.style.setProperty("--shadow-y", `${14 + dy * 0.35}px`);
+    }, { passive: true });
+    surface.addEventListener("pointerleave", () => {
+      surface.style.setProperty("--surface-x", "50%");
+      surface.style.setProperty("--surface-y", "50%");
+      surface.style.setProperty("--shadow-x", "0px");
+      surface.style.setProperty("--shadow-y", "15px");
+    });
+  };
 
   const showToast = (message) => {
     toast.textContent = message;
@@ -2402,22 +2455,32 @@ html[data-theme="light"] .filter-button.active{color:#fff}
   });
 
   const publicationButtons = [...document.querySelectorAll("[data-publication-filter]")];
-  const publicationCards = [...document.querySelectorAll(".publication-card")];
+  let publicationCards = [...document.querySelectorAll(".publication-card")];
   const publicationSearch = document.getElementById("publicationSearch");
   const publicationEmpty = document.getElementById("publicationEmpty");
+  const publicationList = document.getElementById("publicationList");
+  const publicationSync = document.getElementById("publicationSync");
+  const publicationSyncStatus = document.getElementById("publicationSyncStatus");
+  const refreshPublicationsButton = document.getElementById("refreshPublications");
   let publicationFilter = "all";
+
+  const refreshPublicationCardCollection = () => {
+    publicationCards = [...publicationList.querySelectorAll(".publication-card")];
+  };
 
   const filterPublications = () => {
     const term = publicationSearch.value.trim().toLowerCase();
     let visibleCount = 0;
     publicationCards.forEach((card) => {
-      const topics = card.dataset.topics.split(/\s+/);
+      const topics = String(card.dataset.topics || "").split(/\s+/);
+      const kind = String(card.dataset.kind || "");
       const typeMatch =
         publicationFilter === "all" ||
-        (publicationFilter === "journal" && card.dataset.kind.includes("journal")) ||
-        (publicationFilter === "conference" && card.dataset.kind.includes("conference")) ||
+        (publicationFilter === "journal" && kind.includes("journal")) ||
+        (publicationFilter === "conference" && (kind.includes("conference") || kind.includes("proceedings"))) ||
         topics.includes(publicationFilter);
-      const searchMatch = !term || card.dataset.search.includes(term) || card.textContent.toLowerCase().includes(term);
+      const searchable = `${card.dataset.search || ""} ${card.textContent || ""}`.toLowerCase();
+      const searchMatch = !term || searchable.includes(term);
       const show = typeMatch && searchMatch;
       card.hidden = !show;
       if (show) visibleCount += 1;
@@ -2431,6 +2494,393 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     filterPublications();
   }));
   publicationSearch.addEventListener("input", filterPublications);
+
+  const normaliseDoi = (value) => String(value || "")
+    .trim()
+    .replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, "")
+    .replace(/^doi:\s*/i, "")
+    .replace(/[\s.,;]+$/g, "")
+    .toLowerCase();
+
+  const cleanScholarlyText = (value) => {
+    const template = document.createElement("template");
+    template.innerHTML = String(value || "");
+    return String(template.content.textContent || "").replace(/\s+/g, " ").trim();
+  };
+
+  const normaliseTitle = (value) => cleanScholarlyText(value)
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+
+  const yearFromDateParts = (...candidates) => {
+    for (const candidate of candidates) {
+      const value = candidate && candidate["date-parts"] && candidate["date-parts"][0] && candidate["date-parts"][0][0];
+      if (Number.isFinite(Number(value))) return Number(value);
+    }
+    return null;
+  };
+
+  const formatCrossrefAuthors = (authors) => {
+    const names = Array.isArray(authors) ? authors.map((author) => {
+      const given = cleanScholarlyText(author && author.given);
+      const family = cleanScholarlyText(author && author.family);
+      return [given, family].filter(Boolean).join(" ");
+    }).filter(Boolean) : [];
+    if (names.length > 8) return `${names.slice(0, 8).join(", ")}, et al.`;
+    return names.join(", ");
+  };
+
+  const mapCrossrefRecord = (item) => {
+    const title = cleanScholarlyText(Array.isArray(item.title) ? item.title[0] : item.title);
+    const doi = normaliseDoi(item.DOI);
+    const year = yearFromDateParts(item.published, item.issued, item.created, item["published-online"], item["published-print"]);
+    const container = cleanScholarlyText(Array.isArray(item["container-title"]) ? item["container-title"][0] : item["container-title"]);
+    const typeMap = {
+      "journal-article": "journal article",
+      "proceedings-article": "conference paper",
+      "posted-content": "preprint",
+      "book-chapter": "book chapter",
+      "dissertation": "dissertation"
+    };
+    return {
+      source: "Crossref",
+      id: doi || normaliseTitle(title),
+      doi,
+      pmid: "",
+      title,
+      authors: formatCrossrefAuthors(item.author),
+      container: container || cleanScholarlyText(item.publisher) || "Scholarly work",
+      year,
+      type: typeMap[item.type] || cleanScholarlyText(item.type).replace(/-/g, " ") || "scholarly work",
+      volume: cleanScholarlyText(item.volume),
+      issue: cleanScholarlyText(item.issue),
+      page: cleanScholarlyText(item.page || item["article-number"]),
+      citedBy: Number(item["is-referenced-by-count"] || 0),
+      url: doi ? `https://doi.org/${encodeURI(doi)}` : String(item.URL || "")
+    };
+  };
+
+  const mapPubMedRecord = (item, uid) => {
+    const ids = Array.isArray(item.articleids) ? item.articleids : [];
+    const doi = normaliseDoi((ids.find((entry) => entry.idtype === "doi") || {}).value);
+    const yearMatch = String(item.sortpubdate || item.pubdate || "").match(/\b(?:19|20)\d{2}\b/);
+    return {
+      source: "PubMed",
+      id: doi || `pmid:${uid}`,
+      doi,
+      pmid: String(uid || ""),
+      title: cleanScholarlyText(item.title),
+      authors: Array.isArray(item.authors) ? item.authors.map((author) => cleanScholarlyText(author.name)).filter(Boolean).join(", ") : "",
+      container: cleanScholarlyText(item.fulljournalname || item.source) || "PubMed-indexed work",
+      year: yearMatch ? Number(yearMatch[0]) : null,
+      type: "journal article",
+      volume: cleanScholarlyText(item.volume),
+      issue: cleanScholarlyText(item.issue),
+      page: cleanScholarlyText(item.pages),
+      citedBy: 0,
+      url: `https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(uid)}/`
+    };
+  };
+
+  const fetchJson = async (url, timeoutMs = 14000) => {
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+        headers: { Accept: "application/json" },
+        signal: controller.signal,
+        cache: "no-store",
+        credentials: "omit",
+        referrerPolicy: "strict-origin-when-cross-origin"
+      });
+      if (!response.ok) throw new Error(`Request failed (${response.status})`);
+      return await response.json();
+    } finally {
+      window.clearTimeout(timer);
+    }
+  };
+
+  const fetchCrossrefRecords = async () => {
+    const url = new URL("https://api.crossref.org/works");
+    url.searchParams.set("filter", `orcid:${SITE_CONFIG.orcid}`);
+    url.searchParams.set("rows", "100");
+    url.searchParams.set("sort", "published");
+    url.searchParams.set("order", "desc");
+    url.searchParams.set("mailto", SITE_CONFIG.contactEmail);
+    const payload = await fetchJson(url.toString());
+    const items = payload && payload.message && Array.isArray(payload.message.items) ? payload.message.items : [];
+    return items.map(mapCrossrefRecord).filter((record) => record.title);
+  };
+
+  const fetchPubMedRecords = async () => {
+    const searchUrl = new URL("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi");
+    searchUrl.searchParams.set("db", "pubmed");
+    searchUrl.searchParams.set("term", '("orcid 0000-0002-2755-0091"[auid]) OR ("Evangelista-Leite D"[au]) OR ("Evangelista Leite D"[au])');
+    searchUrl.searchParams.set("retmode", "json");
+    searchUrl.searchParams.set("retmax", "100");
+    searchUrl.searchParams.set("sort", "pub date");
+    searchUrl.searchParams.set("tool", "daniele_evangelista_portfolio");
+    searchUrl.searchParams.set("email", SITE_CONFIG.contactEmail);
+    const searchPayload = await fetchJson(searchUrl.toString());
+    const ids = searchPayload && searchPayload.esearchresult && Array.isArray(searchPayload.esearchresult.idlist)
+      ? searchPayload.esearchresult.idlist
+      : [];
+    if (!ids.length) return [];
+
+    const summaryUrl = new URL("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi");
+    summaryUrl.searchParams.set("db", "pubmed");
+    summaryUrl.searchParams.set("id", ids.join(","));
+    summaryUrl.searchParams.set("retmode", "json");
+    summaryUrl.searchParams.set("tool", "daniele_evangelista_portfolio");
+    summaryUrl.searchParams.set("email", SITE_CONFIG.contactEmail);
+    const summaryPayload = await fetchJson(summaryUrl.toString());
+    const result = summaryPayload && summaryPayload.result ? summaryPayload.result : {};
+    const uids = Array.isArray(result.uids) ? result.uids : ids;
+    return uids.map((uid) => result[uid] ? mapPubMedRecord(result[uid], uid) : null).filter(Boolean);
+  };
+
+  const mergeScholarlyRecords = (...groups) => {
+    const records = new Map();
+    groups.flat().forEach((record) => {
+      if (!record || !record.title) return;
+      const key = record.doi ? `doi:${record.doi}` : `title:${normaliseTitle(record.title)}`;
+      const existing = records.get(key);
+      if (!existing) {
+        records.set(key, record);
+        return;
+      }
+      records.set(key, {
+        ...existing,
+        ...record,
+        source: [...new Set(`${existing.source || ""}+${record.source || ""}`.split("+").filter(Boolean))].join(" + "),
+        doi: existing.doi || record.doi,
+        pmid: existing.pmid || record.pmid,
+        url: record.url || existing.url,
+        citedBy: Math.max(Number(existing.citedBy || 0), Number(record.citedBy || 0))
+      });
+    });
+    return [...records.values()].sort((a, b) => (Number(b.year || 0) - Number(a.year || 0)) || a.title.localeCompare(b.title));
+  };
+
+  const inferPublicationTopics = (record) => {
+    const textValue = `${record.title} ${record.container} ${record.type}`.toLowerCase();
+    const topics = new Set(["live"]);
+    if (/journal|review|preprint/.test(record.type)) topics.add("journal");
+    if (/conference|proceedings|abstract/.test(record.type)) topics.add("conference");
+    if (/lung|pulmonary|airway|thoracic|transplant|evlp/.test(textValue)) topics.add("lung");
+    if (/biomaterial|extracellular matrix|hydrogel|scaffold|decellular|recellular|tissue engineering/.test(textValue)) topics.add("biomaterials");
+    if (/regener|stem cell|biofabrication|organ engineering/.test(textValue)) topics.add("regeneration");
+    return [...topics].join(" ");
+  };
+
+  const buildCitationText = (record) => {
+    const volumeIssue = [record.volume, record.issue ? `(${record.issue})` : ""].filter(Boolean).join("");
+    const bibliographic = [record.container, record.year, volumeIssue, record.page].filter(Boolean).join(" · ");
+    return record.doi ? `${bibliographic}. DOI: ${record.doi}` : bibliographic;
+  };
+
+  const createLivePublicationCard = (record) => {
+    const article = document.createElement("article");
+    article.className = "publication-card interactive";
+    article.dataset.liveGenerated = "true";
+    article.dataset.kind = record.type || "scholarly work";
+    article.dataset.topics = inferPublicationTopics(record);
+    article.dataset.doi = record.doi || "";
+    article.dataset.year = String(record.year || 0);
+    article.dataset.search = `${record.year || ""} ${record.type || ""} ${record.title} ${record.authors} ${record.container} ${record.doi || ""}`.toLowerCase();
+
+    const number = document.createElement("div");
+    number.className = "publication-number";
+    number.textContent = "—";
+
+    const copy = document.createElement("div");
+    copy.className = "publication-copy";
+
+    const meta = document.createElement("div");
+    meta.className = "meta-row";
+    const source = document.createElement("span");
+    source.textContent = record.container || "Scholarly work";
+    const time = document.createElement("time");
+    time.textContent = record.year || "Forthcoming";
+    if (record.year) time.dateTime = String(record.year);
+    const badge = document.createElement("span");
+    badge.className = "live-record-badge";
+    badge.textContent = "Live record";
+    meta.append(source, time, badge);
+
+    const title = document.createElement("h3");
+    title.textContent = record.title;
+    const authors = document.createElement("p");
+    authors.className = "publication-authors";
+    authors.textContent = record.authors || "Author record matched through ORCID or PubMed.";
+    const citation = document.createElement("p");
+    citation.className = "publication-citation";
+    citation.textContent = buildCitationText(record);
+    const detail = document.createElement("p");
+    detail.className = "publication-live-detail";
+    detail.textContent = `${record.source} metadata${record.citedBy > 0 ? ` · ${record.citedBy.toLocaleString("en-CA")} Crossref citation${record.citedBy === 1 ? "" : "s"}` : ""}`;
+    copy.append(meta, title, authors, citation, detail);
+
+    const link = document.createElement("a");
+    link.className = "publication-link";
+    link.href = record.url || (record.doi ? `https://doi.org/${encodeURI(record.doi)}` : "#publications");
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute("aria-label", `Open live scholarly record: ${record.title}`);
+    link.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+
+    article.append(number, copy, link);
+    enhanceInteractiveSurface(article);
+    return article;
+  };
+
+  const markStaticCardVerified = (card, record) => {
+    card.dataset.liveVerified = "true";
+    card.dataset.year = card.querySelector("time")?.textContent?.match(/\d{4}/)?.[0] || String(record.year || 0);
+    const meta = card.querySelector(".meta-row");
+    if (meta && !meta.querySelector(".live-record-badge")) {
+      const badge = document.createElement("span");
+      badge.className = "live-record-badge";
+      badge.textContent = "Live verified";
+      meta.appendChild(badge);
+    }
+    const copy = card.querySelector(".publication-copy");
+    if (copy && !copy.querySelector(".publication-live-detail")) {
+      const detail = document.createElement("p");
+      detail.className = "publication-live-detail";
+      detail.textContent = `${record.source} match${record.citedBy > 0 ? ` · ${record.citedBy.toLocaleString("en-CA")} Crossref citation${record.citedBy === 1 ? "" : "s"}` : ""}`;
+      copy.appendChild(detail);
+    }
+  };
+
+  const updatePublicationStatistics = () => {
+    refreshPublicationCardCollection();
+    const total = publicationCards.length;
+    const journals = publicationCards.filter((card) => String(card.dataset.kind || "").includes("journal") || String(card.dataset.kind || "").includes("review") || String(card.dataset.kind || "").includes("preprint")).length;
+    const conferences = publicationCards.filter((card) => /conference|proceedings|abstract/.test(String(card.dataset.kind || ""))).length;
+    const biomaterials = publicationCards.filter((card) => /\bbiomaterials\b/i.test(card.textContent || "")).length;
+    [
+      [document.getElementById("homePublicationCount"), total],
+      [document.getElementById("publicationTotalCount"), total],
+      [document.getElementById("publicationJournalCount"), journals],
+      [document.getElementById("publicationConferenceCount"), conferences],
+      [document.getElementById("publicationBiomaterialsCount"), biomaterials]
+    ].forEach(([element, value]) => {
+      if (!element) return;
+      element.dataset.count = String(value);
+      element.dataset.animated = "true";
+      setCounterValue(element, value);
+    });
+  };
+
+  const applyScholarlyRecords = (records) => {
+    publicationList.querySelectorAll('[data-live-generated="true"]').forEach((card) => card.remove());
+    const staticCards = [...publicationList.querySelectorAll('.publication-card:not([data-live-generated="true"])')];
+    const byDoi = new Map();
+    const byTitle = new Map();
+    staticCards.forEach((card) => {
+      const doi = normaliseDoi(card.dataset.doi);
+      const title = normaliseTitle(card.querySelector("h3")?.textContent || "");
+      if (doi) byDoi.set(doi, card);
+      if (title) byTitle.set(title, card);
+    });
+
+    const generated = [];
+    records.forEach((record) => {
+      const matched = (record.doi && byDoi.get(record.doi)) || byTitle.get(normaliseTitle(record.title));
+      if (matched) markStaticCardVerified(matched, record);
+      else generated.push(createLivePublicationCard(record));
+    });
+
+    generated.forEach((card) => publicationList.appendChild(card));
+    const allCards = [...publicationList.querySelectorAll(".publication-card")];
+    allCards.sort((a, b) => {
+      const yearA = Number(a.dataset.year || a.querySelector("time")?.textContent?.match(/\d{4}/)?.[0] || 0);
+      const yearB = Number(b.dataset.year || b.querySelector("time")?.textContent?.match(/\d{4}/)?.[0] || 0);
+      if (yearA !== yearB) return yearB - yearA;
+      return Number(b.dataset.liveGenerated === "true") - Number(a.dataset.liveGenerated === "true");
+    }).forEach((card) => publicationList.appendChild(card));
+
+    refreshPublicationCardCollection();
+    publicationCards.forEach((card, index) => {
+      const number = card.querySelector(".publication-number");
+      if (number) number.textContent = String(index + 1).padStart(2, "0");
+    });
+    updatePublicationStatistics();
+    filterPublications();
+  };
+
+  const formatSyncTime = (timestamp) => new Intl.DateTimeFormat("en-CA", {
+    dateStyle: "medium",
+    timeStyle: "short"
+  }).format(new Date(timestamp));
+
+  const setPublicationSyncState = (state, message) => {
+    publicationSync.dataset.state = state;
+    publicationSyncStatus.textContent = message;
+    const loading = state === "loading";
+    refreshPublicationsButton.disabled = loading;
+    refreshPublicationsButton.classList.toggle("is-loading", loading);
+  };
+
+  const readPublicationCache = () => {
+    try {
+      const raw = localStorage.getItem(SITE_CONFIG.publicationCacheKey);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (!parsed || !Array.isArray(parsed.records) || !Number.isFinite(Number(parsed.checkedAt))) return null;
+      return parsed;
+    } catch (error) {
+      return null;
+    }
+  };
+
+  const writePublicationCache = (records, checkedAt) => {
+    try {
+      localStorage.setItem(SITE_CONFIG.publicationCacheKey, JSON.stringify({ records, checkedAt }));
+    } catch (error) {}
+  };
+
+  const synchronisePublications = async (force = false) => {
+    const cache = readPublicationCache();
+    const now = Date.now();
+    if (cache) {
+      applyScholarlyRecords(cache.records);
+      setPublicationSyncState("success", `Live sources last checked ${formatSyncTime(cache.checkedAt)}.`);
+      if (!force && now - Number(cache.checkedAt) < SITE_CONFIG.publicationRefreshMs) return;
+    }
+
+    setPublicationSyncState("loading", "Checking Crossref and PubMed for new scholarly records…");
+    const results = await Promise.allSettled([fetchCrossrefRecords(), fetchPubMedRecords()]);
+    const successfulGroups = results.filter((result) => result.status === "fulfilled").map((result) => result.value);
+    const records = mergeScholarlyRecords(...successfulGroups);
+
+    if (records.length) {
+      applyScholarlyRecords(records);
+      writePublicationCache(records, now);
+      const failedCount = results.filter((result) => result.status === "rejected").length;
+      setPublicationSyncState(
+        "success",
+        `${records.length.toLocaleString("en-CA")} live record${records.length === 1 ? "" : "s"} checked ${formatSyncTime(now)}${failedCount ? "; one source was temporarily unavailable" : ""}.`
+      );
+      if (force) showToast("Scholarly record refreshed");
+      return;
+    }
+
+    if (cache) {
+      setPublicationSyncState("error", `Live sources are temporarily unavailable. Showing the cached record checked ${formatSyncTime(cache.checkedAt)} and the embedded CV record.`);
+    } else {
+      setPublicationSyncState("error", "Live sources are temporarily unavailable. The verified embedded CV publication record remains fully available.");
+    }
+    if (force) showToast("Live scholarly sources unavailable");
+  };
+
+  refreshPublicationsButton.addEventListener("click", () => synchronisePublications(true));
+  window.setTimeout(() => synchronisePublications(false), 700);
 
   const experienceSearch = document.getElementById("experienceSearch");
   const experienceGroups = [...document.querySelectorAll(".experience-group")];
@@ -2481,6 +2931,24 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 
   const contactForm = document.getElementById("contactForm");
   const formStatus = document.getElementById("formStatus");
+  const contactSubmit = document.getElementById("contactSubmit");
+  const submitLabel = contactSubmit.querySelector(".button-label");
+  let submissionInProgress = false;
+
+  const setFormStatus = (message, state = "") => {
+    formStatus.textContent = message;
+    if (state) formStatus.dataset.state = state;
+    else formStatus.removeAttribute("data-state");
+  };
+
+  const setSubmissionState = (sending) => {
+    submissionInProgress = sending;
+    contactSubmit.disabled = sending;
+    contactSubmit.classList.toggle("is-sending", sending);
+    contactSubmit.setAttribute("aria-busy", String(sending));
+    submitLabel.textContent = sending ? "Sending…" : "Send message";
+  };
+
   const buildEmail = () => {
     const data = new FormData(contactForm);
     const name = String(data.get("name") || "").trim();
@@ -2490,7 +2958,12 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     const subject = String(data.get("subject") || "").trim();
     const message = String(data.get("message") || "").trim();
     return {
+      name,
+      email,
+      organisation,
+      topic,
       subject,
+      message,
       body: [
         "Dear Dr. Evangelista,",
         "",
@@ -2508,25 +2981,109 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     };
   };
 
-  contactForm.addEventListener("submit", (event) => {
+  const hasWeb3FormsAccessKey = () => {
+    const key = SITE_CONFIG.web3FormsAccessKey.trim();
+    return key.length >= 20 && !/PASTE|REPLACE|YOUR_/i.test(key);
+  };
+
+  const sendViaWeb3Forms = async (email) => {
+    const response = await fetch(SITE_CONFIG.web3FormsEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: SITE_CONFIG.web3FormsAccessKey,
+        name: email.name,
+        email: email.email,
+        subject: `Website message: ${email.subject}`.slice(0, 160),
+        message: email.body,
+        organisation: email.organisation || "Not provided",
+        topic: email.topic,
+        from_name: "Daniele Evangelista professional portfolio",
+        botcheck: ""
+      }),
+      credentials: "omit",
+      referrerPolicy: "strict-origin-when-cross-origin"
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || result.success !== true) {
+      throw new Error(String(result.message || `Web3Forms submission failed (${response.status})`));
+    }
+    return { provider: "Web3Forms", result };
+  };
+
+  const sendViaFormSubmit = async (email) => {
+    const payload = new FormData(contactForm);
+    payload.set("name", email.name);
+    payload.set("email", email.email);
+    payload.set("_replyto", email.email);
+    payload.set("_subject", `Website message: ${email.subject}`.slice(0, 160));
+    payload.set("submitted_from", window.location.origin + window.location.pathname);
+    payload.set("submitted_at", new Date().toISOString());
+    const response = await fetch(contactForm.dataset.ajaxEndpoint || SITE_CONFIG.formSubmitEndpoint, {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: payload,
+      credentials: "omit",
+      referrerPolicy: "strict-origin-when-cross-origin"
+    });
+    const result = await response.json().catch(() => ({}));
+    const successValue = result && result.success;
+    const succeeded = response.ok && (successValue === undefined || successValue === true || successValue === "true");
+    if (!succeeded) throw new Error(String(result.message || `FormSubmit submission failed (${response.status})`));
+    if (/activat|confirm|verif/i.test(String(result.message || ""))) {
+      const error = new Error("The fallback form provider requires one-time recipient verification.");
+      error.name = "FormSetupRequired";
+      throw error;
+    }
+    return { provider: "FormSubmit", result };
+  };
+
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+    if (submissionInProgress) return;
     if (!contactForm.reportValidity()) {
-      formStatus.textContent = "Please complete the required fields.";
+      setFormStatus("Please complete the required fields.", "error");
       return;
     }
+
+    const raw = new FormData(contactForm);
+    if (String(raw.get("_honey") || "").trim() || raw.get("botcheck")) {
+      contactForm.reset();
+      setFormStatus("Message sent successfully.", "success");
+      return;
+    }
+
     const email = buildEmail();
-    formStatus.textContent = "Opening a prepared message in your email application.";
-    window.location.href = `mailto:daniele.evangelista@uhn.ca?subject=${encodeURIComponent(email.subject)}&body=${encodeURIComponent(email.body)}`;
+    setSubmissionState(true);
+    setFormStatus("Sending your message securely to Daniele’s Gmail…", "sending");
+
+    try {
+      if (hasWeb3FormsAccessKey()) await sendViaWeb3Forms(email);
+      else await sendViaFormSubmit(email);
+      contactForm.reset();
+      setFormStatus("Your message was sent successfully to Daniele’s Gmail.", "success");
+      showToast("Message sent successfully");
+    } catch (error) {
+      console.error("Contact form submission failed:", error);
+      if (error && error.name === "FormSetupRequired") {
+        setFormStatus("Direct delivery has not been activated by the site administrator yet. Please use the email address shown on this page.", "error");
+      } else {
+        setFormStatus(`The message could not be delivered right now. Please email ${SITE_CONFIG.contactEmail} using the address shown on this page.`, "error");
+      }
+      showToast("Message delivery unavailable");
+    } finally {
+      setSubmissionState(false);
+    }
   });
 
   document.getElementById("copyMessageButton").addEventListener("click", async () => {
     if (!contactForm.reportValidity()) {
-      formStatus.textContent = "Please complete the required fields before copying the message.";
+      setFormStatus("Please complete the required fields before copying the message.", "error");
       return;
     }
     const email = buildEmail();
     const copied = await copyText(`Subject: ${email.subject}\n\n${email.body}`, "Prepared email copied");
-    formStatus.textContent = copied ? "The prepared email has been copied." : "Use your browser to copy the message.";
+    setFormStatus(copied ? "The prepared email has been copied." : "Use your browser to copy the message.", copied ? "success" : "error");
   });
 
   const shareProfile = async () => {
@@ -2573,25 +3130,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     document.documentElement.addEventListener("mouseenter", () => body.classList.add("cursor-active"));
     window.addEventListener("blur", () => body.style.setProperty("--cursor-opacity", "0"));
 
-    document.querySelectorAll(".interactive").forEach((surface) => {
-      surface.addEventListener("pointermove", (event) => {
-        const rect = surface.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-        surface.style.setProperty("--surface-x", `${x}px`);
-        surface.style.setProperty("--surface-y", `${y}px`);
-        const dx = ((x / Math.max(rect.width, 1)) - 0.5) * -22;
-        const dy = ((y / Math.max(rect.height, 1)) - 0.5) * -22;
-        surface.style.setProperty("--shadow-x", `${dx}px`);
-        surface.style.setProperty("--shadow-y", `${14 + dy * 0.35}px`);
-      }, { passive: true });
-      surface.addEventListener("pointerleave", () => {
-        surface.style.setProperty("--surface-x", "50%");
-        surface.style.setProperty("--surface-y", "50%");
-        surface.style.setProperty("--shadow-x", "0px");
-        surface.style.setProperty("--shadow-y", "15px");
-      });
-    });
+    document.querySelectorAll(".interactive").forEach(enhanceInteractiveSurface);
 
     portraitStage.addEventListener("pointermove", (event) => {
       const rect = portraitStage.getBoundingClientRect();
