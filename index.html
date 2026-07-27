@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en-CA" data-theme="dark">
 <head>
@@ -24,7 +25,7 @@
   <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https:; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://api.crossref.org https://eutils.ncbi.nlm.nih.gov https://api.web3forms.com https://formsubmit.co; form-action https://api.web3forms.com https://formsubmit.co; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https:; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://api.crossref.org https://eutils.ncbi.nlm.nih.gov; form-action https://formsubmit.co; upgrade-insecure-requests">
   <link rel="canonical" href="https://danieleevangelistaa.github.io/">
   <link rel="alternate" hreflang="en-CA" href="https://danieleevangelistaa.github.io/">
   <link rel="alternate" hreflang="x-default" href="https://danieleevangelistaa.github.io/">
@@ -852,7 +853,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 </head>
 
 <body>
-  <!-- Public contact is intentionally limited to devangelsilva@gmail.com. For direct form delivery without recipient activation, paste the Web3Forms access key in SITE_CONFIG.web3FormsAccessKey. -->
+  <!-- Public contact is intentionally limited to devangelsilva@gmail.com. The contact form uses a standard HTTPS POST to FormSubmit; the Gmail owner must confirm FormSubmit once after the first test submission. -->
   <a class="skip-link" href="#mainContent">Skip to main content</a>
   <div class="scroll-progress" aria-hidden="true"><span id="pageProgress"></span></div>
   <div class="cursor-aura" id="cursorAura" aria-hidden="true"></div>
@@ -2155,14 +2156,14 @@ html[data-theme="light"] .filter-button.active{color:#fff}
             <p>Submit a professional message from this page. It is delivered to Daniele’s Gmail address without requiring the visitor to open a separate email application.</p>
             <form class="contact-form" id="contactForm"
                   action="https://formsubmit.co/devangelsilva@gmail.com"
-                  data-ajax-endpoint="https://formsubmit.co/ajax/devangelsilva@gmail.com"
-                  method="POST" novalidate>
+                  method="POST"
+                  accept-charset="UTF-8">
               <input class="form-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-              <input class="form-honeypot" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
-              <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_subject" value="New message from Daniele Evangelista’s website">
-              <input type="hidden" name="_next" value="https://danieleevangelistaa.github.io/#contact">
+              <input type="hidden" id="formSubmitSubject" name="_subject" value="New message from Daniele Evangelista’s website">
+              <input type="hidden" id="formSubmitReplyTo" name="_replyto" value="">
+              <input type="hidden" id="formSubmitNext" name="_next" value="https://danieleevangelistaa.github.io/?contact=sent#contact">
+              <input type="hidden" id="formSubmitUrl" name="_url" value="https://danieleevangelistaa.github.io/#contact">
               <input type="hidden" name="source" value="Daniele Evangelista professional portfolio">
               <div class="form-grid">
                 <div class="field">
@@ -2204,7 +2205,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
                 </button>
                 <button class="button button-secondary" id="copyMessageButton" type="button">Copy prepared message</button>
               </div>
-              <p class="form-note">Messages are transmitted over HTTPS to Daniele’s Gmail through the configured delivery service. Do not include confidential patient, clinical or health information.</p>
+              <p class="form-note">Messages are submitted over HTTPS and delivered to Daniele’s Gmail. A human-verification step may appear to protect the form from spam. Do not include confidential patient, clinical or health information.</p>
               <p class="form-status" id="formStatus" role="status" aria-live="polite" aria-atomic="true"></p>
             </form>
           </article>
@@ -2253,11 +2254,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 
   const SITE_CONFIG = Object.freeze({
     contactEmail: "devangelsilva@gmail.com",
-    // Replace the value below with the Web3Forms access key created for
-    // devangelsilva@gmail.com. The rest of the website remains a single file.
-    web3FormsAccessKey: "PASTE_WEB3FORMS_ACCESS_KEY_HERE",
-    web3FormsEndpoint: "https://api.web3forms.com/submit",
-    formSubmitEndpoint: "https://formsubmit.co/ajax/devangelsilva@gmail.com",
+    siteUrl: "https://danieleevangelistaa.github.io/",
     orcid: "0000-0002-2755-0091",
     publicationCacheKey: "daniele-scholar-record-v5",
     publicationRefreshMs: 7 * 24 * 60 * 60 * 1000
@@ -2981,100 +2978,59 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     };
   };
 
-  const hasWeb3FormsAccessKey = () => {
-    const key = SITE_CONFIG.web3FormsAccessKey.trim();
-    return key.length >= 20 && !/PASTE|REPLACE|YOUR_/i.test(key);
-  };
+  const formSubmitSubject = document.getElementById("formSubmitSubject");
+  const formSubmitReplyTo = document.getElementById("formSubmitReplyTo");
+  const formSubmitNext = document.getElementById("formSubmitNext");
+  const formSubmitUrl = document.getElementById("formSubmitUrl");
 
-  const sendViaWeb3Forms = async (email) => {
-    const response = await fetch(SITE_CONFIG.web3FormsEndpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({
-        access_key: SITE_CONFIG.web3FormsAccessKey,
-        name: email.name,
-        email: email.email,
-        subject: `Website message: ${email.subject}`.slice(0, 160),
-        message: email.body,
-        organisation: email.organisation || "Not provided",
-        topic: email.topic,
-        from_name: "Daniele Evangelista professional portfolio",
-        botcheck: ""
-      }),
-      credentials: "omit",
-      referrerPolicy: "strict-origin-when-cross-origin"
-    });
-    const result = await response.json().catch(() => ({}));
-    if (!response.ok || result.success !== true) {
-      throw new Error(String(result.message || `Web3Forms submission failed (${response.status})`));
+  const buildPublicContactUrl = () => {
+    if (window.location.protocol === "http:" || window.location.protocol === "https:") {
+      return `${window.location.origin}${window.location.pathname}`;
     }
-    return { provider: "Web3Forms", result };
+    return SITE_CONFIG.siteUrl;
   };
 
-  const sendViaFormSubmit = async (email) => {
-    const payload = new FormData(contactForm);
-    payload.set("name", email.name);
-    payload.set("email", email.email);
-    payload.set("_replyto", email.email);
-    payload.set("_subject", `Website message: ${email.subject}`.slice(0, 160));
-    payload.set("submitted_from", window.location.origin + window.location.pathname);
-    payload.set("submitted_at", new Date().toISOString());
-    const response = await fetch(contactForm.dataset.ajaxEndpoint || SITE_CONFIG.formSubmitEndpoint, {
-      method: "POST",
-      headers: { Accept: "application/json" },
-      body: payload,
-      credentials: "omit",
-      referrerPolicy: "strict-origin-when-cross-origin"
-    });
-    const result = await response.json().catch(() => ({}));
-    const successValue = result && result.success;
-    const succeeded = response.ok && (successValue === undefined || successValue === true || successValue === "true");
-    if (!succeeded) throw new Error(String(result.message || `FormSubmit submission failed (${response.status})`));
-    if (/activat|confirm|verif/i.test(String(result.message || ""))) {
-      const error = new Error("The fallback form provider requires one-time recipient verification.");
-      error.name = "FormSetupRequired";
-      throw error;
+  const restoreContactFormAfterNavigation = () => {
+    setSubmissionState(false);
+    if (formStatus.dataset.state === "sending") setFormStatus("");
+  };
+
+  window.addEventListener("pageshow", restoreContactFormAfterNavigation);
+
+  contactForm.addEventListener("submit", (event) => {
+    if (submissionInProgress) {
+      event.preventDefault();
+      return;
     }
-    return { provider: "FormSubmit", result };
-  };
-
-  contactForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    if (submissionInProgress) return;
     if (!contactForm.reportValidity()) {
+      event.preventDefault();
       setFormStatus("Please complete the required fields.", "error");
       return;
     }
 
-    const raw = new FormData(contactForm);
-    if (String(raw.get("_honey") || "").trim() || raw.get("botcheck")) {
-      contactForm.reset();
-      setFormStatus("Message sent successfully.", "success");
-      return;
-    }
-
     const email = buildEmail();
-    setSubmissionState(true);
-    setFormStatus("Sending your message securely to Daniele’s Gmail…", "sending");
+    const publicUrl = buildPublicContactUrl();
+    formSubmitSubject.value = `Website message: ${email.subject}`.slice(0, 160);
+    formSubmitReplyTo.value = email.email;
+    formSubmitNext.value = `${publicUrl}?contact=sent#contact`;
+    formSubmitUrl.value = `${publicUrl}#contact`;
 
-    try {
-      if (hasWeb3FormsAccessKey()) await sendViaWeb3Forms(email);
-      else await sendViaFormSubmit(email);
-      contactForm.reset();
-      setFormStatus("Your message was sent successfully to Daniele’s Gmail.", "success");
-      showToast("Message sent successfully");
-    } catch (error) {
-      console.error("Contact form submission failed:", error);
-      if (error && error.name === "FormSetupRequired") {
-        setFormStatus("Direct delivery has not been activated by the site administrator yet. Please use the email address shown on this page.", "error");
-      } else {
-        setFormStatus(`The message could not be delivered right now. Please email ${SITE_CONFIG.contactEmail} using the address shown on this page.`, "error");
-      }
-      showToast("Message delivery unavailable");
-    } finally {
-      setSubmissionState(false);
-    }
+    setSubmissionState(true);
+    setFormStatus("Submitting your message securely…", "sending");
+    // Do not call preventDefault here. A normal HTTPS form POST is more reliable
+    // on GitHub Pages than a cross-origin AJAX request and lets FormSubmit handle
+    // recipient verification, spam protection and the final email delivery.
   });
+
+  const contactParams = new URLSearchParams(window.location.search);
+  if (contactParams.get("contact") === "sent") {
+    setFormStatus("Your message was sent successfully to Daniele’s Gmail.", "success");
+    showToast("Message sent successfully");
+    contactParams.delete("contact");
+    const cleanQuery = contactParams.toString();
+    const cleanUrl = `${window.location.pathname}${cleanQuery ? `?${cleanQuery}` : ""}${window.location.hash || "#contact"}`;
+    window.history.replaceState({}, "", cleanUrl);
+  }
 
   document.getElementById("copyMessageButton").addEventListener("click", async () => {
     if (!contactForm.reportValidity()) {
