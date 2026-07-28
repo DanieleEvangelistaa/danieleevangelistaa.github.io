@@ -25,7 +25,7 @@
   <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https:; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://api.crossref.org https://eutils.ncbi.nlm.nih.gov; form-action https://formsubmit.co; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https:; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://api.crossref.org https://eutils.ncbi.nlm.nih.gov https://email.gosecureserver.in; form-action 'self' https://email.gosecureserver.in; frame-src https://email.gosecureserver.in; upgrade-insecure-requests">
   <link rel="canonical" href="https://danieleevangelistaa.github.io/">
   <link rel="alternate" hreflang="en-CA" href="https://danieleevangelistaa.github.io/">
   <link rel="alternate" hreflang="x-default" href="https://danieleevangelistaa.github.io/">
@@ -692,6 +692,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 .copy-button:hover{color:var(--accent);border-color:rgba(var(--accent-rgb),.36)}
 .contact-form{display:grid;gap:16px}
 .form-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
+.contact-transport{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;border:0!important;opacity:0!important;pointer-events:none!important}
 .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .field{display:grid;gap:7px;min-width:0}
 .field.full{grid-column:1/-1}
@@ -703,11 +704,11 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--accent);background:rgba(var(--accent-rgb),.055);box-shadow:0 0 0 4px rgba(var(--accent-rgb),.09)}
 .field select option{color:#102b31;background:#fff}
 .form-actions{display:flex;flex-wrap:wrap;gap:10px}
-.form-note{margin:0;color:var(--muted-2);font-size:.61rem;line-height:1.5}
 .form-status{min-height:22px;margin:0;color:var(--accent);font-size:.66rem;font-weight:790;line-height:1.5}
 .form-status[data-state="sending"]{color:var(--muted)}
-.form-status[data-state="success"]{color:var(--success)}
-.form-status[data-state="error"]{color:var(--coral)}
+.form-status[data-state="success"]{padding:11px 13px;border:1px solid rgba(143,221,178,.28);border-radius:12px;color:var(--success);background:rgba(143,221,178,.075)}
+.form-status[data-state="error"]{padding:11px 13px;border:1px solid rgba(226,138,118,.28);border-radius:12px;color:var(--coral);background:rgba(226,138,118,.07)}
+
 /* Footer and utility */
 .site-footer{position:relative;z-index:2;padding:28px 0 38px}
 .footer-layout{display:grid;grid-template-columns:1fr 1.25fr auto;gap:25px;align-items:center;padding-top:25px;border-top:1px solid var(--line)}
@@ -853,7 +854,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 </head>
 
 <body>
-  <!-- Public contact is intentionally limited to devangelsilva@gmail.com. The contact form uses a standard HTTPS POST to FormSubmit; the Gmail owner must confirm FormSubmit once after the first test submission. -->
+  <!-- Public contact is intentionally limited to devangelsilva@gmail.com. The form submits in place to a static-site email relay; no visitor email application is opened and no private mail credential is stored in this page. -->
   <a class="skip-link" href="#mainContent">Skip to main content</a>
   <div class="scroll-progress" aria-hidden="true"><span id="pageProgress"></span></div>
   <div class="cursor-aura" id="cursorAura" aria-hidden="true"></div>
@@ -1676,7 +1677,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
             <p class="kicker">Scholarly record</p>
             <h2 class="display-title" id="publicationsTitle">Research grounded in <em>mechanism and application.</em></h2>
           </div>
-          <p>The verified CV record is preserved locally, while new DOI- and PubMed-indexed works are checked periodically using Daniele’s ORCID and author record.</p>
+          <p>The verified CV record is preserved locally. On page load, the website checks Crossref and PubMed for ORCID- or author-linked publications when the browser’s last successful check is more than 24 hours old.</p>
         </header>
 
         <div class="stats-grid" aria-label="Publication overview" data-reveal>
@@ -1900,7 +1901,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         
         </div>
         <p class="publication-empty" id="publicationEmpty">No publications match that search.</p>
-        <p class="publication-source-note">The embedded CV record remains available if a live source is temporarily unavailable. Automatically added records are matched through ORCID-linked Crossref metadata or an exact PubMed author query and are labelled as live records.</p>
+        <p class="publication-source-note">The embedded CV record remains available if a live source is temporarily unavailable. New publication records are added dynamically in the visitor’s browser from ORCID-linked Crossref metadata or the PubMed author query, and are labelled as live records.</p>
       </div>
     </section>
 
@@ -2153,18 +2154,19 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 
           <article class="contact-card glass interactive" data-reveal>
             <h3>Send a message</h3>
-            <p>Submit a professional message from this page. It is delivered to Daniele’s Gmail address without requiring the visitor to open a separate email application.</p>
+            <p>Send a professional message directly from this page.</p>
             <form class="contact-form" id="contactForm"
-                  action="https://formsubmit.co/devangelsilva@gmail.com"
-                  method="POST"
-                  accept-charset="UTF-8">
-              <input class="form-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" id="formSubmitSubject" name="_subject" value="New message from Daniele Evangelista’s website">
-              <input type="hidden" id="formSubmitReplyTo" name="_replyto" value="">
-              <input type="hidden" id="formSubmitNext" name="_next" value="https://danieleevangelistaa.github.io/?contact=sent#contact">
-              <input type="hidden" id="formSubmitUrl" name="_url" value="https://danieleevangelistaa.github.io/#contact">
-              <input type="hidden" name="source" value="Daniele Evangelista professional portfolio">
+                  action="https://email.gosecureserver.in/api/send.php"
+                  method="POST" target="contactTransport" accept-charset="UTF-8" novalidate>
+              <input class="form-honeypot" type="text" name="hp_email" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <input type="hidden" name="to" value="devangelsilva@gmail.com">
+              <input type="hidden" id="contactReplyTo" name="reply_to" value="">
+              <input type="hidden" id="contactReference" name="reference" value="">
+              <input type="hidden" id="contactSubmittedAt" name="submitted_at" value="">
+              <input type="hidden" name="website" value="https://danieleevangelistaa.github.io/">
+              <input type="hidden" name="source" value="https://danieleevangelistaa.github.io/#contact">
+              <input type="hidden" name="from_name" value="Daniele Evangelista Website">
+              <input type="hidden" name="form_version" value="2026.07.27-direct-email-relay-v1">
               <div class="form-grid">
                 <div class="field">
                   <label for="contactName">Your name</label>
@@ -2205,9 +2207,9 @@ html[data-theme="light"] .filter-button.active{color:#fff}
                 </button>
                 <button class="button button-secondary" id="copyMessageButton" type="button">Copy prepared message</button>
               </div>
-              <p class="form-note">Messages are submitted over HTTPS and delivered to Daniele’s Gmail. A human-verification step may appear to protect the form from spam. Do not include confidential patient, clinical or health information.</p>
               <p class="form-status" id="formStatus" role="status" aria-live="polite" aria-atomic="true"></p>
             </form>
+            <iframe class="contact-transport" id="contactTransport" name="contactTransport" title="Secure contact-form delivery" aria-hidden="true" tabindex="-1"></iframe>
           </article>
         </div>
       </div>
@@ -2254,10 +2256,13 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 
   const SITE_CONFIG = Object.freeze({
     contactEmail: "devangelsilva@gmail.com",
+    contactEndpoint: "https://email.gosecureserver.in/api/send.php",
     siteUrl: "https://danieleevangelistaa.github.io/",
     orcid: "0000-0002-2755-0091",
-    publicationCacheKey: "daniele-scholar-record-v5",
-    publicationRefreshMs: 7 * 24 * 60 * 60 * 1000
+    contactRequestTimeoutMs: 22000,
+    publicationCacheKey: "daniele-scholar-record-v8",
+    publicationRefreshMs: 24 * 60 * 60 * 1000,
+    publicationHeartbeatMs: 6 * 60 * 60 * 1000
   });
 
   const enhanceInteractiveSurface = (surface) => {
@@ -2842,42 +2847,57 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     } catch (error) {}
   };
 
-  const synchronisePublications = async (force = false) => {
-    const cache = readPublicationCache();
-    const now = Date.now();
-    if (cache) {
-      applyScholarlyRecords(cache.records);
-      setPublicationSyncState("success", `Live sources last checked ${formatSyncTime(cache.checkedAt)}.`);
-      if (!force && now - Number(cache.checkedAt) < SITE_CONFIG.publicationRefreshMs) return;
-    }
+  let publicationSyncPromise = null;
 
-    setPublicationSyncState("loading", "Checking Crossref and PubMed for new scholarly records…");
-    const results = await Promise.allSettled([fetchCrossrefRecords(), fetchPubMedRecords()]);
-    const successfulGroups = results.filter((result) => result.status === "fulfilled").map((result) => result.value);
-    const records = mergeScholarlyRecords(...successfulGroups);
+  const synchronisePublications = (force = false) => {
+    if (publicationSyncPromise) return publicationSyncPromise;
 
-    if (records.length) {
-      applyScholarlyRecords(records);
-      writePublicationCache(records, now);
-      const failedCount = results.filter((result) => result.status === "rejected").length;
-      setPublicationSyncState(
-        "success",
-        `${records.length.toLocaleString("en-CA")} live record${records.length === 1 ? "" : "s"} checked ${formatSyncTime(now)}${failedCount ? "; one source was temporarily unavailable" : ""}.`
-      );
-      if (force) showToast("Scholarly record refreshed");
-      return;
-    }
+    publicationSyncPromise = (async () => {
+      const cache = readPublicationCache();
+      const now = Date.now();
+      if (cache) {
+        applyScholarlyRecords(cache.records);
+        setPublicationSyncState("success", `Live sources last checked ${formatSyncTime(cache.checkedAt)}.`);
+        if (!force && now - Number(cache.checkedAt) < SITE_CONFIG.publicationRefreshMs) return;
+      }
 
-    if (cache) {
-      setPublicationSyncState("error", `Live sources are temporarily unavailable. Showing the cached record checked ${formatSyncTime(cache.checkedAt)} and the embedded CV record.`);
-    } else {
-      setPublicationSyncState("error", "Live sources are temporarily unavailable. The verified embedded CV publication record remains fully available.");
-    }
-    if (force) showToast("Live scholarly sources unavailable");
+      setPublicationSyncState("loading", "Checking Crossref and PubMed for new scholarly records…");
+      const results = await Promise.allSettled([fetchCrossrefRecords(), fetchPubMedRecords()]);
+      const successfulGroups = results.filter((result) => result.status === "fulfilled").map((result) => result.value);
+      const records = mergeScholarlyRecords(...successfulGroups);
+
+      if (records.length) {
+        applyScholarlyRecords(records);
+        writePublicationCache(records, now);
+        const failedCount = results.filter((result) => result.status === "rejected").length;
+        setPublicationSyncState(
+          "success",
+          `${records.length.toLocaleString("en-CA")} live record${records.length === 1 ? "" : "s"} checked ${formatSyncTime(now)}${failedCount ? "; one source was temporarily unavailable" : ""}.`
+        );
+        if (force) showToast("Scholarly record refreshed");
+        return;
+      }
+
+      if (cache) {
+        setPublicationSyncState("error", `Live sources are temporarily unavailable. Showing the cached record checked ${formatSyncTime(cache.checkedAt)} and the embedded CV record.`);
+      } else {
+        setPublicationSyncState("error", "Live sources are temporarily unavailable. The verified embedded CV publication record remains fully available.");
+      }
+      if (force) showToast("Live scholarly sources unavailable");
+    })().finally(() => {
+      publicationSyncPromise = null;
+    });
+
+    return publicationSyncPromise;
   };
 
   refreshPublicationsButton.addEventListener("click", () => synchronisePublications(true));
   window.setTimeout(() => synchronisePublications(false), 700);
+  window.setInterval(() => synchronisePublications(false), SITE_CONFIG.publicationHeartbeatMs);
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) synchronisePublications(false);
+  });
+  window.addEventListener("online", () => synchronisePublications(false));
 
   const experienceSearch = document.getElementById("experienceSearch");
   const experienceGroups = [...document.querySelectorAll(".experience-group")];
@@ -2930,7 +2950,25 @@ html[data-theme="light"] .filter-button.active{color:#fff}
   const formStatus = document.getElementById("formStatus");
   const contactSubmit = document.getElementById("contactSubmit");
   const submitLabel = contactSubmit.querySelector(".button-label");
+  const contactReplyTo = document.getElementById("contactReplyTo");
+  const contactReference = document.getElementById("contactReference");
+  const contactSubmittedAt = document.getElementById("contactSubmittedAt");
+  const CONTACT_SUCCESS_MESSAGE = "Thanks! Your message was sent successfully. We will contact you shortly. Thanks!";
+  const CONTACT_ERROR_MESSAGE = "The message could not be sent. Please check your connection and try again.";
+  const CONTACT_MINIMUM_COMPLETION_MS = 1400;
+  const CONTACT_RATE_WINDOW_MS = 5 * 60 * 1000;
+  const CONTACT_RATE_MAXIMUM = 4;
+  const CONTACT_RATE_KEY = "daniele-contact-submissions-v1";
+  const contactFormOpenedAt = Date.now();
   let submissionInProgress = false;
+
+  const allowedContactTopics = new Set([
+    "Research collaboration",
+    "Scientific exchange or speaking",
+    "Publication inquiry",
+    "Professional introduction",
+    "Other"
+  ]);
 
   const setFormStatus = (message, state = "") => {
     formStatus.textContent = message;
@@ -2946,14 +2984,70 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     submitLabel.textContent = sending ? "Sending…" : "Send message";
   };
 
+  const cleanSingleLine = (value) => String(value || "")
+    .replace(/[\r\n\t]+/g, " ")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+
+  const cleanMessage = (value) => String(value || "")
+    .replace(/\r\n?/g, "\n")
+    .trim();
+
+  const createContactReference = () => {
+    const timestamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
+    let random = "";
+    if (window.crypto && typeof window.crypto.getRandomValues === "function") {
+      random = [...window.crypto.getRandomValues(new Uint8Array(4))]
+        .map((value) => value.toString(16).padStart(2, "0"))
+        .join("")
+        .toUpperCase();
+    } else {
+      random = Math.random().toString(36).slice(2, 10).toUpperCase();
+    }
+    return `DE-${timestamp}-${random}`;
+  };
+
+  const readRecentContactTimes = () => {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(CONTACT_RATE_KEY) || "[]");
+      if (!Array.isArray(parsed)) return [];
+      const now = Date.now();
+      return parsed
+        .map(Number)
+        .filter((value) => Number.isFinite(value) && now - value < CONTACT_RATE_WINDOW_MS);
+    } catch (error) {
+      return [];
+    }
+  };
+
+  const recordContactSubmission = () => {
+    try {
+      const times = readRecentContactTimes();
+      times.push(Date.now());
+      localStorage.setItem(CONTACT_RATE_KEY, JSON.stringify(times));
+    } catch (error) {}
+  };
+
+  const validateContactRate = () => {
+    const times = readRecentContactTimes();
+    if (times.length < CONTACT_RATE_MAXIMUM) return true;
+    const remainingMs = CONTACT_RATE_WINDOW_MS - (Date.now() - Math.min(...times));
+    const remainingMinutes = Math.max(1, Math.ceil(remainingMs / 60000));
+    setFormStatus(
+      `Please wait about ${remainingMinutes} minute${remainingMinutes === 1 ? "" : "s"} before sending another message.`,
+      "error"
+    );
+    return false;
+  };
+
   const buildEmail = () => {
     const data = new FormData(contactForm);
-    const name = String(data.get("name") || "").trim();
-    const email = String(data.get("email") || "").trim();
-    const organisation = String(data.get("organisation") || "").trim();
-    const topic = String(data.get("topic") || "").trim();
-    const subject = String(data.get("subject") || "").trim();
-    const message = String(data.get("message") || "").trim();
+    const name = cleanSingleLine(data.get("name"));
+    const email = cleanSingleLine(data.get("email"));
+    const organisation = cleanSingleLine(data.get("organisation"));
+    const topic = cleanSingleLine(data.get("topic"));
+    const subject = cleanSingleLine(data.get("subject"));
+    const message = cleanMessage(data.get("message"));
     return {
       name,
       email,
@@ -2978,59 +3072,134 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     };
   };
 
-  const formSubmitSubject = document.getElementById("formSubmitSubject");
-  const formSubmitReplyTo = document.getElementById("formSubmitReplyTo");
-  const formSubmitNext = document.getElementById("formSubmitNext");
-  const formSubmitUrl = document.getElementById("formSubmitUrl");
+  const createContactPayload = () => {
+    const email = buildEmail();
+    if (!allowedContactTopics.has(email.topic)) throw new Error("Please select a valid topic.");
 
-  const buildPublicContactUrl = () => {
-    if (window.location.protocol === "http:" || window.location.protocol === "https:") {
-      return `${window.location.origin}${window.location.pathname}`;
-    }
-    return SITE_CONFIG.siteUrl;
+    const reference = createContactReference();
+    const honeypot = cleanSingleLine(new FormData(contactForm).get("hp_email"));
+    const payload = new URLSearchParams();
+    payload.set("to", SITE_CONFIG.contactEmail);
+    payload.set("name", email.name);
+    payload.set("email", email.email);
+    payload.set("reply_to", email.email);
+    payload.set("organisation", email.organisation);
+    payload.set("topic", email.topic);
+    payload.set("inquiry_type", email.topic);
+    payload.set("subject", `[Daniele Evangelista Website] ${email.topic}: ${email.subject}`);
+    payload.set("message", email.message);
+    payload.set("reference", reference);
+    payload.set("submitted_at", new Date().toISOString());
+    payload.set("website", SITE_CONFIG.siteUrl);
+    payload.set("source", `${SITE_CONFIG.siteUrl}#contact`);
+    payload.set("from_name", "Daniele Evangelista Website");
+    payload.set("form_version", "2026.07.27-direct-email-relay-v1");
+    payload.set("hp_email", honeypot);
+
+    contactReplyTo.value = email.email;
+    contactReference.value = reference;
+    contactSubmittedAt.value = payload.get("submitted_at");
+    return payload;
   };
 
-  const restoreContactFormAfterNavigation = () => {
-    setSubmissionState(false);
-    if (formStatus.dataset.state === "sending") setFormStatus("");
+  const submitContactPayload = async (payload) => {
+    const controller = new AbortController();
+    const timeout = window.setTimeout(
+      () => controller.abort(),
+      Number(SITE_CONFIG.contactRequestTimeoutMs) || 22000
+    );
+
+    try {
+      const response = await fetch(SITE_CONFIG.contactEndpoint, {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+        },
+        body: payload.toString(),
+        mode: "cors",
+        credentials: "omit",
+        cache: "no-store",
+        redirect: "follow",
+        referrerPolicy: "strict-origin-when-cross-origin",
+        signal: controller.signal
+      });
+
+      const responseText = await response.text();
+      let responseData = null;
+      try { responseData = responseText ? JSON.parse(responseText) : null; } catch (error) {}
+
+      if (!response.ok) {
+        const detail = responseData && (responseData.message || responseData.error);
+        throw new Error(detail || `Contact endpoint returned HTTP ${response.status}.`);
+      }
+
+      if (responseData && (
+        responseData.success === false ||
+        responseData.ok === false ||
+        ["error", "failed", "failure"].includes(String(responseData.status || "").toLowerCase())
+      )) {
+        throw new Error(responseData.message || responseData.error || "The contact endpoint rejected the message.");
+      }
+
+      return responseData;
+    } finally {
+      window.clearTimeout(timeout);
+    }
   };
 
-  window.addEventListener("pageshow", restoreContactFormAfterNavigation);
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (submissionInProgress) return;
 
-  contactForm.addEventListener("submit", (event) => {
-    if (submissionInProgress) {
-      event.preventDefault();
-      return;
-    }
+    setFormStatus("");
     if (!contactForm.reportValidity()) {
-      event.preventDefault();
       setFormStatus("Please complete the required fields.", "error");
       return;
     }
 
-    const email = buildEmail();
-    const publicUrl = buildPublicContactUrl();
-    formSubmitSubject.value = `Website message: ${email.subject}`.slice(0, 160);
-    formSubmitReplyTo.value = email.email;
-    formSubmitNext.value = `${publicUrl}?contact=sent#contact`;
-    formSubmitUrl.value = `${publicUrl}#contact`;
+    const honeypot = cleanSingleLine(new FormData(contactForm).get("hp_email"));
+    if (honeypot) {
+      contactForm.reset();
+      setFormStatus(CONTACT_SUCCESS_MESSAGE, "success");
+      return;
+    }
+
+    if (Date.now() - contactFormOpenedAt < CONTACT_MINIMUM_COMPLETION_MS) {
+      setFormStatus("Please review the form once more before sending.", "error");
+      return;
+    }
+
+    if (!validateContactRate()) return;
+
+    let payload;
+    try {
+      payload = createContactPayload();
+    } catch (error) {
+      setFormStatus(error instanceof Error ? error.message : "Please review the form fields.", "error");
+      return;
+    }
 
     setSubmissionState(true);
-    setFormStatus("Submitting your message securely…", "sending");
-    // Do not call preventDefault here. A normal HTTPS form POST is more reliable
-    // on GitHub Pages than a cross-origin AJAX request and lets FormSubmit handle
-    // recipient verification, spam protection and the final email delivery.
-  });
+    setFormStatus("Sending your message…", "sending");
 
-  const contactParams = new URLSearchParams(window.location.search);
-  if (contactParams.get("contact") === "sent") {
-    setFormStatus("Your message was sent successfully to Daniele’s Gmail.", "success");
-    showToast("Message sent successfully");
-    contactParams.delete("contact");
-    const cleanQuery = contactParams.toString();
-    const cleanUrl = `${window.location.pathname}${cleanQuery ? `?${cleanQuery}` : ""}${window.location.hash || "#contact"}`;
-    window.history.replaceState({}, "", cleanUrl);
-  }
+    try {
+      await submitContactPayload(payload);
+      recordContactSubmission();
+      contactForm.reset();
+      contactReplyTo.value = "";
+      contactReference.value = "";
+      contactSubmittedAt.value = "";
+      setFormStatus(CONTACT_SUCCESS_MESSAGE, "success");
+      showToast("Message sent successfully");
+    } catch (error) {
+      console.error("Contact-form submission failed:", error);
+      setFormStatus(CONTACT_ERROR_MESSAGE, "error");
+      showToast("Message not sent");
+    } finally {
+      setSubmissionState(false);
+    }
+  });
 
   document.getElementById("copyMessageButton").addEventListener("click", async () => {
     if (!contactForm.reportValidity()) {
