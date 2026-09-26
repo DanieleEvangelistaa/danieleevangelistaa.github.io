@@ -18,16 +18,18 @@ The professional website of **Daniele Evangelista Leite da Silva**, Postdoctoral
 
 | Section | What you can find |
 | :--- | :--- |
-| [Research](https://danieleevangelistaa.github.io/#research) | Research themes and the 2026 ISHLT fellowship project |
+| [Research](https://danieleevangelistaa.github.io/#research) | Four illustrated research themes and the 2026 ISHLT fellowship project |
 | [Profile & experience](https://danieleevangelistaa.github.io/#profile) | Education, research, clinical practice, teaching and leadership |
 | [Recognition](https://danieleevangelistaa.github.io/#recognition) | Grants, awards and scholarships |
-| [Publications](https://danieleevangelistaa.github.io/#publications) | Searchable scholarly records with topic filters, sorting, citation copying and export |
+| [Publications](https://danieleevangelistaa.github.io/#publications) | Interactive publication timeline, search, topic filters, sorting, citation copying and export |
 | [Scientific exchange](https://danieleevangelistaa.github.io/#events) | Presentations, posters and conference participation |
 | [Contact](https://danieleevangelistaa.github.io/#contact) | Professional profiles and collaboration inquiries |
 
 ### Designed for reading and discovery
 
 A responsive graphite, mint and periwinkle design supports light and dark themes, keyboard navigation and reduced-motion preferences. Visitors can search experience, explore research themes, sort publications by year or title, copy individual citations and export the currently selected citations as a text file.
+
+Original vector diagrams explain targeted delivery, ex vivo lung perfusion, matrix-derived biomaterials and organ bioengineering. The figures are conceptual schematics, not experimental results. The interactive publication timeline counts the 13 embedded CV records by year; selecting a year filters the bibliography alongside the existing search and topic controls.
 
 The embedded CV bibliography remains available without scholarly database access. Crossref and PubMed checks supplement it with **database matches**, with a manual refresh option and a 24-hour browser refresh interval. Source-specific caching retains previous matches when a provider is unavailable. New database matches require author review; they do not replace the embedded CV records.
 

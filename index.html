@@ -1523,6 +1523,110 @@ html[data-theme="light"] .filter-button.active {color:#fffef7}
 @media(max-width:1080px){.desktop-nav{display:none}.menu-button{display:grid}.nav-actions{margin-left:auto}}
 @media(max-width:760px){.news-section .section-header{grid-template-columns:1fr;gap:15px}.news-section .section-header>p{justify-self:start}.hero-role{font-size:.85rem}}
 
+
+/* Scientific illustrations: descriptive vector art; no quantitative data. */
+.sf-panel.panel-visual{display:block;align-self:stretch;min-height:0;padding:23px;background:var(--bg);border-color:var(--line)}
+.scientific-figure{width:100%;margin:0}
+.sf-heading{display:grid;gap:8px;padding-bottom:15px;border-bottom:1px solid var(--line)}
+.sf-heading>span{font-size:.59rem;line-height:1.4;letter-spacing:.12em;font-weight:650;color:var(--warm)}
+.sf-heading>strong{font-size:.95rem;line-height:1.4;font-weight:550;letter-spacing:-.025em;color:var(--ink)}
+.sf-canvas{display:block;width:100%;height:auto;overflow:visible;fill:none;stroke-linecap:round;stroke-linejoin:round;margin:12px auto 8px;isolation:isolate}
+.sf-canvas *{animation:none!important}
+.sf-particle-halo{fill:none;stroke:var(--blue);stroke-width:.7;opacity:.25;stroke-dasharray:2 5}
+.sf-particle-body{fill:color-mix(in srgb,var(--blue) 12%,var(--bg));stroke:var(--blue);stroke-opacity:.3;stroke-width:1}
+.sf-lipid-head{fill:var(--blue);stroke:none}
+.sf-lipid-tail{stroke:var(--blue);stroke-width:1.25;opacity:.65}
+.sf-lipid-interior{stroke:var(--blue);stroke-width:2.3;opacity:.35}
+.sf-cargo{stroke:var(--accent);stroke-width:4;fill:none}
+.sf-cargo-detail{stroke:var(--accent);stroke-width:1.6;opacity:.8}
+.sf-connector,.sf-loop{stroke:var(--accent);stroke-width:1.7;fill:none}
+.sf-arrow-head{stroke:var(--accent);stroke-width:1.15;fill:none}
+.sf-lung-left{fill:color-mix(in srgb,var(--accent) 10%,var(--bg));stroke:var(--accent);stroke-width:1.8}
+.sf-lung-right{fill:color-mix(in srgb,var(--blue) 9%,var(--bg));stroke:var(--blue);stroke-width:1.8}
+.sf-airway{stroke:var(--muted);stroke-width:6;fill:none}
+.sf-branches{stroke:var(--muted);stroke-width:2.3;fill:none;opacity:.6}
+.sf-lobe-line{stroke:var(--muted);stroke-width:1;fill:none;opacity:.3}
+.sf-target{stroke:var(--warm);stroke-width:1;fill:color-mix(in srgb,var(--warm) 8%,transparent);stroke-dasharray:3 3}
+.sf-target-core{fill:var(--warm);stroke:none}
+.sf-svg-label{font-family:var(--font-sans);font-size:12px;font-weight:650;letter-spacing:.8px;fill:var(--muted);stroke:none}
+.sf-secondary-label{font-size:10px;letter-spacing:.8px;fill:var(--muted-2)}
+.sf-guide{stroke:var(--line-strong);stroke-width:1}
+.sf-loop-track{stroke:var(--line);stroke-width:6}
+.sf-platform{fill:var(--surface-bright);stroke:var(--line-strong);stroke-width:1}
+.sf-target-route{stroke:var(--blue);stroke-width:1.6;stroke-dasharray:3 4;fill:none}
+.sf-matrix-bed{fill:color-mix(in srgb,var(--accent) 3%,var(--bg));stroke:var(--line-strong);stroke-width:1}
+.sf-fiber{fill:none;stroke-width:1.8}
+.sf-fiber-a{stroke:var(--accent);opacity:.85}
+.sf-fiber-b{stroke:var(--blue);opacity:.7}
+.sf-junctions{fill:var(--bg);stroke:var(--accent);stroke-width:1.3}
+.sf-detail-origin{fill:var(--bg);fill-opacity:.35;stroke:var(--warm);stroke-width:1.2}
+.sf-detail-leader{stroke:var(--warm);stroke-width:1;opacity:.65}
+.sf-detail-bg{fill:var(--bg);stroke:none}
+.sf-detail-border{fill:none;stroke:var(--warm);stroke-width:1.3}
+.sf-lungs-scaffold .sf-lung-left,.sf-lungs-scaffold .sf-lung-right{fill:none;stroke:var(--accent);stroke-width:1.5}
+.sf-lungs-scaffold .sf-airway,.sf-lungs-scaffold .sf-branches{stroke:var(--accent);opacity:.7}
+.sf-lungs-construct .sf-lung-left,.sf-lungs-construct .sf-lung-right{fill:color-mix(in srgb,var(--accent) 6%,var(--bg));stroke:var(--accent)}
+.sf-cells{fill:color-mix(in srgb,var(--warm) 65%,var(--bg));stroke:var(--warm);stroke-width:1}
+.sf-cell-nuclei{fill:var(--bg);stroke:none}
+.sf-legend{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px;list-style:none;margin:0;padding:13px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sf-legend li{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:.69rem;line-height:1.45;min-width:0}
+.sf-key{display:block;width:7px;height:7px;border-radius:50%;flex:0 0 7px}
+.sf-key-accent{background:var(--accent)}
+.sf-key-blue{background:var(--blue)}
+.sf-key-warm{background:var(--warm)}
+.scientific-figure figcaption{font-size:.71rem;line-height:1.65;color:var(--muted);margin-top:12px;max-width:44em}
+.scientific-figure figcaption small{display:block;margin-top:7px;font-size:.61rem;color:var(--muted-2);line-height:1.4}
+.sf-news-art.news-art{height:240px;padding:19px 24px;background:var(--bg-2);color:var(--muted);display:grid;grid-template-rows:auto 1fr auto;gap:0;isolation:isolate}
+.sf-news-art>span,.sf-news-art>small{font-size:9px;letter-spacing:.15em;color:var(--muted);position:relative}
+.sf-news-art>small{color:var(--warm);grid-row:3}
+.sf-news-art .sf-news-canvas{position:absolute;inset:21px 0 18px;width:100%;height:calc(100% - 39px);margin:0;z-index:-1}
+.sf-news-art .sf-news-rule{stroke:var(--line);stroke-width:1;stroke-dasharray:2 8}
+.sf-news-art .sf-particle-body{fill:color-mix(in srgb,var(--blue) 12%,var(--bg-2))}
+.sf-news-art .sf-lung-left{fill:color-mix(in srgb,var(--accent) 10%,var(--bg-2))}
+.sf-news-art .sf-lung-right{fill:color-mix(in srgb,var(--blue) 9%,var(--bg-2))}
+.sf-news-art .sf-detail-bg{fill:var(--bg-2)}
+@media(min-width:1081px) and (max-width:1280px){.sf-panel.panel-visual{padding:17px}.sf-heading>strong{font-size:.85rem}.sf-legend{grid-template-columns:1fr}.sf-legend li{font-size:.7rem}}
+@media(max-width:760px){.sf-panel.panel-visual{padding:21px}.sf-canvas{max-width:420px;margin:10px auto}.sf-news-art.news-art{height:220px}}
+@media(max-width:480px){.sf-panel.panel-visual{padding:15px}.sf-heading{padding-bottom:11px;gap:6px}.sf-heading>strong{font-size:.88rem}.sf-legend{grid-template-columns:1fr;gap:7px}.sf-legend li{font-size:.72rem}.scientific-figure figcaption{font-size:.73rem}.scientific-figure figcaption small{font-size:.65rem}.sf-news-art.news-art{height:205px;padding:17px}.sf-news-art>span,.sf-news-art>small{font-size:8px;letter-spacing:.10em}}
+@media(prefers-reduced-motion:reduce){.sf-canvas,.sf-canvas *{animation:none!important;transition:none!important}}
+@media print{.sf-panel{break-inside:avoid}.sf-canvas{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+
+/* A quiet, labelled graphic drawn from the portfolio's own bibliography. */
+.publication-timeline{margin:34px 0 30px;padding:32px 36px 22px;border:1px solid var(--line-strong);border-radius:12px;background:var(--surface);color:var(--ink)}
+.timeline-header{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.timeline-header .eyebrow{margin:0 0 8px;color:var(--warm);font-size:.64rem}
+.timeline-header h3{font-size:clamp(1.45rem,2.5vw,2rem);font-weight:550;letter-spacing:-.035em;line-height:1.2;margin:0}
+.timeline-reset{background:transparent;color:var(--muted);border:1px solid var(--line-strong);border-radius:30px;font:inherit;font-size:.76rem;padding:9px 17px;white-space:nowrap;cursor:pointer}
+.timeline-reset[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.timeline-instruction{margin:12px 0 32px;font-size:.8rem;color:var(--muted)}
+.timeline-chart{display:flex;gap:16px;height:184px;margin-top:10px}
+.timeline-axis{height:153px;display:flex;flex-direction:column;justify-content:space-between;font-size:.7rem;color:var(--muted-2);width:14px;text-align:right;flex:none;padding-top:0;line-height:1}
+.timeline-bars{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:clamp(8px,2vw,25px);flex:1;min-width:0;position:relative;isolation:isolate}
+.timeline-bars:before{content:"";position:absolute;inset:0 0 34px;background:linear-gradient(var(--line) 1px,transparent 1px);background-size:100% calc(100% / var(--chart-steps));border-bottom:1px solid var(--line-strong);z-index:-1}
+.timeline-year{border:0;background:transparent;color:var(--muted);padding:0 5px;min-width:0;display:flex;flex-direction:column;cursor:pointer;position:relative;border-radius:4px;font-family:inherit}
+.timeline-track{height:150px;display:flex;align-items:flex-end;justify-content:center;width:100%}
+.timeline-bar{height:var(--bar-height);min-height:2px;max-height:150px;background:var(--blue);border:1px solid var(--blue);border-radius:3px 3px 0 0;width:min(100%,65px);position:relative;opacity:.65;transition:opacity .2s ease,background .2s ease}
+.timeline-value{position:absolute;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%);color:var(--ink);font-size:.75rem;font-weight:650}
+.timeline-label{font-size:.74rem;line-height:1;padding-top:15px;font-variant-numeric:tabular-nums;white-space:nowrap;align-self:center}
+.timeline-year:hover .timeline-bar,.timeline-year[aria-pressed="true"] .timeline-bar{background:var(--accent);border-color:var(--accent);opacity:1}
+.timeline-year[aria-pressed="true"] .timeline-label{color:var(--accent);font-weight:750}
+.timeline-year[aria-pressed="true"]:after{content:"";position:absolute;bottom:-5px;left:25%;right:25%;height:2px;background:var(--accent)}
+.timeline-year:focus-visible,.timeline-reset:focus-visible{outline:2px solid var(--warm);outline-offset:5px}
+.publication-timeline figcaption{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:30px;color:var(--muted);font-size:.73rem;line-height:1.65}
+.publication-timeline figcaption>span:first-child{display:flex;align-items:flex-start;gap:8px;flex:none}
+.publication-timeline figcaption>span:last-child{max-width:500px;text-align:right}
+.publication-timeline figcaption i{display:inline-block;background:var(--blue);width:8px;height:8px;border-radius:2px;flex:none;margin-top:5px}
+.timeline-selection{font-size:.71rem;color:var(--muted-2);margin:10px 0 0;min-height:1.6em}
+.portrait-frame{aspect-ratio:5/6}
+.portrait-frame img{object-position:center;filter:none}
+.portrait-card:hover img{transform:none}
+.portrait-stage{min-height:0}
+@media(max-width:600px){.publication-timeline{padding:24px 18px 18px}.timeline-header{gap:12px}.timeline-header h3{font-size:1.4rem}.timeline-header .eyebrow{font-size:.55rem;max-width:180px}.timeline-reset{font-size:.69rem;padding:8px 12px}.timeline-instruction{font-size:.72rem;max-width:230px}.timeline-chart{gap:7px;height:164px}.timeline-axis{height:133px;font-size:.62rem;width:12px}.timeline-bars{gap:4px}.timeline-bars:before{bottom:34px}.timeline-year{padding:0 3px}.timeline-track{height:130px}.timeline-bar{max-height:130px}.timeline-label{font-size:.61rem;padding-top:14px}.timeline-value{font-size:.68rem}.publication-timeline figcaption{flex-direction:column;gap:8px;font-size:.66rem;margin-top:18px}.publication-timeline figcaption>span:last-child{text-align:left}.timeline-selection{font-size:.65rem}.portrait-frame{aspect-ratio:5/6}.portrait-card{max-width:410px}}
+@media(prefers-reduced-motion:reduce){.timeline-bar{transition:none}}
+@media(max-width:380px){.timeline-year{padding-inline:1px}.timeline-label{font-size:.58rem}.timeline-bars{gap:3px}}
+@media print{.timeline-reset,.timeline-instruction,.timeline-selection{display:none}.publication-timeline{break-inside:avoid}.timeline-bar{background:#555!important;border-color:#555!important;print-color-adjust:exact}.timeline-value,.timeline-label{color:#111!important}}
+
   </style>
 </head>
 
@@ -1648,7 +1752,25 @@ html[data-theme="light"] .filter-button.active {color:#fffef7}
         </header>
         <div class="news-grid">
           <article class="news-card" data-reveal>
-            <div class="news-art" aria-hidden="true"><span>01 / TRANSLATIONAL RESEARCH</span><div class="molecule-orbit"><i></i><i></i><i></i><b>mRNA</b></div><small>DELIVERY → DONOR LUNG</small></div>
+            <div class="news-art sf-news-art" aria-hidden="true"><span>01 / TRANSLATIONAL RESEARCH</span><svg class="sf-canvas sf-news-canvas" viewBox="0 0 620 220" role="img" aria-labelledby="sfNewsDeliveryTitle sfNewsDeliveryDesc" xmlns="http://www.w3.org/2000/svg">
+    <title id="sfNewsDeliveryTitle">Targeted delivery to the donor lung</title><desc id="sfNewsDeliveryDesc">A lipid nanoparticle and donor-lung silhouette illustrate the fellowship research focus.</desc>
+    <defs><marker id="sfNewsDeliveryArrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M1 1l4 2.5L1 6" class="sf-arrow-head"/></marker></defs>
+    <path class="sf-news-rule" d="M35 108h540"/><g transform="translate(193 110)" class="sf-particle">
+      <circle class="sf-particle-halo" r="83"/>
+      <circle class="sf-particle-body" r="65"/>
+      <g><g transform="rotate(0.000)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(8.571)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(17.143)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(25.714)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(34.286)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(42.857)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(51.429)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(60.000)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(68.571)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(77.143)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(85.714)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(94.286)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(102.857)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(111.429)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(120.000)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(128.571)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(137.143)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(145.714)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(154.286)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(162.857)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(171.429)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(180.000)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(188.571)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(197.143)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(205.714)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(214.286)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(222.857)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(231.429)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(240.000)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(248.571)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(257.143)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(265.714)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(274.286)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(282.857)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(291.429)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(300.000)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(308.571)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(317.143)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(325.714)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(334.286)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(342.857)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g><g transform="rotate(351.429)"><path class="sf-lipid-tail" d="M0 -64l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-69" r="3.2"/></g></g>
+      <g transform="scale(0.9857142857142858)">
+        <path class="sf-lipid-interior" d="M-42-29l9 9m-13 0 7 9M29-42l-5 11m15-5-7 13M-38 22l11 5m-8 9 12 1M32 23l-7 9m15 0-7 9M-5-46l3 11m9-9 2 10"/>
+        <path class="sf-cargo" d="M-27-12c-4-18 21-25 31-11s-18 29-12 43 36 13 40-2-27-16-29-5 21 16 30 2"/>
+        <path class="sf-cargo-detail" d="m-20-25 5 5m4-7 2 6m13 1-5 4m-3 10 6 2m-11 9 7 1m2 14 3-6m12 9 1-6m11-3-6-3"/>
+      </g>
+    </g><path class="sf-connector" d="M289 111h74" marker-end="url(#sfNewsDeliveryArrow)"/><g transform="translate(438 114) scale(0.85)" class="sf-lungs sf-lungs-filled">
+      <path class="sf-lung-left" d="M-17-48C-30-71-61-37-72-8c-15 42-14 80 17 91 19 7 34-4 34-26V-7c0-20 3-30 4-41Z"/>
+      <path class="sf-lung-right" d="M17-48C30-71 61-37 72-8c15 42 14 80-17 91-19 7-34-4-34-26V-7c0-20-3-30-4-41Z"/>
+      <path class="sf-airway" d="M0-90v48M0-44c-2 16-20 23-32 37M0-44c2 16 20 23 32 37"/>
+      <path class="sf-branches" d="M-32-7c-13 23-20 46-23 66M-40 11l-16 14M-48 33l10 15M32-7c13 23 20 46 23 66M40 11l16 14M48 33 38 48"/>
+      <path class="sf-lobe-line" d="M-66 26c13-2 31 7 44 20M22 5c20 5 35 2 44-7M28 29c12 8 22 12 41 13"/>
+    </g><circle class="sf-target" cx="410" cy="125" r="17"/><circle class="sf-target-core" cx="410" cy="125" r="4"/></svg><small>DELIVERY → DONOR LUNG</small></div>
             <div class="news-content"><div class="meta-row"><span>ISHLT Research Fellowship</span><time datetime="2026">2026</time></div>
               <h3>A targeted approach to donor-lung engineering.</h3>
               <p>Daniele’s fellowship project investigates click chemistry for targeted mRNA delivery during ex vivo lung perfusion, with the goal of improving donor-lung quality.</p>
@@ -1656,7 +1778,18 @@ html[data-theme="light"] .filter-button.active {color:#fffef7}
             </div>
           </article>
           <article class="news-card" data-reveal>
-            <div class="news-art matrix-art" aria-hidden="true"><span>02 / REGENERATIVE BIOMATERIALS</span><div class="matrix-motif"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small>MATRIX → MECHANISM</small></div>
+            <div class="news-art sf-news-art" aria-hidden="true"><span>02 / REGENERATIVE BIOMATERIALS</span><svg class="sf-canvas sf-news-canvas" viewBox="0 0 620 220" role="img" aria-labelledby="sfNewsMatrixTitle sfNewsMatrixDesc" xmlns="http://www.w3.org/2000/svg">
+    <title id="sfNewsMatrixTitle">Extracellular matrix as a research material</title><desc id="sfNewsMatrixDesc">A stylised matrix network and a magnified detail illustrate the hydrogel research focus.</desc>
+    <defs><marker id="sfNewsMatrixArrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M1 1l4 2.5L1 6" class="sf-arrow-head"/></marker></defs>
+    <defs><clipPath id="sfNewsMatrixClip"><rect x="106" y="28" width="200" height="170" rx="10"/></clipPath><clipPath id="sfNewsMatrixZoom"><circle cx="460" cy="110" r="77"/></clipPath></defs><rect class="sf-matrix-bed" x="106" y="28" width="200" height="170" rx="10"/><g clip-path="url(#sfNewsMatrixClip)"><g transform="translate(100 22) scale(0.93)" class="sf-matrix">
+      <path class="sf-fiber sf-fiber-a" d="M7 10C48 46 65-9 116 17S164 53 208 25M0 49C37 77 70 26 107 58s74 9 113-7M2 92c50-26 59 28 107 0s63-8 107 11M10 139c33-35 63 21 104-4s62-16 102 17M19 181c23-30 67-12 99 1s56-21 92-13"/>
+      <path class="sf-fiber sf-fiber-b" d="M26 0c29 29-12 55 8 88s-10 61 11 107M78 0c-25 46 25 58 5 102s11 59 1 92M126 1c24 35-9 53 7 95s-20 67-6 101M183 1c-28 40 17 74-2 99s12 55 7 92"/>
+      <g class="sf-junctions"><circle cx="32" cy="43" r="4"/><circle cx="82" cy="58" r="4"/><circle cx="132" cy="80" r="4"/><circle cx="182" cy="133" r="4"/><circle cx="82" cy="142" r="4"/><circle cx="125" cy="178" r="4"/></g>
+    </g></g><circle class="sf-detail-origin" cx="266" cy="106" r="25"/><path class="sf-detail-leader" d="m285 88 108-29m-106 62 106 40"/><circle class="sf-detail-bg" cx="460" cy="110" r="77"/><g clip-path="url(#sfNewsMatrixZoom)"><g transform="translate(348 8) scale(1.5)" class="sf-matrix">
+      <path class="sf-fiber sf-fiber-a" d="M7 10C48 46 65-9 116 17S164 53 208 25M0 49C37 77 70 26 107 58s74 9 113-7M2 92c50-26 59 28 107 0s63-8 107 11M10 139c33-35 63 21 104-4s62-16 102 17M19 181c23-30 67-12 99 1s56-21 92-13"/>
+      <path class="sf-fiber sf-fiber-b" d="M26 0c29 29-12 55 8 88s-10 61 11 107M78 0c-25 46 25 58 5 102s11 59 1 92M126 1c24 35-9 53 7 95s-20 67-6 101M183 1c-28 40 17 74-2 99s12 55 7 92"/>
+      <g class="sf-junctions"><circle cx="32" cy="43" r="4"/><circle cx="82" cy="58" r="4"/><circle cx="132" cy="80" r="4"/><circle cx="182" cy="133" r="4"/><circle cx="82" cy="142" r="4"/><circle cx="125" cy="178" r="4"/></g>
+    </g></g><circle class="sf-detail-border" cx="460" cy="110" r="77"/></svg><small>MATRIX → MECHANISM</small></div>
             <div class="news-content"><div class="meta-row"><span>Selected publication · Biomaterials</span><time datetime="2023">2023</time></div>
               <h3>Understanding the biology of matrix-derived hydrogels.</h3>
               <p>First-author research examines molecular mechanisms of extracellular matrix-derived hydrogel therapy in experimental models of idiopathic pulmonary fibrosis.</p>
@@ -1705,20 +1838,41 @@ html[data-theme="light"] .filter-button.active {color:#fffef7}
                   <div class="panel-point"><i>3</i><span>Connect molecular delivery with clinically relevant transplantation questions.</span></div>
                 </div>
               </div>
-              <div class="panel-visual" aria-label="Components of donor-lung genetic engineering">
-                <div class="science-map">
-                  <div class="science-node"><strong>Therapeutic cargo</strong><span>Transient genetic instruction</span></div>
-                  <div class="science-node"><strong>Lipid nanoparticle</strong><span>Protective delivery carrier</span></div>
-                  <div class="science-node"><strong>Donor lung</strong><span>Transplant-relevant organ target</span></div>
-                  <div class="science-node"><strong>Evaluation</strong><span>Delivery and biological response</span></div>
-                  <div class="science-core">
-                    <div>
-                      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M8 9c2-2 6-2 8 0M8 15c2 2 6 2 8 0M9 7l6 10M15 7 9 17"/></svg>
-                      <strong>LNP-enabled donor-lung engineering</strong>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div class="panel-visual sf-panel">
+      <figure class="scientific-figure">
+        <div class="sf-heading"><span>01 / RESEARCH CONCEPT</span><strong>Delivery at molecular scale</strong></div>
+        <svg class="sf-canvas " viewBox="0 0 360 270" role="img" aria-labelledby="sfDeliveryTitle sfDeliveryDesc" xmlns="http://www.w3.org/2000/svg">
+    <title id="sfDeliveryTitle">Lipid nanoparticle carrying genetic cargo</title><desc id="sfDeliveryDesc">A conceptual section of a lipid nanoparticle shows an outer lipid layer and a filled carrier containing a stylised genetic cargo strand. A directional connector links the carrier to a simplified donor lung. No therapeutic outcome is depicted.</desc>
+    <defs><marker id="sfDeliveryArrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M1 1l4 2.5L1 6" class="sf-arrow-head"/></marker></defs>
+    
+    <path class="sf-guide" d="M24 232H338M24 226v12m314-12v12"/>
+    <g transform="translate(110 128)" class="sf-particle">
+      <circle class="sf-particle-halo" r="84"/>
+      <circle class="sf-particle-body" r="66"/>
+      <g><g transform="rotate(0.000)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(8.571)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(17.143)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(25.714)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(34.286)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(42.857)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(51.429)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(60.000)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(68.571)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(77.143)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(85.714)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(94.286)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(102.857)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(111.429)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(120.000)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(128.571)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(137.143)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(145.714)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(154.286)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(162.857)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(171.429)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(180.000)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(188.571)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(197.143)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(205.714)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(214.286)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(222.857)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(231.429)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(240.000)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(248.571)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(257.143)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(265.714)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(274.286)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(282.857)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(291.429)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(300.000)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(308.571)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(317.143)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(325.714)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(334.286)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(342.857)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g><g transform="rotate(351.429)"><path class="sf-lipid-tail" d="M0 -65l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-70" r="3.2"/></g></g>
+      <g transform="scale(1.0)">
+        <path class="sf-lipid-interior" d="M-42-29l9 9m-13 0 7 9M29-42l-5 11m15-5-7 13M-38 22l11 5m-8 9 12 1M32 23l-7 9m15 0-7 9M-5-46l3 11m9-9 2 10"/>
+        <path class="sf-cargo" d="M-27-12c-4-18 21-25 31-11s-18 29-12 43 36 13 40-2-27-16-29-5 21 16 30 2"/>
+        <path class="sf-cargo-detail" d="m-20-25 5 5m4-7 2 6m13 1-5 4m-3 10 6 2m-11 9 7 1m2 14 3-6m12 9 1-6m11-3-6-3"/>
+      </g>
+    </g>
+    <path class="sf-connector" marker-end="url(#sfDeliveryArrow)" d="M203 128h34"/>
+    <g transform="translate(288 132) scale(0.51)" class="sf-lungs sf-lungs-filled">
+      <path class="sf-lung-left" d="M-17-48C-30-71-61-37-72-8c-15 42-14 80 17 91 19 7 34-4 34-26V-7c0-20 3-30 4-41Z"/>
+      <path class="sf-lung-right" d="M17-48C30-71 61-37 72-8c15 42 14 80-17 91-19 7-34-4-34-26V-7c0-20-3-30-4-41Z"/>
+      <path class="sf-airway" d="M0-90v48M0-44c-2 16-20 23-32 37M0-44c2 16 20 23 32 37"/>
+      <path class="sf-branches" d="M-32-7c-13 23-20 46-23 66M-40 11l-16 14M-48 33l10 15M32-7c13 23 20 46 23 66M40 11l16 14M48 33 38 48"/>
+      <path class="sf-lobe-line" d="M-66 26c13-2 31 7 44 20M22 5c20 5 35 2 44-7M28 29c12 8 22 12 41 13"/>
+    </g>
+    <circle class="sf-target" cx="265" cy="142" r="17"/>
+    <circle class="sf-target-core" cx="265" cy="142" r="4"/>
+    <text class="sf-svg-label" x="110" y="226" text-anchor="middle">CARRIER + CARGO</text>
+    <text class="sf-svg-label" x="288" y="226" text-anchor="middle">DONOR LUNG</text>
+</svg>
+        <ul class="sf-legend" aria-label="Figure legend"><li><span class="sf-key sf-key-blue" aria-hidden="true"></span><span>Lipid carrier</span></li><li><span class="sf-key sf-key-accent" aria-hidden="true"></span><span>Genetic cargo</span></li></ul>
+        <figcaption>A carrier–cargo approach to donor-lung engineering. Delivery and biological response are evaluated in the organ setting.<small>Conceptual illustration · not to scale</small></figcaption>
+      </figure>
+    </div>
             </article>
 
             <article class="research-panel interactive" id="researchEvlp" role="tabpanel" aria-labelledby="researchEvlpTab" tabindex="0" hidden>
@@ -1732,14 +1886,43 @@ html[data-theme="light"] .filter-button.active {color:#fffef7}
                   <div class="panel-point"><i>3</i><span>Assess targeted mRNA delivery in an organ-level therapeutic setting.</span></div>
                 </div>
               </div>
-              <div class="panel-visual" aria-label="Stylised donor lungs during ex vivo lung perfusion">
-                <svg class="lung-art" viewBox="0 0 440 440" role="img" aria-label="Stylised lungs">
-                  <path class="airway" d="M220 45v112M220 132c-12 21-34 34-53 56M220 132c12 21 34 34 53 56"/>
-                  <path class="left" d="M185 165c-42-26-92 6-112 64-25 72-6 158 61 181 38 13 63-15 63-58V210c0-20-3-35-12-45Z"/>
-                  <path class="right" d="M255 165c42-26 92 6 112 64 25 72 6 158-61 181-38 13-63-15-63-58V210c0-20 3-35 12-45Z"/>
-                  <path class="branch" d="M174 204c-30 35-49 82-60 140M158 247c-19 10-34 28-44 50M266 204c30 35 49 82 60 140M282 247c19 10 34 28 44 50"/>
-                </svg>
-              </div>
+              <div class="panel-visual sf-panel">
+      <figure class="scientific-figure">
+        <div class="sf-heading"><span>02 / RESEARCH CONCEPT</span><strong>An intervention window</strong></div>
+        <svg class="sf-canvas " viewBox="0 0 360 270" role="img" aria-labelledby="sfEvlpTitle sfEvlpDesc" xmlns="http://www.w3.org/2000/svg">
+    <title id="sfEvlpTitle">A donor lung as a platform for intervention during EVLP</title><desc id="sfEvlpDesc">A simplified lung sits within a loop indicating ex vivo organ support. An incoming nanoparticle marks the research focus of targeted mRNA delivery. The diagram is a research concept, not an equipment layout or treatment protocol.</desc>
+    <defs><marker id="sfEvlpArrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M1 1l4 2.5L1 6" class="sf-arrow-head"/></marker></defs>
+    
+    <path class="sf-loop-track" d="M74 86H49a18 18 0 0 0-18 18v90a18 18 0 0 0 18 18h265a18 18 0 0 0 18-18v-70a18 18 0 0 0-18-18h-24"/>
+    <path class="sf-loop" d="M74 86H49a18 18 0 0 0-18 18v90a18 18 0 0 0 18 18h93" marker-end="url(#sfEvlpArrow)"/>
+    <path class="sf-loop" d="M221 212h93a18 18 0 0 0 18-18v-70a18 18 0 0 0-18-18h-24" marker-end="url(#sfEvlpArrow)"/>
+    <rect class="sf-platform" x="85" y="181" width="190" height="9" rx="4.5"/>
+    <g transform="translate(180 115) scale(0.75)" class="sf-lungs sf-lungs-filled">
+      <path class="sf-lung-left" d="M-17-48C-30-71-61-37-72-8c-15 42-14 80 17 91 19 7 34-4 34-26V-7c0-20 3-30 4-41Z"/>
+      <path class="sf-lung-right" d="M17-48C30-71 61-37 72-8c15 42 14 80-17 91-19 7-34-4-34-26V-7c0-20-3-30-4-41Z"/>
+      <path class="sf-airway" d="M0-90v48M0-44c-2 16-20 23-32 37M0-44c2 16 20 23 32 37"/>
+      <path class="sf-branches" d="M-32-7c-13 23-20 46-23 66M-40 11l-16 14M-48 33l10 15M32-7c13 23 20 46 23 66M40 11l16 14M48 33 38 48"/>
+      <path class="sf-lobe-line" d="M-66 26c13-2 31 7 44 20M22 5c20 5 35 2 44-7M28 29c12 8 22 12 41 13"/>
+    </g>
+    <g transform="translate(74 58)" class="sf-particle">
+      <circle class="sf-particle-halo" r="37"/>
+      <circle class="sf-particle-body" r="19"/>
+      <g><g transform="rotate(0.000)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(8.571)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(17.143)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(25.714)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(34.286)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(42.857)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(51.429)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(60.000)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(68.571)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(77.143)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(85.714)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(94.286)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(102.857)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(111.429)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(120.000)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(128.571)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(137.143)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(145.714)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(154.286)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(162.857)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(171.429)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(180.000)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(188.571)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(197.143)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(205.714)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(214.286)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(222.857)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(231.429)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(240.000)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(248.571)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(257.143)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(265.714)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(274.286)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(282.857)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(291.429)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(300.000)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(308.571)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(317.143)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(325.714)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(334.286)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(342.857)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g><g transform="rotate(351.429)"><path class="sf-lipid-tail" d="M0 -18l-3 10m3-10 3 10"/><circle class="sf-lipid-head" cy="-23" r="3.2"/></g></g>
+      <g transform="scale(0.32857142857142857)">
+        <path class="sf-lipid-interior" d="M-42-29l9 9m-13 0 7 9M29-42l-5 11m15-5-7 13M-38 22l11 5m-8 9 12 1M32 23l-7 9m15 0-7 9M-5-46l3 11m9-9 2 10"/>
+        <path class="sf-cargo" d="M-27-12c-4-18 21-25 31-11s-18 29-12 43 36 13 40-2-27-16-29-5 21 16 30 2"/>
+        <path class="sf-cargo-detail" d="m-20-25 5 5m4-7 2 6m13 1-5 4m-3 10 6 2m-11 9 7 1m2 14 3-6m12 9 1-6m11-3-6-3"/>
+      </g>
+    </g>
+    <path class="sf-target-route" d="M103 59c18 1 26 11 30 28" marker-end="url(#sfEvlpArrow)"/>
+    <circle class="sf-target" cx="146" cy="116" r="14"/>
+    <circle class="sf-target-core" cx="146" cy="116" r="3"/>
+    <text class="sf-svg-label" x="180" y="247" text-anchor="middle">SUPPORT · INTERVENE · EVALUATE</text>
+</svg>
+        <ul class="sf-legend" aria-label="Figure legend"><li><span class="sf-key sf-key-accent" aria-hidden="true"></span><span>Organ support</span></li><li><span class="sf-key sf-key-blue" aria-hidden="true"></span><span>Targeted delivery</span></li></ul>
+        <figcaption>EVLP provides the setting for research on targeted mRNA delivery. The loop represents organ support, not a perfusion circuit.<small>Conceptual illustration · not to scale</small></figcaption>
+      </figure>
+    </div>
             </article>
 
             <article class="research-panel interactive" id="researchMatrix" role="tabpanel" aria-labelledby="researchMatrixTab" tabindex="0" hidden>
@@ -1753,16 +1936,36 @@ html[data-theme="light"] .filter-button.active {color:#fffef7}
                   <div class="panel-point"><i>3</i><span>Translate biomaterial properties into mechanistic biological evidence.</span></div>
                 </div>
               </div>
-              <div class="panel-visual" aria-label="Extracellular-matrix research themes">
-                <div class="matrix-grid">
-                  <div class="matrix-cell"><i>ECM</i><strong>Decellularised matrix</strong></div>
-                  <div class="matrix-cell"><i>H</i><strong>Hydrogel synthesis</strong></div>
-                  <div class="matrix-cell"><i>O₂</i><strong>Oxidative injury</strong></div>
-                  <div class="matrix-cell"><i>I</i><strong>Inflammation</strong></div>
-                  <div class="matrix-cell"><i>R</i><strong>Tissue remodelling</strong></div>
-                  <div class="matrix-cell"><i>F</i><strong>Fibrotic pathways</strong></div>
-                </div>
-              </div>
+              <div class="panel-visual sf-panel">
+      <figure class="scientific-figure">
+        <div class="sf-heading"><span>03 / RESEARCH CONCEPT</span><strong>The matrix as a biomaterial</strong></div>
+        <svg class="sf-canvas " viewBox="0 0 360 270" role="img" aria-labelledby="sfMatrixTitle sfMatrixDesc" xmlns="http://www.w3.org/2000/svg">
+    <title id="sfMatrixTitle">Matrix-derived hydrogel and molecular pathways</title><desc id="sfMatrixDesc">Interconnected strands represent extracellular matrix-derived hydrogel. A magnifying connector highlights the network structure. The associated research examines inflammation, oxidative injury, tissue remodelling and fibrosis; this figure presents no measured results.</desc>
+    <defs><marker id="sfMatrixArrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M1 1l4 2.5L1 6" class="sf-arrow-head"/></marker></defs>
+    
+    <defs><clipPath id="sfMatrixClip"><rect x="29" y="39" width="220" height="194" rx="14"/></clipPath><clipPath id="sfMatrixDetail"><circle cx="276" cy="93" r="54"/></clipPath></defs>
+    <rect class="sf-matrix-bed" x="29" y="39" width="220" height="194" rx="14"/>
+    <g clip-path="url(#sfMatrixClip)"><g transform="translate(31 40) scale(1)" class="sf-matrix">
+      <path class="sf-fiber sf-fiber-a" d="M7 10C48 46 65-9 116 17S164 53 208 25M0 49C37 77 70 26 107 58s74 9 113-7M2 92c50-26 59 28 107 0s63-8 107 11M10 139c33-35 63 21 104-4s62-16 102 17M19 181c23-30 67-12 99 1s56-21 92-13"/>
+      <path class="sf-fiber sf-fiber-b" d="M26 0c29 29-12 55 8 88s-10 61 11 107M78 0c-25 46 25 58 5 102s11 59 1 92M126 1c24 35-9 53 7 95s-20 67-6 101M183 1c-28 40 17 74-2 99s12 55 7 92"/>
+      <g class="sf-junctions"><circle cx="32" cy="43" r="4"/><circle cx="82" cy="58" r="4"/><circle cx="132" cy="80" r="4"/><circle cx="182" cy="133" r="4"/><circle cx="82" cy="142" r="4"/><circle cx="125" cy="178" r="4"/></g>
+    </g></g>
+    <circle class="sf-detail-origin" cx="163" cy="129" r="25"/>
+    <path class="sf-detail-leader" d="m184 115 46-29m-43 55 69 5"/>
+    <circle class="sf-detail-bg" cx="276" cy="93" r="56"/>
+    <g clip-path="url(#sfMatrixDetail)"><g transform="translate(190 7) scale(1.5)" class="sf-matrix">
+      <path class="sf-fiber sf-fiber-a" d="M7 10C48 46 65-9 116 17S164 53 208 25M0 49C37 77 70 26 107 58s74 9 113-7M2 92c50-26 59 28 107 0s63-8 107 11M10 139c33-35 63 21 104-4s62-16 102 17M19 181c23-30 67-12 99 1s56-21 92-13"/>
+      <path class="sf-fiber sf-fiber-b" d="M26 0c29 29-12 55 8 88s-10 61 11 107M78 0c-25 46 25 58 5 102s11 59 1 92M126 1c24 35-9 53 7 95s-20 67-6 101M183 1c-28 40 17 74-2 99s12 55 7 92"/>
+      <g class="sf-junctions"><circle cx="32" cy="43" r="4"/><circle cx="82" cy="58" r="4"/><circle cx="132" cy="80" r="4"/><circle cx="182" cy="133" r="4"/><circle cx="82" cy="142" r="4"/><circle cx="125" cy="178" r="4"/></g>
+    </g></g>
+    <circle class="sf-detail-border" cx="276" cy="93" r="56"/>
+    <text class="sf-svg-label" x="292" y="188" text-anchor="middle"><tspan x="292">MATRIX</tspan><tspan x="292" dy="17">NETWORK</tspan></text>
+    <path class="sf-guide" d="M29 249H330"/>
+</svg>
+        <ul class="sf-legend" aria-label="Figure legend"><li><span class="sf-key sf-key-accent" aria-hidden="true"></span><span>Matrix-derived network</span></li><li><span class="sf-key sf-key-blue" aria-hidden="true"></span><span>Structural detail</span></li></ul>
+        <figcaption>From hydrogel characterisation to studies of inflammation, oxidative injury, remodelling and fibrotic pathways.<small>Conceptual illustration · not to scale</small></figcaption>
+      </figure>
+    </div>
             </article>
 
             <article class="research-panel interactive" id="researchOrgan" role="tabpanel" aria-labelledby="researchOrganTab" tabindex="0" hidden>
@@ -1776,14 +1979,45 @@ html[data-theme="light"] .filter-button.active {color:#fffef7}
                   <div class="panel-point"><i>3</i><span>Contribute to data analysis, manuscripts and laboratory operations.</span></div>
                 </div>
               </div>
-              <div class="panel-visual" aria-label="Organ engineering translation pathway">
-                <div class="translation-flow">
-                  <div class="translation-step"><b>01</b><div><strong>Decellularise</strong><small>Preserve structural matrix</small></div><span>↓</span></div>
-                  <div class="translation-step"><b>02</b><div><strong>Characterise</strong><small>Measure matrix and function</small></div><span>↓</span></div>
-                  <div class="translation-step"><b>03</b><div><strong>Recellularise</strong><small>Introduce relevant cells</small></div><span>↓</span></div>
-                  <div class="translation-step"><b>04</b><div><strong>Evaluate</strong><small>Assess regenerative potential</small></div><span>✓</span></div>
-                </div>
-              </div>
+              <div class="panel-visual sf-panel">
+      <figure class="scientific-figure">
+        <div class="sf-heading"><span>04 / RESEARCH CONCEPT</span><strong>Engineering across scales</strong></div>
+        <svg class="sf-canvas " viewBox="0 0 360 270" role="img" aria-labelledby="sfOrganTitle sfOrganDesc" xmlns="http://www.w3.org/2000/svg">
+    <title id="sfOrganTitle">From extracellular scaffold to cellular construct</title><desc id="sfOrganDesc">A simplified lung scaffold is shown beside a cell-populated construct, linked by an arrow. Matrix structure, cell seeding and evaluation are stages in organ engineering research. The figure does not represent an achieved clinical outcome.</desc>
+    <defs><marker id="sfOrganArrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M1 1l4 2.5L1 6" class="sf-arrow-head"/></marker></defs>
+    
+    <defs><clipPath id="sfOrganScaffold"><path d="M100 47C83 42 58 71 51 99c-10 35-8 63 15 69 15 5 23-4 24-18V95c0-22 8-34 10-48ZM122 47c17-5 42 24 49 52 10 35 8 63-15 69-15 5-23-4-24-18V95c0-22-8-34-10-48Z"/></clipPath></defs>
+    <g transform="translate(110 111) scale(0.69)" class="sf-lungs sf-lungs-scaffold">
+      <path class="sf-lung-left" d="M-17-48C-30-71-61-37-72-8c-15 42-14 80 17 91 19 7 34-4 34-26V-7c0-20 3-30 4-41Z"/>
+      <path class="sf-lung-right" d="M17-48C30-71 61-37 72-8c15 42 14 80-17 91-19 7-34-4-34-26V-7c0-20-3-30-4-41Z"/>
+      <path class="sf-airway" d="M0-90v48M0-44c-2 16-20 23-32 37M0-44c2 16 20 23 32 37"/>
+      <path class="sf-branches" d="M-32-7c-13 23-20 46-23 66M-40 11l-16 14M-48 33l10 15M32-7c13 23 20 46 23 66M40 11l16 14M48 33 38 48"/>
+      <path class="sf-lobe-line" d="M-66 26c13-2 31 7 44 20M22 5c20 5 35 2 44-7M28 29c12 8 22 12 41 13"/>
+    </g>
+    <g clip-path="url(#sfOrganScaffold)" opacity=".6"><g transform="translate(40 42) scale(0.67)" class="sf-matrix">
+      <path class="sf-fiber sf-fiber-a" d="M7 10C48 46 65-9 116 17S164 53 208 25M0 49C37 77 70 26 107 58s74 9 113-7M2 92c50-26 59 28 107 0s63-8 107 11M10 139c33-35 63 21 104-4s62-16 102 17M19 181c23-30 67-12 99 1s56-21 92-13"/>
+      <path class="sf-fiber sf-fiber-b" d="M26 0c29 29-12 55 8 88s-10 61 11 107M78 0c-25 46 25 58 5 102s11 59 1 92M126 1c24 35-9 53 7 95s-20 67-6 101M183 1c-28 40 17 74-2 99s12 55 7 92"/>
+      <g class="sf-junctions"><circle cx="32" cy="43" r="4"/><circle cx="82" cy="58" r="4"/><circle cx="132" cy="80" r="4"/><circle cx="182" cy="133" r="4"/><circle cx="82" cy="142" r="4"/><circle cx="125" cy="178" r="4"/></g>
+    </g></g>
+    <path class="sf-connector" marker-end="url(#sfOrganArrow)" d="M183 112h23"/>
+    <g transform="translate(270 111) scale(0.69)" class="sf-lungs sf-lungs-construct">
+      <path class="sf-lung-left" d="M-17-48C-30-71-61-37-72-8c-15 42-14 80 17 91 19 7 34-4 34-26V-7c0-20 3-30 4-41Z"/>
+      <path class="sf-lung-right" d="M17-48C30-71 61-37 72-8c15 42 14 80-17 91-19 7-34-4-34-26V-7c0-20-3-30-4-41Z"/>
+      <path class="sf-airway" d="M0-90v48M0-44c-2 16-20 23-32 37M0-44c2 16 20 23 32 37"/>
+      <path class="sf-branches" d="M-32-7c-13 23-20 46-23 66M-40 11l-16 14M-48 33l10 15M32-7c13 23 20 46 23 66M40 11l16 14M48 33 38 48"/>
+      <path class="sf-lobe-line" d="M-66 26c13-2 31 7 44 20M22 5c20 5 35 2 44-7M28 29c12 8 22 12 41 13"/>
+    </g>
+    <g class="sf-cells"><ellipse cx="240" cy="106" rx="6" ry="4" transform="rotate(-24 240 106)"/><ellipse cx="233" cy="132" rx="6" ry="4" transform="rotate(22 233 132)"/><ellipse cx="245" cy="156" rx="6" ry="4" transform="rotate(-30 245 156)"/><ellipse cx="294" cy="91" rx="6" ry="4" transform="rotate(25 294 91)"/><ellipse cx="304" cy="120" rx="6" ry="4" transform="rotate(-10 304 120)"/><ellipse cx="295" cy="150" rx="6" ry="4" transform="rotate(40 295 150)"/></g>
+    <g class="sf-cell-nuclei"><circle cx="240" cy="106" r="1.5"/><circle cx="233" cy="132" r="1.5"/><circle cx="245" cy="156" r="1.5"/><circle cx="294" cy="91" r="1.5"/><circle cx="304" cy="120" r="1.5"/><circle cx="295" cy="150" r="1.5"/></g>
+    <text class="sf-svg-label" x="110" y="211" text-anchor="middle">SCAFFOLD</text>
+    <text class="sf-svg-label" x="270" y="211" text-anchor="middle">CONSTRUCT</text>
+    <path class="sf-guide" d="M42 229h294M42 224v10m294-10v10"/>
+    <text class="sf-svg-label sf-secondary-label" x="189" y="252" text-anchor="middle">CHARACTERISE &amp; EVALUATE</text>
+</svg>
+        <ul class="sf-legend" aria-label="Figure legend"><li><span class="sf-key sf-key-accent" aria-hidden="true"></span><span>Extracellular scaffold</span></li><li><span class="sf-key sf-key-warm" aria-hidden="true"></span><span>Introduced cells</span></li></ul>
+        <figcaption>Decellularisation, matrix characterisation and recellularisation connect tissue structure with regenerative-medicine research.<small>Conceptual illustration · not to scale</small></figcaption>
+      </figure>
+    </div>
             </article>
           </div>
         </div>
@@ -2391,6 +2625,22 @@ html[data-theme="light"] .filter-button.active {color:#fffef7}
           <article class="stat-card interactive"><span class="stat-number" id="publicationConferenceCount" data-count="3">3</span><span class="stat-label">Conference papers and abstracts</span></article>
           <article class="stat-card interactive"><span class="stat-number" id="publicationBiomaterialsCount" data-count="5">5</span><span class="stat-label">Works associated with Biomaterials</span></article>
         </div>
+
+        <figure class="publication-timeline" aria-labelledby="timelineTitle" aria-describedby="timelineCaption" data-reveal>
+          <div class="timeline-header"><div><p class="eyebrow">The scholarly record / 2016–2023</p><h3 id="timelineTitle">A body of work, over time.</h3></div><button class="timeline-reset" id="clearPublicationYear" type="button" aria-pressed="true">All years</button></div>
+          <p class="timeline-instruction">Select a year to explore the publications below.</p>
+          <div class="timeline-chart" style="--chart-steps:3"><div class="timeline-axis" aria-hidden="true"><span>3</span><span>2</span><span>1</span><span>0</span></div><div class="timeline-bars" role="group" aria-label="Curated scholarly works by year"><button class="timeline-year" type="button" data-publication-year="2016" aria-pressed="false" aria-label="Filter publications from 2016: 1 curated work">
+          <span class="timeline-track" aria-hidden="true"><span class="timeline-bar" style="--bar-height:33.333%"><span class="timeline-value">1</span></span></span><span class="timeline-label">2016</span></button><button class="timeline-year" type="button" data-publication-year="2017" aria-pressed="false" aria-label="Filter publications from 2017: 3 curated works">
+          <span class="timeline-track" aria-hidden="true"><span class="timeline-bar" style="--bar-height:100.000%"><span class="timeline-value">3</span></span></span><span class="timeline-label">2017</span></button><button class="timeline-year" type="button" data-publication-year="2018" aria-pressed="false" aria-label="Filter publications from 2018: 2 curated works">
+          <span class="timeline-track" aria-hidden="true"><span class="timeline-bar" style="--bar-height:66.667%"><span class="timeline-value">2</span></span></span><span class="timeline-label">2018</span></button><button class="timeline-year" type="button" data-publication-year="2019" aria-pressed="false" aria-label="Filter publications from 2019: 3 curated works">
+          <span class="timeline-track" aria-hidden="true"><span class="timeline-bar" style="--bar-height:100.000%"><span class="timeline-value">3</span></span></span><span class="timeline-label">2019</span></button><button class="timeline-year" type="button" data-publication-year="2020" aria-pressed="false" aria-label="Filter publications from 2020: 1 curated work">
+          <span class="timeline-track" aria-hidden="true"><span class="timeline-bar" style="--bar-height:33.333%"><span class="timeline-value">1</span></span></span><span class="timeline-label">2020</span></button><button class="timeline-year" type="button" data-publication-year="2021" aria-pressed="false" aria-label="Filter publications from 2021: 2 curated works">
+          <span class="timeline-track" aria-hidden="true"><span class="timeline-bar" style="--bar-height:66.667%"><span class="timeline-value">2</span></span></span><span class="timeline-label">2021</span></button><button class="timeline-year" type="button" data-publication-year="2022" aria-pressed="false" aria-label="Filter publications from 2022: 0 curated works">
+          <span class="timeline-track" aria-hidden="true"><span class="timeline-bar" style="--bar-height:0.000%"><span class="timeline-value">0</span></span></span><span class="timeline-label">2022</span></button><button class="timeline-year" type="button" data-publication-year="2023" aria-pressed="false" aria-label="Filter publications from 2023: 1 curated work">
+          <span class="timeline-track" aria-hidden="true"><span class="timeline-bar" style="--bar-height:33.333%"><span class="timeline-value">1</span></span></span><span class="timeline-label">2023</span></button></div></div>
+          <figcaption id="timelineCaption"><span><i aria-hidden="true"></i> Number of scholarly works</span><span>13 curated records · Includes journal articles and conference contributions. Additional database matches are excluded from this chart.</span></figcaption>
+          <p class="timeline-selection" id="publicationYearStatus" role="status" aria-live="polite">Showing all years</p>
+        </figure>
 
         <div class="publication-tools" data-reveal>
           <div class="filters" role="group" aria-label="Filter publications">
@@ -3178,6 +3428,7 @@ html[data-theme="light"] .filter-button.active {color:#fffef7}
   const publicationSyncStatus = document.getElementById("publicationSyncStatus");
   const refreshPublicationsButton = document.getElementById("refreshPublications");
   let publicationFilter = "all";
+  let publicationYear = "";
 
   const refreshPublicationCardCollection = () => {
     publicationCards = [...publicationList.querySelectorAll(".publication-card")];
@@ -3196,7 +3447,9 @@ html[data-theme="light"] .filter-button.active {color:#fffef7}
         topics.includes(publicationFilter);
       const searchable = `${card.dataset.search || ""} ${card.textContent || ""}`.toLowerCase();
       const searchMatch = !term || searchable.includes(term);
-      const show = typeMatch && searchMatch;
+      const cardYear = card.querySelector('time')?.textContent.trim();
+      const yearMatch = !publicationYear || cardYear === publicationYear;
+      const show = typeMatch && searchMatch && yearMatch;
       card.hidden = !show;
       if (show) visibleCount += 1;
     });
@@ -3212,6 +3465,18 @@ html[data-theme="light"] .filter-button.active {color:#fffef7}
     filterPublications();
   }));
   publicationSearch.addEventListener("input", filterPublications);
+  const yearButtons = [...document.querySelectorAll('[data-publication-year]')];
+  const clearYearButton = document.getElementById('clearPublicationYear');
+  const selectPublicationYear = (year) => {
+    publicationYear = year;
+    yearButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.publicationYear === year)));
+    clearYearButton.setAttribute('aria-pressed', String(!year));
+    document.getElementById('publicationYearStatus').textContent = year ? `Year selected: ${year}. Search and topic filters also apply.` : 'Showing all years';
+    filterPublications();
+  };
+  yearButtons.forEach(button => button.addEventListener('click', () => selectPublicationYear(button.dataset.publicationYear === publicationYear ? '' : button.dataset.publicationYear)));
+  clearYearButton.addEventListener('click', () => selectPublicationYear(''));
+
 
   const normaliseDoi = (value) => String(value || "")
     .trim()
