@@ -36,7 +36,7 @@
   <meta property="og:url" content="https://danieleevangelistaa.github.io/">
   <meta property="og:title" content="Daniele Evangelista, MD, PhD | Physician-Scientist">
   <meta property="og:description" content="Lung transplantation, lipid nanoparticle delivery, regenerative medicine, tissue engineering and translational thoracic research.">
-  <meta property="og:image" content="https://www.ishlt.org/images/default-source/headshots/evangelistaleitedasilva-daniele_headshot_square.jpg?sfvrsn=2c141cea_1">
+  <meta property="og:image" content="https://danieleevangelistaa.github.io/daniele-portrait.png">
   <meta property="og:image:alt" content="Portrait of Daniele Evangelista, MD, PhD">
   <meta property="profile:first_name" content="Daniele">
   <meta property="profile:last_name" content="Evangelista">
@@ -44,7 +44,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Daniele Evangelista, MD, PhD | Physician-Scientist">
   <meta name="twitter:description" content="Lung transplantation, targeted therapeutic delivery, regenerative medicine and tissue engineering.">
-  <meta name="twitter:image" content="https://www.ishlt.org/images/default-source/headshots/evangelistaleitedasilva-daniele_headshot_square.jpg?sfvrsn=2c141cea_1">
+  <meta name="twitter:image" content="https://danieleevangelistaa.github.io/daniele-portrait.png">
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23071317'/%3E%3Cpath d='M17 16h14c12 0 20 7 20 16s-8 16-20 16H17V16Zm13 24c7 0 11-3 11-8s-4-8-11-8h-4v16h4Z' fill='%237ce6d7'/%3E%3C/svg%3E">
   <script type="application/ld+json">
@@ -58,7 +58,7 @@
       "alternateName": "Daniele Evangelista",
       "honorificSuffix": "MD, PhD",
       "url": "https://danieleevangelistaa.github.io/",
-      "image": "https://www.ishlt.org/images/default-source/headshots/evangelistaleitedasilva-daniele_headshot_square.jpg?sfvrsn=2c141cea_1",
+      "image": "https://danieleevangelistaa.github.io/daniele-portrait.png",
       "email": "mailto:devangelsilva@gmail.com",
       "jobTitle": "Postdoctoral Research Fellow",
       "description": "Physician-scientist and postdoctoral research fellow working in lung transplantation, lipid nanoparticle-based donor-lung engineering, regenerative medicine, tissue engineering and translational thoracic research.",
@@ -850,6 +850,679 @@ html[data-theme="light"] .filter-button.active{color:#fff}
   .publication-link{display:none}
 }
 
+
+/* Editorial portfolio system — progressive enhancement of the existing site. */
+:root {
+  --font-sans: "Segoe UI", Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  --bg: #111b1a;
+  --bg-2: #162321;
+  --surface: #192724;
+  --surface-solid: #192724;
+  --surface-soft: rgba(240,245,238,.035);
+  --surface-bright: #22312e;
+  --ink: #f4f4ec;
+  --muted: #b4c0ba;
+  --muted-2: #91a39a;
+  --line: rgba(212,224,212,.15);
+  --line-strong: rgba(212,224,212,.29);
+  --accent: #bee7cf;
+  --accent-rgb: 190,231,207;
+  --blue: #b5bded;
+  --blue-rgb: 181,189,237;
+  --warm: #c5af7d;
+  --warm-rgb: 197,175,125;
+  --success: #b6dfc7;
+  --shadow: 0 16px 40px rgba(0,0,0,.14);
+  --shadow-soft: 0 6px 20px rgba(0,0,0,.06);
+  --radius-sm: 7px;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --header-h: 86px;
+  --container: 1280px;
+}
+html[data-theme="light"] {
+  --bg: #f7f7f0;
+  --bg-2: #edeee6;
+  --surface: #fffef8;
+  --surface-solid: #fffef8;
+  --surface-soft: rgba(24,51,41,.025);
+  --surface-bright: #e8ede5;
+  --ink: #1b322a;
+  --muted: #52665b;
+  --muted-2: #63776a;
+  --line: rgba(31,65,46,.15);
+  --line-strong: rgba(31,65,46,.28);
+  --accent: #285e49;
+  --accent-rgb: 40,94,73;
+  --blue: #4e5c9b;
+  --blue-rgb: 78,92,155;
+  --warm: #856c3c;
+  --warm-rgb: 133,108,60;
+  --success: #285e49;
+  --shadow: 0 16px 40px rgba(35,55,40,.06);
+  --shadow-soft: 0 6px 20px rgba(35,55,40,.025);
+}
+body {font-family:var(--font-sans);line-height:1.7;letter-spacing:.002em}
+body::before,body::after,.cursor-aura {display:none!important}
+.container {width:min(var(--container),calc(100% - 100px))}
+.scroll-progress {height:2px}
+.scroll-progress span {background:var(--warm);box-shadow:none}
+.site-header {background:var(--bg);border-bottom:1px solid var(--line)}
+.site-header.scrolled {height:76px;background:color-mix(in srgb,var(--bg) 96%,transparent);box-shadow:none;backdrop-filter:blur(16px)}
+.nav-shell {gap:24px}
+.brand {gap:11px}
+.brand-mark {width:40px;height:40px;border-radius:50%;font-family:var(--font-sans);font-size:.77rem;letter-spacing:-.04em;background:transparent;border-color:var(--warm);color:var(--warm);box-shadow:none}
+.brand-copy strong {font-size:.9rem;font-weight:650;letter-spacing:-.02em}
+.brand-copy small {font-size:.59rem;letter-spacing:.055em;color:var(--muted-2);font-weight:500}
+.desktop-nav {gap:2px}
+.desktop-nav a {font-size:.72rem;font-weight:550;padding:11px 9px;color:var(--muted)}
+.desktop-nav a::after {height:1px;background:var(--warm);bottom:6px}
+.nav-actions {margin-left:auto}
+.icon-button {width:38px;height:38px;border-radius:50%;background:transparent}
+.icon-button:hover {transform:none;background:var(--surface-soft);border-color:var(--warm)}
+.glass {background:var(--surface);border-radius:var(--radius);box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.interactive,.interactive:hover {box-shadow:none}
+.interactive::after {display:none}
+.interactive:hover {border-color:var(--line-strong)}
+.section {padding:104px 0}
+.section:first-child {padding-top:78px}
+.section-header {grid-template-columns:minmax(0,1.2fr) minmax(280px,.7fr);gap:75px;margin-bottom:50px;align-items:end}
+.kicker,.eyebrow {font-size:.66rem;letter-spacing:.16em;font-weight:650;color:var(--warm);line-height:1.6}
+.kicker {display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-number {font-size:.61rem;letter-spacing:.08em;display:inline-grid;place-items:center;width:28px;height:28px;border:1px solid var(--line-strong);border-radius:50%;flex:none;color:var(--warm)}
+.display-title,.subheading,.panel-copy h3,.fellowship-feature h3 {font-family:var(--font-sans);font-weight:520;letter-spacing:-.052em;text-wrap:balance}
+.display-title {font-size:clamp(2.4rem,4.4vw,4.2rem);line-height:1.07;max-width:860px}
+.display-title em,.subheading em {color:var(--blue);font-style:normal;font-weight:520}
+.subheading {font-size:clamp(1.9rem,3.3vw,3.1rem);line-height:1.13}
+.section-header>p,.section-lead {font-size:.98rem;line-height:1.8;color:var(--muted);max-width:440px}
+.button {min-height:49px;padding:12px 21px;border-radius:7px;font-size:.77rem;font-weight:650;letter-spacing:0;gap:14px;box-shadow:none}
+.button:hover {transform:translateY(-2px);box-shadow:none}
+.button-primary {background:#bee7cf;color:#1b382b;box-shadow:none}
+.button-primary:hover {background:#d0efdd;box-shadow:none}
+html[data-theme="light"] .button-primary {background:#285e49;color:#fffef7}
+html[data-theme="light"] .button-primary:hover {background:#1d4938}
+.button-secondary {background:transparent;border-color:var(--line-strong)}
+.button-secondary:hover {background:var(--surface-soft);border-color:var(--warm)}
+.tag {font-size:.65rem;font-weight:500;padding:5px 10px;border-radius:5px;background:transparent}
+.clean-list {gap:8px}
+.clean-list li {font-size:.81rem;padding-left:15px}
+.clean-list li::before {width:4px;height:4px;top:.76em;box-shadow:none;border-radius:0;background:var(--warm)}
+.meta-row span {font-size:.6rem;color:var(--warm);font-weight:650}
+.meta-row time {font-size:.68rem;font-weight:500}
+
+/* Introduction and portrait. */
+.hero {min-height:auto;padding-bottom:0}
+.hero-layout {grid-template-columns:minmax(0,1.14fr) minmax(340px,.86fr);gap:clamp(45px,7vw,100px);align-items:center}
+.hero-copy {max-width:650px}
+.award-pill {padding:7px 11px;margin-bottom:29px;border-radius:4px;font-size:.61rem;font-weight:550;letter-spacing:.045em;background:rgba(var(--warm-rgb),.04);border-color:rgba(var(--warm-rgb),.34)}
+.award-pill i {width:5px;height:5px;box-shadow:none;animation:none}
+.hero-copy>.kicker {margin-bottom:17px;color:var(--muted-2);font-size:.63rem;letter-spacing:.15em}
+.hero-title {font-family:var(--font-sans);font-size:clamp(3.5rem,6.35vw,6rem);font-weight:550;line-height:.99;letter-spacing:-.065em;text-wrap:initial}
+.hero-title em {color:var(--blue);font-style:normal;font-weight:550}
+.hero-role {font-size:.86rem;line-height:1.7;font-weight:600;letter-spacing:0;margin-top:24px;max-width:540px}
+.hero-summary {font-size:1rem;line-height:1.85;max-width:600px;margin-top:18px}
+.hero-actions {gap:10px;margin-top:28px}
+.hero-actions .button:last-child {border-color:transparent;padding-inline:10px}
+.hero-socials {display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:24px}
+.hero-socials a {display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:.73rem;color:var(--muted);font-weight:550;transition:color .2s ease}
+.hero-socials a:hover {color:var(--accent)}
+.hero-socials svg {width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.7}
+.hero-socials a span[aria-hidden] {font-size:.8rem;color:var(--warm)}
+.affiliation-strip {margin-top:30px;padding-top:21px}
+.affiliation-strip div {padding-inline:16px}
+.affiliation-strip dt {font-size:.55rem;font-weight:600;letter-spacing:.09em}
+.affiliation-strip dd {font-size:.68rem;font-weight:550;line-height:1.6;margin-top:7px}
+.portrait-stage {min-height:520px;background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible;align-self:center;padding:0 0 40px 20px}
+.portrait-stage::before {display:block;inset:-16px 16px 65px 0;width:auto;height:auto;border:1px solid rgba(var(--warm-rgb),.4);border-radius:12px;animation:none;transform:none;z-index:-1}
+.portrait-stage::after {display:none}
+.portrait-card,.portrait-card:hover {width:100%;max-width:430px;margin:0;padding:0;border:0;border-radius:10px;background:transparent;box-shadow:none;transform:none!important;transition:none}
+.portrait-frame {aspect-ratio:1/.99;border-radius:10px;overflow:hidden;background:#22342d}
+.portrait-frame img {object-fit:cover;object-position:center 28%;filter:saturate(.86) contrast(1.02)}
+.portrait-card:hover img {transform:scale(1.015)}
+.portrait-card figcaption {position:relative;width:calc(100% - 25px);margin:-24px 0 0 -26px;padding:21px 25px;gap:7px;color:#24382b;background:#f0eee0;border-radius:4px;box-shadow:0 7px 18px rgba(0,0,0,.08);border-left:3px solid #bda671}
+.portrait-card figcaption small {font-size:.55rem;font-weight:650;letter-spacing:.14em;color:#657459}
+.portrait-card figcaption strong {font-size:.88rem;line-height:1.5;font-weight:550;letter-spacing:-.015em}
+.photo-credit {top:12px;right:12px;padding:5px 8px;font-size:.49rem;font-weight:500;background:rgba(16,26,23,.55);border-radius:3px;opacity:.82}
+.float-badge {display:none}
+.stats-grid {gap:0;margin-top:62px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat-card {padding:28px 30px 31px;background:transparent;border:0;border-right:1px solid var(--line);border-radius:0;box-shadow:none;display:grid;grid-template-columns:auto 1fr;gap:19px;align-items:center}
+.stat-card:first-child {padding-left:0}
+.stat-card:last-child {border-right:0;padding-right:0}
+.stat-number {font-family:var(--font-sans);font-size:2.65rem;font-weight:450;letter-spacing:-.07em;line-height:1;color:var(--blue)}
+.stat-label {margin:0;font-size:.7rem;font-weight:450;line-height:1.7;max-width:185px}
+
+/* Highlights connect current work to the research portfolio. */
+.news-section {padding:68px 0 76px}
+.news-section .section-header {margin-bottom:27px;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.news-section .kicker {margin:0}
+.news-section .display-title {font-size:1.7rem;letter-spacing:-.035em}
+.news-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.news-card {position:relative;min-width:0;border-top:1px solid var(--warm);border-bottom:1px solid var(--line);padding:25px 26px 27px;background:var(--surface);border-radius:0 0 8px 8px}
+.news-card .eyebrow,.news-card .kicker {margin:0 0 16px;color:var(--warm);font-size:.59rem}
+.news-card h3 {font-size:1.32rem;line-height:1.35;letter-spacing:-.026em;font-weight:550;margin:0 0 12px}
+.news-card p {font-size:.86rem;line-height:1.8;color:var(--muted);margin:10px 0 18px}
+.news-card>a,.news-card .news-link {display:inline-flex;align-items:center;gap:12px;color:var(--accent);font-size:.72rem;font-weight:600;text-decoration:none;border-bottom:1px solid transparent;padding-bottom:3px}
+.news-card>a:hover,.news-card .news-link:hover {border-bottom-color:var(--accent)}
+.news-card a svg {width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.6}
+.news-meta {display:flex;gap:15px;align-items:center;margin-bottom:15px;color:var(--warm);font-size:.62rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase}
+.news-meta time {color:var(--muted-2);font-weight:450}
+
+/* Research: the active topic reads as a carefully composed spread. */
+.research-layout {grid-template-columns:268px minmax(0,1fr);gap:28px}
+.research-tabs {gap:0;border-top:1px solid var(--line);align-self:start}
+.research-tab {grid-template-columns:29px minmax(0,1fr);gap:13px;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:23px 12px;background:transparent;position:relative}
+.research-tab b {width:28px;height:28px;border-radius:50%;background:transparent;border:1px solid var(--line);font-size:.58rem;font-weight:500;color:var(--muted-2)}
+.research-tab strong {font-size:.8rem;line-height:1.5;font-weight:600}
+.research-tab small {font-size:.64rem;line-height:1.6;margin-top:5px}
+.research-tab.active {background:var(--surface);border-bottom-color:var(--line);color:var(--ink)}
+.research-tab.active::before {content:"";position:absolute;inset:0 auto 0 0;width:2px;background:var(--accent)}
+.research-tab.active b {color:var(--accent);border-color:rgba(var(--accent-rgb),.4)}
+.research-tab:hover {transform:none;background:var(--surface-soft)}
+.research-panel {min-height:520px;grid-template-columns:minmax(0,1.1fr) minmax(240px,.9fr);gap:30px;border-radius:12px;background:var(--surface);padding:36px;box-shadow:none}
+.panel-copy h3 {font-size:clamp(1.85rem,2.7vw,2.65rem);line-height:1.13;margin:16px 0 19px;letter-spacing:-.045em}
+.panel-copy>p:not(.eyebrow) {font-size:.88rem;line-height:1.8}
+.panel-points {gap:15px}
+.panel-point {font-size:.75rem;line-height:1.7;gap:10px}
+.panel-point i {width:20px;height:20px;border-radius:50%;background:transparent;border:1px solid var(--line-strong);color:var(--warm);font-weight:500;font-size:.57rem;margin-top:3px}
+.panel-visual {padding:20px;min-height:360px;border-radius:8px;background:var(--bg);border-color:var(--line)}
+.science-map {gap:10px}
+.science-node {padding:13px;border-radius:6px;background:var(--surface);box-shadow:none}
+.science-node strong {font-size:.68rem;color:var(--accent);line-height:1.5;font-weight:550}
+.science-node span {font-size:.6rem;line-height:1.7;color:var(--muted-2)}
+.science-core {border-radius:6px;background:rgba(var(--blue-rgb),.05);border-color:rgba(var(--blue-rgb),.15);min-height:138px}
+.science-core strong {font-size:.7rem;font-weight:550;color:var(--blue)}
+.science-core svg {color:var(--blue);width:48px;height:48px}
+.lung-art {filter:none}
+.lung-art .left {fill:rgba(var(--blue-rgb),.32);stroke:var(--blue)}
+.lung-art .right {fill:rgba(var(--accent-rgb),.25);stroke:var(--accent)}
+.matrix-cell {border-radius:6px;background:var(--surface);min-height:108px}
+.matrix-cell i {width:35px;height:35px;background:transparent;border:1px solid rgba(var(--warm-rgb),.4);color:var(--warm);font-weight:550;font-size:.65rem}
+.matrix-cell strong {font-size:.65rem;font-weight:500;line-height:1.5}
+.translation-flow {width:100%}
+.translation-step {border-radius:6px;padding:14px 10px;gap:10px;grid-template-columns:34px minmax(0,1fr) auto;background:var(--surface)}
+.translation-step b {width:32px;height:32px;border-radius:50%;color:var(--blue);background:transparent;border:1px solid var(--line-strong);font-weight:500;font-size:.62rem}
+.translation-step strong {font-size:.73rem;font-weight:600}
+.translation-step small {font-size:.6rem;margin-top:3px}
+.fellowship-feature {grid-template-columns:minmax(0,1fr) minmax(310px,.82fr);gap:60px;background:transparent;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;padding:42px 0;margin-top:30px;box-shadow:none}
+.fellowship-feature h3 {font-size:1.75rem;line-height:1.25;letter-spacing:-.035em}
+.fellowship-feature p:not(.eyebrow) {font-size:.85rem;line-height:1.8;max-width:540px}
+.fellowship-feature .button {font-size:.71rem;min-height:44px;margin-top:9px}
+.pathway {grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.path-step {padding:18px;border-radius:7px;background:var(--surface);border-color:var(--line)}
+.path-step span {font-family:var(--font-sans);font-size:.72rem;color:var(--warm);font-weight:500}
+.path-step strong {margin-top:13px;font-size:.78rem;font-weight:600}
+.path-step small {font-size:.66rem;line-height:1.65}
+
+/* Biography, education and professional appointments. */
+#profile,#recognition,#events {background:color-mix(in srgb,var(--surface-solid) 26%,var(--bg))}
+.profile-layout {gap:80px;grid-template-columns:minmax(270px,.82fr) minmax(0,1.18fr)}
+.profile-story .lead {font-family:var(--font-sans);font-size:1.45rem;font-weight:450;line-height:1.55;letter-spacing:-.025em;color:var(--ink)}
+.profile-story p:not(.lead) {font-size:.92rem;line-height:1.85}
+.principle {font-family:var(--font-sans);font-size:1.04rem;line-height:1.7;font-weight:450;border:0;border-left:2px solid var(--warm);border-radius:0;background:transparent;padding:8px 0 8px 23px;margin-top:32px;color:var(--blue)}
+.principle::before {display:none}
+.education-stack {gap:0;border-top:1px solid var(--line)}
+.education-card {background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:29px 0;grid-template-columns:43px minmax(0,1fr);gap:20px;overflow:visible}
+.education-marker span {width:34px;height:34px;border-radius:50%;background:transparent;border-color:var(--line-strong);color:var(--warm);font-family:var(--font-sans);font-size:.61rem;font-weight:500}
+.education-card h3 {font-family:var(--font-sans);font-size:1.22rem;font-weight:550;line-height:1.35;letter-spacing:-.025em;margin:10px 0 8px}
+.institution {font-size:.79rem;font-weight:600}
+.subline {font-size:.74rem;line-height:1.75}
+.education-card .clean-list li {font-size:.77rem}
+.experience-tools {margin:0 0 27px}
+.experience-note {font-size:.74rem}
+.experience-search input,.publication-search input {border-radius:6px;min-height:47px;font-size:.8rem;background:var(--surface)}
+.experience-groups {gap:12px}
+.experience-group {border-radius:9px;background:var(--surface)}
+.experience-group>summary {padding:25px 28px;gap:20px;grid-template-columns:36px minmax(0,1fr) auto 24px}
+.summary-index {width:34px;height:34px;background:transparent;border:1px solid var(--line-strong);border-radius:50%;font-family:var(--font-sans);font-size:.64rem;color:var(--warm)}
+.summary-copy strong {font-family:var(--font-sans);font-size:1.1rem;font-weight:550;letter-spacing:-.018em}
+.summary-copy small {font-size:.72rem;line-height:1.65;font-weight:400}
+.summary-count {font-size:.67rem;font-weight:450}
+.experience-list {padding:0 29px 3px 84px}
+.experience-entry {grid-template-columns:143px minmax(0,1fr);gap:32px;padding:30px 0}
+.experience-period {font-family:var(--font-sans);font-size:.72rem;line-height:1.7;color:var(--warm)}
+.experience-copy h4 {font-family:var(--font-sans);font-size:1.1rem;line-height:1.4;letter-spacing:-.018em;font-weight:550}
+.experience-org {font-size:.8rem;font-weight:600}
+.experience-unit {font-size:.72rem;line-height:1.7}
+.experience-copy>p:last-of-type {font-size:.82rem;line-height:1.85}
+.recognition-grid {gap:24px}
+.recognition-column {padding:0 0 5px;background:transparent;border:0;border-radius:0}
+.recognition-column-header {padding:20px 0;border-top:1px solid var(--warm)}
+.recognition-column-header h3 {font-family:var(--font-sans);font-size:1.22rem;font-weight:550;letter-spacing:-.026em}
+.recognition-column-header span {background:transparent;color:var(--warm);border:1px solid var(--line);border-radius:50%;width:31px;height:31px;font-weight:450;font-size:.62rem}
+.recognition-item {grid-template-columns:77px minmax(0,1fr);gap:16px;padding:24px 0}
+.recognition-date {font-family:var(--font-sans);font-size:.69rem;color:var(--warm)}
+.recognition-item h4 {font-size:.88rem;line-height:1.5;font-weight:550}
+.recognition-org {font-size:.72rem!important;line-height:1.7;font-weight:500}
+.recognition-item p {font-size:.75rem;line-height:1.8}
+
+/* A bibliography should be easy to scan and comfortable to read. */
+.publication-tools {margin:30px 0 24px}
+.filter-button {border-radius:5px;font-size:.72rem;font-weight:550;padding:9px 14px;background:transparent}
+.filter-button.active {background:var(--accent);border-color:var(--accent);color:#183626}
+html[data-theme="light"] .filter-button.active {color:#fffef7}
+.publication-sync {padding:17px 20px;background:var(--surface);border-radius:7px;box-shadow:none;margin-bottom:32px}
+.sync-copy strong {font-size:.78rem;font-weight:550}
+.sync-copy small {font-size:.69rem;line-height:1.65}
+.sync-indicator {width:7px;height:7px;box-shadow:none!important}
+.sync-button {border-radius:5px;font-size:.69rem;font-weight:550;background:transparent}
+.publication-card {grid-template-columns:55px minmax(0,1fr) 46px;gap:26px;padding:29px 0;transition:background .2s ease}
+.publication-card:hover {padding-left:0;background:var(--surface-soft)}
+.publication-number {width:35px;height:auto;margin-top:6px;display:block;border:0;border-radius:0;color:var(--warm);font-family:var(--font-sans);font-size:.73rem;font-weight:500;text-align:left}
+.publication-copy h3 {font-family:var(--font-sans);font-size:clamp(1.03rem,1.6vw,1.3rem);line-height:1.5;letter-spacing:-.02em;font-weight:520;margin-top:8px;max-width:1040px}
+.publication-authors {font-size:.75rem;line-height:1.8;margin-top:11px}
+.publication-citation {font-size:.72rem;line-height:1.8;margin-top:7px}
+.publication-link {border-radius:50%;width:39px;height:39px;margin-top:5px;border-color:var(--line-strong);color:var(--accent)}
+.publication-live-detail,.publication-source-note {font-size:.69rem;line-height:1.8}
+.live-record-badge {font-size:.53rem!important;font-weight:550!important;border-radius:4px;background:transparent}
+.live-record-badge::before {box-shadow:none}
+.event-groups {gap:15px}
+.event-group {padding:27px;background:transparent;border-radius:8px}
+.event-group>summary h3 {font-family:var(--font-sans);font-size:1.23rem;font-weight:550;letter-spacing:-.02em}
+.event-group>summary span {font-size:.71rem;font-weight:450}
+.event-cards {gap:20px}
+.event-card {border-radius:8px;padding:25px;background:var(--surface)}
+.event-top span {font-size:.61rem;font-weight:550;color:var(--warm)}
+.event-top time {font-size:.7rem;font-weight:450}
+.event-card h3 {font-family:var(--font-sans);font-size:1.04rem;font-weight:550;line-height:1.5;letter-spacing:-.015em;margin-top:17px}
+.event-location {font-size:.75rem!important;font-weight:500}
+.event-card p {font-size:.8rem;line-height:1.8}
+.skills-layout {gap:24px}
+.skill-card {padding:30px;background:var(--surface);border-radius:9px}
+.skill-card h3 {font-family:var(--font-sans);font-size:1.25rem;font-weight:550;letter-spacing:-.03em}
+.skill-card>p {font-size:.83rem;line-height:1.8}
+.language-list {gap:17px;margin-top:28px}
+.language-row strong {font-size:.78rem;font-weight:500}
+.language-row small {font-size:.65rem}
+.language-bar {height:3px;background:var(--line)}
+.language-bar span {background:var(--blue)}
+.technique-grid {gap:9px;margin-top:24px}
+.technique-grid span {font-size:.7rem;font-weight:450;padding:8px 11px;border-radius:5px;background:transparent}
+.cert-item,.society-item {background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:15px 0;gap:15px}
+.cert-item:last-child,.society-item:last-child {border-bottom:0}
+.cert-item b,.society-item b {border-radius:50%;background:transparent;border:1px solid var(--line-strong);color:var(--warm);font-size:.57rem;font-weight:500}
+.cert-item strong,.society-item strong {font-size:.78rem;font-weight:550;line-height:1.5}
+.cert-item small,.society-item small {font-size:.69rem;line-height:1.7;margin-top:5px}
+
+/* Contact and footer. */
+#contact {background:var(--bg-2)}
+.contact-layout {grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:26px}
+.contact-card {padding:34px;background:var(--surface);border-radius:10px}
+.contact-card h3 {font-family:var(--font-sans);font-size:1.48rem;line-height:1.4;font-weight:550;letter-spacing:-.035em}
+.contact-card>p {font-size:.83rem;line-height:1.8;margin-top:12px}
+.profile-links {gap:0}
+.profile-link {padding:16px 0;background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0}
+.profile-link:hover {transform:none;background:transparent;color:var(--accent)}
+.profile-icon {width:36px;height:36px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--warm);font-size:.6rem;font-weight:550}
+.profile-link strong {font-size:.8rem;font-weight:550}
+.profile-link small {font-size:.67rem;line-height:1.7}
+.contact-block {border-radius:7px;background:transparent;padding:20px}
+.contact-block-primary {background:rgba(var(--accent-rgb),.035);border-color:rgba(var(--accent-rgb),.2)}
+.contact-block small {font-size:.59rem;font-weight:550;letter-spacing:.08em}
+.contact-value-row a {font-family:var(--font-sans);font-size:.97rem;font-weight:500;letter-spacing:-.01em}
+.copy-button {font-size:.65rem;font-weight:500;border-radius:4px;padding:7px 11px;background:transparent}
+.field label {font-size:.74rem;font-weight:550}
+.field input,.field textarea,.field select {border-radius:5px;font-size:.81rem;background:var(--bg);border-color:var(--line-strong)}
+.field input,.field select {min-height:49px}
+.field textarea {min-height:162px}
+.contact-form {gap:20px}
+.form-grid {gap:18px}
+.form-status {font-size:.74rem;font-weight:500}
+.site-footer {padding:0 0 32px;background:var(--bg-2)}
+.footer-layout {padding-top:29px;gap:26px}
+.footer-layout strong {font-weight:550;font-size:.78rem}
+.footer-layout p {font-size:.67rem;line-height:1.7}
+.footer-links a,.footer-links button {font-size:.67rem;font-weight:500}
+.toast {font-size:.77rem;font-weight:500;border-radius:7px}
+
+@media (min-width:1121px) and (max-width:1280px) {
+  .nav-shell {gap:16px}
+  .desktop-nav a {padding-inline:7px;font-size:.67rem}
+  .brand-copy strong {font-size:.82rem}
+  .brand-copy small {font-size:.54rem}
+  .research-panel {grid-template-columns:minmax(0,1fr) minmax(205px,.85fr);gap:24px;padding:29px}
+  .panel-visual {padding:15px}
+  .stat-card {grid-template-columns:1fr;gap:10px;padding:25px}
+}
+@media (max-width:1120px) {
+  .container {width:calc(100% - 70px)}
+  .nav-actions {margin-left:auto}
+  .mobile-nav {inset:86px 24px auto;border-radius:9px;box-shadow:var(--shadow);background:var(--bg);padding:12px}
+  .mobile-nav a {font-size:.84rem;font-weight:500;border-radius:5px}
+  .hero-layout {grid-template-columns:minmax(0,1.1fr) minmax(300px,.85fr);gap:45px}
+  .hero-title {font-size:clamp(3.3rem,6.4vw,5rem)}
+  .hero-summary {font-size:.93rem}
+  .hero-role {font-size:.78rem}
+  .hero-actions .button {font-size:.72rem;padding-inline:15px}
+  .portrait-stage {min-height:0;padding-bottom:30px}
+  .portrait-card {max-width:none}
+  .portrait-card figcaption {padding:19px 21px}
+  .portrait-card figcaption strong {font-size:.8rem}
+  .stat-card {grid-template-columns:1fr;gap:10px;padding:25px}
+  .stat-number {font-size:2.3rem}
+  .stat-label {font-size:.68rem}
+  .section-header {gap:40px;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr)}
+  .display-title {font-size:3rem}
+  .section-header>p {font-size:.89rem}
+  .research-layout {grid-template-columns:1fr;gap:22px}
+  .research-tabs {grid-template-columns:repeat(4,minmax(0,1fr));border-top:0;border-bottom:1px solid var(--line)}
+  .research-tab {padding:17px 12px;grid-template-columns:1fr;gap:11px;align-content:start;border:0;border-right:1px solid var(--line)}
+  .research-tab:last-child {border-right:0}
+  .research-tab.active::before {inset:auto 0 -1px;height:2px;width:auto}
+  .research-tab strong {font-size:.75rem}
+  .research-tab small {font-size:.61rem}
+  .research-panel {grid-template-columns:minmax(0,1.1fr) minmax(270px,.9fr);min-height:490px}
+  .fellowship-feature {grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:40px}
+  .profile-layout {grid-template-columns:minmax(250px,.82fr) minmax(0,1.18fr);gap:45px}
+  .profile-story {position:sticky;top:108px}
+  .recognition-grid {grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+  .recognition-column {display:block}
+  .recognition-column-header {border-right:0;border-bottom:1px solid var(--line);padding:19px 0}
+  .recognition-item {grid-template-columns:1fr;gap:7px}
+  .contact-layout {grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .contact-card {padding:27px}
+}
+@media (max-width:800px) {
+  :root {--header-h:74px}
+  .container {width:calc(100% - 44px)}
+  .site-header.scrolled {height:68px}
+  .mobile-nav {inset:74px 16px auto}
+  .section {padding:76px 0}
+  .section:first-child {padding-top:48px}
+  .hero {padding-bottom:0}
+  .hero-layout {grid-template-columns:1fr;gap:55px}
+  .hero-copy {max-width:660px}
+  .award-pill {margin-bottom:26px}
+  .hero-title {font-size:clamp(3.6rem,10vw,5.7rem)}
+  .hero-role {font-size:.86rem;max-width:none}
+  .hero-summary {font-size:.98rem;max-width:none}
+  .hero-actions .button {font-size:.75rem;padding-inline:19px}
+  .affiliation-strip {grid-template-columns:repeat(3,minmax(0,1fr));margin-top:30px}
+  .affiliation-strip div {padding:0 15px;border-right:1px solid var(--line);border-bottom:0}
+  .portrait-stage {width:min(440px,calc(100% - 30px));margin:0 auto;min-height:0;padding:0 0 18px 14px}
+  .portrait-stage::before {inset:-14px 15px 55px 0}
+  .portrait-card {width:100%}
+  .portrait-frame {aspect-ratio:1/1}
+  .portrait-card figcaption {width:calc(100% - 14px);margin-left:-20px;padding:20px 23px}
+  .portrait-card figcaption strong {font-size:.89rem}
+  .stats-grid {margin-top:45px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat-card {padding:24px!important;grid-template-columns:auto 1fr;gap:16px;border-bottom:1px solid var(--line)}
+  .stat-card:nth-child(2) {border-right:0}
+  .stat-card:nth-child(3),.stat-card:nth-child(4) {border-bottom:0}
+  .stat-number {font-size:2.15rem}
+  .stat-label {max-width:none;font-size:.68rem}
+  .news-section {padding:50px 0 60px}
+  .news-grid {gap:16px}
+  .news-card {padding:22px}
+  .news-card h3 {font-size:1.14rem}
+  .news-card p {font-size:.79rem}
+  .section-header {grid-template-columns:1fr;gap:24px;margin-bottom:35px}
+  .display-title {font-size:clamp(2.15rem,6.2vw,3.4rem);line-height:1.12;max-width:670px}
+  .section-header>p {max-width:630px;font-size:.94rem;line-height:1.8}
+  .kicker {margin-bottom:17px}
+  .research-tabs {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible;scroll-snap-type:none;padding-bottom:0}
+  .research-tab {flex:auto;padding:17px;grid-template-columns:28px minmax(0,1fr);gap:10px;border-bottom:1px solid var(--line)}
+  .research-tab:nth-child(2n) {border-right:0}
+  .research-tab.active::before {inset:0 auto 0 0;width:2px;height:auto}
+  .research-tab strong {font-size:.73rem}
+  .research-tab small {font-size:.6rem}
+  .research-panel {grid-template-columns:1fr;gap:25px;padding:29px;min-height:0}
+  .panel-copy h3 {font-size:2.15rem;max-width:580px}
+  .panel-visual {min-height:320px;padding:26px}
+  .science-map {max-width:480px;gap:13px}
+  .science-node {padding:17px}
+  .science-node strong {font-size:.77rem}
+  .science-node span {font-size:.67rem}
+  .matrix-grid,.translation-flow {max-width:470px}
+  .lung-art {max-width:320px}
+  .fellowship-feature {grid-template-columns:1fr;gap:25px;padding:32px 0}
+  .fellowship-feature h3 {max-width:620px}
+  .pathway {grid-template-columns:repeat(4,minmax(0,1fr))}
+  .path-step {padding:17px}
+  .path-step small {font-size:.63rem}
+  .profile-layout {grid-template-columns:1fr;gap:32px}
+  .profile-story {position:static;max-width:650px}
+  .profile-story .lead {font-size:1.35rem}
+  .education-card {grid-template-columns:40px minmax(0,1fr);gap:15px}
+  .experience-group>summary {padding:23px;grid-template-columns:34px minmax(0,1fr) 20px;gap:14px}
+  .experience-list {padding:0 23px 3px 71px}
+  .experience-entry {grid-template-columns:1fr;gap:9px;padding:25px 0}
+  .recognition-grid {grid-template-columns:1fr;gap:26px}
+  .recognition-item {grid-template-columns:95px minmax(0,1fr);gap:20px}
+  .publication-card {grid-template-columns:34px minmax(0,1fr) 39px;gap:15px;padding:25px 0}
+  .publication-sync {flex-direction:column;align-items:flex-start}
+  .sync-button {width:auto}
+  .event-cards {grid-template-columns:1fr;gap:15px}
+  .skills-layout {grid-template-columns:1fr;gap:18px}
+  .contact-layout {grid-template-columns:1fr;gap:20px}
+  .contact-card {padding:30px}
+  .form-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .field.full {grid-column:1/-1}
+  .footer-layout {grid-template-columns:1fr;gap:15px;padding-top:25px}
+  .footer-layout>p {max-width:600px}
+}
+@media (max-width:560px) {
+  .container {width:calc(100% - 38px)}
+  .nav-shell {gap:14px}
+  .brand-copy strong {font-size:.87rem}
+  .brand-copy small {display:none}
+  .brand-mark {width:36px;height:36px}
+  .nav-actions {gap:6px}
+  .icon-button {width:35px;height:35px}
+  .section {padding:62px 0}
+  .section:first-child {padding-top:39px}
+  .hero {padding-bottom:0}
+  .award-pill {font-size:.54rem;letter-spacing:.025em;padding:7px 9px;gap:8px;margin-bottom:23px}
+  .hero-copy>.kicker {font-size:.57rem;letter-spacing:.115em;gap:7px}
+  .hero-title {font-size:clamp(3.2rem,12vw,4.5rem);letter-spacing:-.065em}
+  .hero-role {font-size:.78rem;line-height:1.8;margin-top:20px}
+  .hero-summary {font-size:.9rem;line-height:1.85}
+  .hero-actions {gap:9px;margin-top:24px}
+  .hero-actions .button {width:auto;flex:1 1 auto;font-size:.69rem;padding:12px 15px;gap:8px;min-height:46px}
+  .hero-actions .button:last-child {flex:0 0 auto;padding-inline:10px}
+  .hero-socials {gap:20px;margin-top:23px}
+  .hero-socials a {font-size:.7rem}
+  .affiliation-strip {grid-template-columns:1fr;gap:0;margin-top:25px;padding-top:8px}
+  .affiliation-strip div {display:grid;grid-template-columns:97px 1fr;gap:12px;padding:11px 0;border:0;border-bottom:1px solid var(--line)}
+  .affiliation-strip dd {margin-top:0;font-size:.69rem}
+  .affiliation-strip dt {font-size:.51rem;padding-top:3px}
+  .hero-layout {gap:47px}
+  .portrait-stage {width:min(365px,calc(100% - 22px));min-height:0;padding-bottom:11px}
+  .portrait-stage::before {display:block;border-radius:9px}
+  .portrait-card,.portrait-card:hover {width:100%;max-width:none}
+  .portrait-frame {aspect-ratio:1/1.03;border-radius:9px}
+  .portrait-card figcaption {padding:18px 21px;margin-top:-23px}
+  .portrait-card figcaption strong {font-size:.82rem}
+  .photo-credit {font-size:.44rem;top:10px;right:10px}
+  .stats-grid {grid-template-columns:repeat(2,minmax(0,1fr));margin-top:35px}
+  .stat-card {padding:22px 17px!important;grid-template-columns:1fr;gap:11px}
+  .stat-card:nth-child(odd) {padding-left:0!important}
+  .stat-number {font-size:2.1rem}
+  .stat-label {font-size:.65rem;line-height:1.7}
+  .news-section {padding:43px 0 50px}
+  .news-section .section-header {grid-template-columns:1fr;gap:10px;margin-bottom:22px}
+  .news-grid {grid-template-columns:1fr;gap:17px}
+  .news-card {padding:23px}
+  .news-card h3 {font-size:1.16rem}
+  .news-card p {font-size:.82rem}
+  .kicker {font-size:.61rem;letter-spacing:.13em}
+  .display-title {font-size:clamp(2rem,8.2vw,2.75rem);letter-spacing:-.05em;line-height:1.13}
+  .section-header>p {font-size:.89rem}
+  .section-header {gap:20px;margin-bottom:30px}
+  .research-tab {padding:14px 10px;grid-template-columns:1fr;gap:8px}
+  .research-tab b {width:25px;height:25px;font-size:.55rem}
+  .research-tab strong {font-size:.69rem}
+  .research-tab small {font-size:.57rem}
+  .research-panel {padding:23px;gap:22px}
+  .panel-copy h3 {font-size:1.85rem;line-height:1.17}
+  .panel-copy>p:not(.eyebrow) {font-size:.83rem}
+  .panel-point {font-size:.73rem}
+  .panel-visual {min-height:290px;padding:16px;border-radius:6px}
+  .science-map {gap:9px}
+  .science-node {padding:12px}
+  .science-node strong {font-size:.68rem}
+  .science-node span {font-size:.6rem}
+  .science-core {min-height:128px}
+  .science-core strong {font-size:.65rem}
+  .matrix-cell {padding:12px;min-height:100px}
+  .matrix-cell strong {font-size:.62rem}
+  .translation-step {grid-template-columns:31px minmax(0,1fr) auto;padding:12px 9px;gap:9px}
+  .translation-step b {width:29px;height:29px;font-size:.56rem}
+  .translation-step strong {font-size:.7rem}
+  .translation-step small {font-size:.56rem}
+  .fellowship-feature {gap:23px}
+  .fellowship-feature h3 {font-size:1.52rem}
+  .fellowship-feature .button {font-size:.65rem;padding-inline:12px}
+  .pathway {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .path-step {padding:17px}
+  .profile-story .lead {font-size:1.24rem}
+  .profile-story p:not(.lead) {font-size:.86rem}
+  .principle {font-size:.95rem;padding-left:20px}
+  .education-card {grid-template-columns:28px minmax(0,1fr);gap:14px;padding:25px 0}
+  .education-marker span {width:27px;height:27px;font-size:.52rem}
+  .education-card h3 {font-size:1.1rem;line-height:1.4}
+  .meta-row {gap:5px}
+  .meta-row span {font-size:.53rem}
+  .meta-row time {font-size:.61rem}
+  .institution {font-size:.75rem}
+  .subline {font-size:.69rem}
+  .education-card .clean-list li {font-size:.73rem}
+  .experience-tools {gap:11px}
+  .experience-note {font-size:.68rem}
+  .experience-group>summary {padding:19px 16px;grid-template-columns:29px minmax(0,1fr) 18px;gap:11px}
+  .summary-index {width:28px;height:28px;font-size:.54rem}
+  .summary-copy strong {font-size:.93rem;line-height:1.4}
+  .summary-copy small {display:none}
+  .experience-list {padding:0 18px 2px}
+  .experience-copy h4 {font-size:1.02rem}
+  .experience-copy>p:last-of-type {font-size:.78rem}
+  .experience-org {font-size:.76rem}
+  .recognition-item {grid-template-columns:62px minmax(0,1fr);gap:15px}
+  .recognition-date {font-size:.65rem}
+  .recognition-item h4 {font-size:.83rem}
+  .recognition-item p {font-size:.72rem}
+  .publication-tools {gap:16px}
+  .filters {gap:7px}
+  .filter-button {font-size:.66rem;padding:8px 11px}
+  .publication-search {width:100%}
+  .publication-sync {padding:16px;gap:14px}
+  .sync-copy strong {font-size:.72rem}
+  .sync-copy small {font-size:.63rem}
+  .sync-button {font-size:.64rem;min-height:36px}
+  .publication-card {grid-template-columns:23px minmax(0,1fr);gap:11px;padding:24px 0}
+  .publication-number {width:23px;height:auto;font-size:.65rem}
+  .publication-copy h3 {font-size:1rem;line-height:1.5}
+  .publication-authors {font-size:.7rem}
+  .publication-citation {font-size:.67rem}
+  .publication-link {grid-column:2;justify-self:start;width:32px;height:32px;margin-top:0}
+  .publication-link svg {width:15px;height:15px}
+  .publication-live-detail,.publication-source-note {font-size:.64rem}
+  .event-group {padding:20px 17px}
+  .event-group>summary {align-items:flex-start;gap:12px}
+  .event-group>summary h3 {font-size:1.07rem}
+  .event-group>summary span {font-size:.64rem;white-space:nowrap;margin-top:4px}
+  .event-card {padding:20px 17px}
+  .event-card h3 {font-size:.98rem}
+  .event-card p {font-size:.75rem}
+  .skill-card {padding:24px}
+  .skill-card h3 {font-size:1.18rem}
+  .skill-card>p {font-size:.78rem}
+  .language-row {grid-template-columns:90px minmax(0,1fr);gap:10px}
+  .language-row small {grid-column:1/-1;margin-top:-8px}
+  .technique-grid span {font-size:.66rem}
+  .contact-card {padding:24px;border-radius:9px}
+  .contact-card h3 {font-size:1.32rem}
+  .contact-card>p {font-size:.79rem}
+  .contact-block {padding:16px}
+  .contact-value-row a {font-size:.83rem}
+  .profile-link>div {gap:11px}
+  .profile-link strong {font-size:.74rem}
+  .profile-link small {font-size:.62rem}
+  .profile-icon {width:32px;height:32px;font-size:.55rem}
+  .form-grid {grid-template-columns:1fr}
+  .field.full {grid-column:auto}
+  .field label {font-size:.7rem}
+  .form-actions .button {width:100%}
+  .footer-layout p {font-size:.64rem}
+}
+@media (max-width:390px) {
+  .container {width:calc(100% - 32px)}
+  .brand-copy {display:grid}
+  .brand-copy strong {font-size:.77rem}
+  .brand-mark {width:31px;height:31px;font-size:.64rem}
+  .brand {gap:8px}
+  .nav-shell {gap:8px}
+  .icon-button {width:31px;height:31px}
+  .hero-title {font-size:clamp(2.78rem,12vw,3.3rem)}
+  .award-pill {font-size:.48rem}
+  .hero-copy>.kicker {font-size:.5rem}
+  .hero-actions .button {font-size:.64rem;padding-inline:11px}
+  .portrait-stage {min-height:0}
+  .portrait-card {width:100%}
+  .research-panel {padding:19px}
+  .panel-copy h3 {font-size:1.68rem}
+  .panel-visual {padding:13px}
+}
+@media (prefers-reduced-motion:reduce) {
+  .portrait-card:hover img {transform:none}
+}
+@media print {
+  :root,html[data-theme="light"] {--bg:#fff;--bg-2:#fff;--surface:#fff;--surface-solid:#fff;--ink:#111;--muted:#333;--muted-2:#555;--blue:#333;--accent:#333;--warm:#555;--line:#ccc}
+  .container {width:100%}
+  .section,.news-section {padding:25px 0;background:#fff!important}
+  .hero-layout {grid-template-columns:1fr 220px;gap:30px}
+  .hero-title {font-size:3rem}
+  .portrait-stage {width:auto;padding:0;min-height:0}
+  .portrait-stage::before {display:none}
+  .portrait-card figcaption {margin:0;width:100%;background:#eee;padding:12px;border-left:0;box-shadow:none}
+  .portrait-card figcaption small,.portrait-card figcaption strong {color:#222}
+  .hero-socials {display:none}
+  .stats-grid {margin-top:25px}
+  .stat-card {padding:15px!important}
+  .profile-story {position:static}
+  .display-title {font-size:2.25rem}
+  .contact-layout {grid-template-columns:1fr}
+  .contact-card:has(form) {display:none}
+}
+
+.news-art{height:190px;background:#142625;position:relative;overflow:hidden;padding:23px;display:flex;justify-content:space-between;flex-direction:column;border-bottom:1px solid var(--line);color:#b5c7c5}
+.news-art>span,.news-art>small{font-size:10px;letter-spacing:.15em;z-index:1;font-weight:700}
+.molecule-orbit{position:absolute;width:144px;height:144px;top:24px;right:70px;display:grid;place-items:center;border:1px solid #96aaa5;border-radius:50%;transform:rotate(-25deg)}
+.molecule-orbit:before,.molecule-orbit:after{content:'';position:absolute;inset:12px -38px;border:1px solid #768fb6;border-radius:50%;transform:rotate(40deg)}
+.molecule-orbit:after{transform:rotate(-40deg);border-color:#b6a47d}
+.molecule-orbit b{font-size:24px;color:#d0deed;transform:rotate(25deg);letter-spacing:-.04em}
+.molecule-orbit i{position:absolute;width:10px;height:10px;border-radius:50%;background:#a6c4ff;top:0;left:40px}
+.molecule-orbit i:nth-child(2){top:auto;bottom:0;left:85px;background:#9edfc9}
+.molecule-orbit i:nth-child(3){top:85px;left:-12px;background:#e0c88f}
+.matrix-art{background:#19232d}
+.matrix-motif{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;width:125px;position:absolute;right:85px;top:30px;transform:rotate(-14deg)}
+.matrix-motif i{aspect-ratio:1;border:1px solid #9ccbbf;border-radius:9px;background:#9ccbbf12}
+.matrix-motif i:nth-child(2n){border-color:#899ecb;transform:translateY(8px);background:#899ecb14}
+.publication-actions{display:flex;align-items:center;justify-content:flex-end;gap:20px;margin:18px 0;color:var(--muted);font-size:.8rem}
+.publication-actions p{margin-right:auto}
+.publication-actions label{display:flex;align-items:center;gap:10px}
+.publication-actions select{background:var(--surface-solid);color:var(--ink);border:1px solid var(--line-strong);padding:9px 12px;border-radius:8px}
+.publication-actions .button{min-height:40px;padding:8px 14px;font-size:.76rem}
+.copy-citation{margin-top:10px;padding:5px 0;border:0;border-bottom:1px solid var(--line-strong);background:transparent;color:var(--accent);font-size:.74rem;cursor:pointer}
+.copy-citation:hover{color:var(--ink);border-color:var(--accent)}
+[hidden]{display:none!important}
+@media(max-width:600px){.publication-actions{gap:12px;justify-content:flex-start;flex-wrap:wrap}.publication-actions p{width:100%;margin:0}.publication-actions label{font-size:.75rem}.news-art{height:170px}.molecule-orbit{right:35px}.matrix-motif{right:50px}}
+@media print{.news-art,.hero-socials,.publication-actions,.copy-citation,.publication-sync,.contact-form{display:none!important}body:before,body:after{display:none!important}.section{break-inside:auto!important}details>*{display:block!important}[data-reveal]{opacity:1!important;transform:none!important}.publication-card[hidden],.experience-entry[hidden],.experience-group[hidden]{display:block!important}.publication-card{break-inside:avoid}*{box-shadow:none!important}a{color:#111!important}body{background:#fff!important;color:#111!important}}
+.news-card{padding:0;overflow:hidden}
+.news-content{padding:26px}
+.desktop-nav a{font-size:.78rem;padding-inline:8px}
+.brand-copy strong{font-size:.95rem}
+.hero-role{font-size:1rem}
+.news-section .display-title{font-size:clamp(1.8rem,3vw,2.65rem);line-height:1.12}
+.news-section .section-header{grid-template-columns:1fr 1fr;gap:40px}
+.news-section .section-header>p{justify-self:end}
+.news-content>a{font-size:.84rem;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:5px;display:inline-block}
+.news-content .meta-row{margin-bottom:14px}
+.affiliation-strip dt,.portrait-card figcaption small{font-size:.62rem}
+.affiliation-strip dd{font-size:.75rem}
+.stat-label{font-size:.8rem}
+@media(max-width:1080px){.desktop-nav{display:none}.menu-button{display:grid}.nav-actions{margin-left:auto}}
+@media(max-width:760px){.news-section .section-header{grid-template-columns:1fr;gap:15px}.news-section .section-header>p{justify-self:start}.hero-role{font-size:.85rem}}
+
   </style>
 </head>
 
@@ -870,7 +1543,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
       </a>
 
       <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="#home" data-section-link="home">Home</a>
+        <a href="#news" data-section-link="news">In focus</a>
         <a href="#research" data-section-link="research">Research</a>
         <a href="#profile" data-section-link="profile">Profile</a>
         <a href="#experience" data-section-link="experience">Experience</a>
@@ -893,7 +1566,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     </div>
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-      <a href="#home" data-section-link="home">Home</a>
+      <a href="#news" data-section-link="news">In focus</a>
       <a href="#research" data-section-link="research">Research</a>
       <a href="#profile" data-section-link="profile">Profile &amp; education</a>
       <a href="#experience" data-section-link="experience">Experience</a>
@@ -916,9 +1589,9 @@ html[data-theme="light"] .filter-button.active{color:#fff}
               <i aria-hidden="true"></i>2026 ISHLT Research Fellowship recipient
             </a>
             <p class="kicker">Lung transplantation · Regenerative medicine</p>
-            <h1 class="hero-title" id="homeTitle">Daniele<br><em>Evangelista</em></h1>
-            <p class="hero-role">MD, PhD · Postdoctoral Research Fellow · Physician-scientist</p>
-            <p class="hero-summary">Daniele Evangelista Leite da Silva is a physician-scientist at University Health Network. Her current research focuses on lipid nanoparticle-based strategies for genetic engineering of donor lungs, building on training in transplantation, regenerative medicine, tissue engineering, organ bioengineering and clinical surgery.</p>
+            <h1 class="hero-title" id="homeTitle">Dr. Daniele<br><em>Evangelista.</em></h1>
+            <p class="hero-role">MD, PhD · Physician-scientist · Postdoctoral Research Fellow</p>
+            <p class="hero-summary">Advancing lung transplantation through targeted therapeutic delivery, donor-lung engineering and regenerative medicine. At University Health Network, Daniele connects molecular research with the clinical challenge of improving donor-lung quality.</p>
             <div class="hero-actions">
               <a class="button button-primary" href="#research">Explore the research
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -930,6 +1603,11 @@ html[data-theme="light"] .filter-button.active{color:#fff}
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>
               </a>
             </div>
+            <div class="hero-socials" aria-label="Professional profiles">
+              <a href="https://orcid.org/0000-0002-2755-0091" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">iD</span> ORCID ↗</a>
+              <a href="https://ca.linkedin.com/in/daniele-evangelista-leite-da-silva-8680ab81" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">in</span> LinkedIn ↗</a>
+              <a href="https://github.com/DanieleEvangelistaa" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.28.1-2.66 0 0 .84-.27 2.75 1.03a9.57 9.57 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.41.1 2.66.64.7 1.03 1.59 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2Z"/></svg> GitHub ↗</a>
+            </div>
             <dl class="affiliation-strip">
               <div><dt>Research group</dt><dd>Latner Thoracic Research Laboratories</dd></div>
               <div><dt>Program</dt><dd>Thoracic Surgery · Lung Transplant Program</dd></div>
@@ -940,12 +1618,12 @@ html[data-theme="light"] .filter-button.active{color:#fff}
           <div class="portrait-stage interactive" id="portraitStage" data-reveal>
             <figure class="portrait-card" id="portraitCard">
               <div class="portrait-frame">
-                <img src="data:image/jpeg;base64,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" alt="Daniele Evangelista, MD, PhD" width="350" height="350" fetchpriority="high" decoding="async">
-                <a class="photo-credit" href="https://www.ishlt.org/grants-and-awards/grants-awards/ishlt-research-fellowship-grant" target="_blank" rel="noopener noreferrer">Professional headshot · ISHLT profile</a>
+                <img src="daniele-portrait.png" alt="Daniele Evangelista, MD, PhD" width="350" height="350" fetchpriority="high" decoding="async">
+                
               </div>
               <figcaption>
-                <small>Physician-scientist</small>
-                <strong>Lung transplantation · LNP delivery · Regenerative medicine</strong>
+                <small>Toronto, Canada · UHN</small>
+                <strong>Daniele Evangelista, MD, PhD</strong>
               </figcaption>
             </figure>
             <div class="float-badge one"><b>Current research</b><span>LNP-based genetic engineering of donor lungs</span></div>
@@ -954,10 +1632,37 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         </div>
 
         <div class="stats-grid" aria-label="Professional profile highlights" data-reveal>
-          <article class="stat-card interactive"><span class="stat-number" id="homePublicationCount" data-count="13">13</span><span class="stat-label">Verified and live-synchronised scholarly works</span></article>
-          <article class="stat-card interactive"><span class="stat-number" data-count="4">4</span><span class="stat-label">Selected education milestones across Brazil, the United States and Costa Rica</span></article>
-          <article class="stat-card interactive"><span class="stat-number" data-count="4">4</span><span class="stat-label">Languages: Portuguese, English, Spanish and Japanese</span></article>
-          <article class="stat-card interactive"><span class="stat-number" data-count="2025" data-start="2000" data-grouping="false">2025</span><span class="stat-label">Start of current UHN postdoctoral appointment</span></article>
+          <article class="stat-card interactive"><span class="stat-number" id="homePublicationCount" data-count="13">13</span><span class="stat-label">Publications &amp; scholarly works</span></article>
+          <article class="stat-card interactive"><span class="stat-number" data-count="4">4</span><span class="stat-label">Education milestones across three countries</span></article>
+          <article class="stat-card interactive"><span class="stat-number" data-count="4">4</span><span class="stat-label">Languages · Portuguese, English, Spanish &amp; Japanese</span></article>
+          <article class="stat-card interactive"><span class="stat-number" data-count="2025" data-start="2000" data-grouping="false">2025</span><span class="stat-label">Joined UHN as a postdoctoral research fellow</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-rule news-section" id="news" aria-labelledby="newsTitle">
+      <div class="container">
+        <header class="section-header" data-reveal>
+          <div><p class="kicker">In focus</p><h2 class="display-title" id="newsTitle">Science with <em>clinical purpose.</em></h2></div>
+          <p>Current fellowship research and selected work connecting therapeutic delivery, biomaterials and organ regeneration.</p>
+        </header>
+        <div class="news-grid">
+          <article class="news-card" data-reveal>
+            <div class="news-art" aria-hidden="true"><span>01 / TRANSLATIONAL RESEARCH</span><div class="molecule-orbit"><i></i><i></i><i></i><b>mRNA</b></div><small>DELIVERY → DONOR LUNG</small></div>
+            <div class="news-content"><div class="meta-row"><span>ISHLT Research Fellowship</span><time datetime="2026">2026</time></div>
+              <h3>A targeted approach to donor-lung engineering.</h3>
+              <p>Daniele’s fellowship project investigates click chemistry for targeted mRNA delivery during ex vivo lung perfusion, with the goal of improving donor-lung quality.</p>
+              <a href="https://www.ishlt.org/grants-and-awards/grants-awards/ishlt-research-fellowship-grant" target="_blank" rel="noopener noreferrer">Explore the fellowship <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="news-card" data-reveal>
+            <div class="news-art matrix-art" aria-hidden="true"><span>02 / REGENERATIVE BIOMATERIALS</span><div class="matrix-motif"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small>MATRIX → MECHANISM</small></div>
+            <div class="news-content"><div class="meta-row"><span>Selected publication · Biomaterials</span><time datetime="2023">2023</time></div>
+              <h3>Understanding the biology of matrix-derived hydrogels.</h3>
+              <p>First-author research examines molecular mechanisms of extracellular matrix-derived hydrogel therapy in experimental models of idiopathic pulmonary fibrosis.</p>
+              <a href="https://doi.org/10.1016/j.biomaterials.2023.122338" target="_blank" rel="noopener noreferrer">Read the publication <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -974,22 +1679,22 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 
         <div class="research-layout" data-reveal>
           <div class="research-tabs" role="tablist" aria-label="Research areas">
-            <button class="research-tab active interactive" type="button" role="tab" aria-selected="true" aria-controls="researchDelivery" data-panel="researchDelivery">
+            <button class="research-tab active interactive" type="button" role="tab" aria-selected="true" aria-controls="researchDelivery" data-panel="researchDelivery" id="researchDeliveryTab">
               <b>01</b><span><strong>Donor-lung engineering</strong><small>LNPs · genetic engineering</small></span>
             </button>
-            <button class="research-tab interactive" type="button" role="tab" aria-selected="false" aria-controls="researchEvlp" data-panel="researchEvlp" tabindex="-1">
+            <button class="research-tab interactive" type="button" role="tab" aria-selected="false" aria-controls="researchEvlp" data-panel="researchEvlp" tabindex="-1" id="researchEvlpTab">
               <b>02</b><span><strong>EVLP intervention</strong><small>Targeted mRNA delivery</small></span>
             </button>
-            <button class="research-tab interactive" type="button" role="tab" aria-selected="false" aria-controls="researchMatrix" data-panel="researchMatrix" tabindex="-1">
+            <button class="research-tab interactive" type="button" role="tab" aria-selected="false" aria-controls="researchMatrix" data-panel="researchMatrix" tabindex="-1" id="researchMatrixTab">
               <b>03</b><span><strong>Regenerative biomaterials</strong><small>dECM hydrogels · fibrosis</small></span>
             </button>
-            <button class="research-tab interactive" type="button" role="tab" aria-selected="false" aria-controls="researchOrgan" data-panel="researchOrgan" tabindex="-1">
+            <button class="research-tab interactive" type="button" role="tab" aria-selected="false" aria-controls="researchOrgan" data-panel="researchOrgan" tabindex="-1" id="researchOrganTab">
               <b>04</b><span><strong>Organ bioengineering</strong><small>Scaffolds · regeneration</small></span>
             </button>
           </div>
 
           <div>
-            <article class="research-panel active interactive" id="researchDelivery" role="tabpanel">
+            <article class="research-panel active interactive" id="researchDelivery" role="tabpanel" aria-labelledby="researchDeliveryTab" tabindex="0">
               <div class="panel-copy">
                 <p class="eyebrow">Current postdoctoral research</p>
                 <h3>Engineer donor lungs before transplantation.</h3>
@@ -1016,7 +1721,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
               </div>
             </article>
 
-            <article class="research-panel interactive" id="researchEvlp" role="tabpanel" hidden>
+            <article class="research-panel interactive" id="researchEvlp" role="tabpanel" aria-labelledby="researchEvlpTab" tabindex="0" hidden>
               <div class="panel-copy">
                 <p class="eyebrow">2026 ISHLT fellowship project</p>
                 <h3>Use EVLP as a window for targeted treatment.</h3>
@@ -1037,7 +1742,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
               </div>
             </article>
 
-            <article class="research-panel interactive" id="researchMatrix" role="tabpanel" hidden>
+            <article class="research-panel interactive" id="researchMatrix" role="tabpanel" aria-labelledby="researchMatrixTab" tabindex="0" hidden>
               <div class="panel-copy">
                 <p class="eyebrow">Doctoral research</p>
                 <h3>Study the therapeutic potential of lung extracellular matrix.</h3>
@@ -1060,7 +1765,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
               </div>
             </article>
 
-            <article class="research-panel interactive" id="researchOrgan" role="tabpanel" hidden>
+            <article class="research-panel interactive" id="researchOrgan" role="tabpanel" aria-labelledby="researchOrganTab" tabindex="0" hidden>
               <div class="panel-copy">
                 <p class="eyebrow">Massachusetts General Hospital</p>
                 <h3>Build regeneration strategies at organ scale.</h3>
@@ -1179,7 +1884,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
             <p class="kicker">Experience</p>
             <h2 class="display-title" id="experienceTitle">Research, clinical practice, teaching and <em>leadership.</em></h2>
           </div>
-          <p>The complete experience record from the CV is organised below by category. Open any section or search across roles, institutions, methods and topics.</p>
+          <p>Research, clinical training, teaching and leadership across international institutions. Explore a category or search by role, institution or research method.</p>
         </header>
 
         <div class="experience-tools" data-reveal>
@@ -1521,7 +2226,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
             <p class="kicker">Funding &amp; recognition</p>
             <h2 class="display-title" id="recognitionTitle">Support earned across <em>research, medicine and international education.</em></h2>
           </div>
-          <p>Grants, awards and scholarships listed in the CV, supplemented by the current 2026 ISHLT Research Fellowship featured on this portfolio.</p>
+          <p>Competitive fellowships, academic honours and research support across medicine and international education.</p>
         </header>
 
         <div class="recognition-grid">
@@ -1677,7 +2382,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
             <p class="kicker">Scholarly record</p>
             <h2 class="display-title" id="publicationsTitle">Research grounded in <em>mechanism and application.</em></h2>
           </div>
-          <p>The verified CV record is preserved locally. On page load, the website checks Crossref and PubMed for ORCID- or author-linked publications when the browser’s last successful check is more than 24 hours old.</p>
+          <p>Explore journal articles, reviews and conference contributions. Search by title, author, topic or year; copy a citation, or check scholarly databases for additional records.</p>
         </header>
 
         <div class="stats-grid" aria-label="Publication overview" data-reveal>
@@ -1689,12 +2394,12 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 
         <div class="publication-tools" data-reveal>
           <div class="filters" role="group" aria-label="Filter publications">
-            <button class="filter-button active" type="button" data-publication-filter="all">All</button>
-            <button class="filter-button" type="button" data-publication-filter="journal">Journal articles</button>
-            <button class="filter-button" type="button" data-publication-filter="conference">Conference abstracts</button>
-            <button class="filter-button" type="button" data-publication-filter="lung">Lung research</button>
-            <button class="filter-button" type="button" data-publication-filter="biomaterials">Biomaterials</button>
-            <button class="filter-button" type="button" data-publication-filter="regeneration">Regeneration</button>
+            <button class="filter-button active" type="button" aria-pressed="true" data-publication-filter="all">All</button>
+            <button class="filter-button" type="button" aria-pressed="false" data-publication-filter="journal">Journal articles</button>
+            <button class="filter-button" type="button" aria-pressed="false" data-publication-filter="conference">Conference abstracts</button>
+            <button class="filter-button" type="button" aria-pressed="false" data-publication-filter="lung">Lung research</button>
+            <button class="filter-button" type="button" aria-pressed="false" data-publication-filter="biomaterials">Biomaterials</button>
+            <button class="filter-button" type="button" aria-pressed="false" data-publication-filter="regeneration">Regeneration</button>
           </div>
           <label class="publication-search" aria-label="Search publications">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
@@ -1706,8 +2411,8 @@ html[data-theme="light"] .filter-button.active{color:#fff}
           <div class="sync-copy">
             <span class="sync-indicator" aria-hidden="true"></span>
             <span>
-              <strong>Live scholarly synchronisation</strong>
-              <small id="publicationSyncStatus" role="status" aria-live="polite">The CV record is ready. Live sources will be checked automatically.</small>
+              <strong>Scholarly database updates</strong>
+              <small id="publicationSyncStatus" role="status" aria-live="polite">The publication record is ready. Crossref and PubMed are checked automatically every 24 hours while you browse.</small>
             </span>
           </div>
           <button class="sync-button" id="refreshPublications" type="button" aria-label="Check Crossref and PubMed for updated publications">
@@ -1716,6 +2421,11 @@ html[data-theme="light"] .filter-button.active{color:#fff}
           </button>
         </div>
 
+        <div class="publication-actions" data-reveal>
+          <p id="publicationResults" role="status" aria-live="polite">13 works shown</p>
+          <label for="publicationSort">Sort by <select id="publicationSort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label>
+          <button class="button button-secondary" id="exportCitations" type="button">Export citations ↓</button>
+        </div>
         <div class="publication-list" id="publicationList" data-reveal>
           
         <article class="publication-card interactive" data-kind="journal article" data-topics="journal lung biomaterials fibrosis" data-search="2023 journal article journal lung biomaterials fibrosis the molecular mechanisms of extracellular matrix-derived hydrogel therapy in idiopathic pulmonary fibrosis models evangelista-leite d, carreira aco, nishiyama my, gilpin se, miglino ma. biomaterials. 2023;302:122338. 10.1016/j.biomaterials.2023.122338" data-doi="10.1016/j.biomaterials.2023.122338">
@@ -1901,7 +2611,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         
         </div>
         <p class="publication-empty" id="publicationEmpty">No publications match that search.</p>
-        <p class="publication-source-note">The embedded CV record remains available if a live source is temporarily unavailable. New publication records are added dynamically in the visitor’s browser from ORCID-linked Crossref metadata or the PubMed author query, and are labelled as live records.</p>
+        <p class="publication-source-note">The publication list includes the portfolio’s curated records. Additional database matches are clearly labelled and should be checked against their original source.</p>
       </div>
     </section>
 
@@ -1912,7 +2622,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
             <p class="kicker">Academic events</p>
             <h2 class="display-title" id="eventsTitle">Scientific exchange through <em>presentations, posters and conferences.</em></h2>
           </div>
-          <p>The event record includes oral presentations, poster presentations and major conference participation from 2011 through 2025.</p>
+          <p>Presentations and scientific exchange across transplantation, regenerative medicine and interdisciplinary research.</p>
         </header>
 
         <div class="event-groups">
@@ -2050,7 +2760,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
             <p class="kicker">Skills, certifications &amp; societies</p>
             <h2 class="display-title" id="skillsTitle">Technical depth with <em>multilingual reach.</em></h2>
           </div>
-          <p>Laboratory methods, language proficiency, professional training and active scientific-society membership recorded in the CV.</p>
+          <p>A multidisciplinary toolkit spanning molecular techniques, whole-organ platforms, scientific communication and international collaboration.</p>
         </header>
 
         <div class="skills-layout">
@@ -2206,6 +2916,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
                   <svg class="button-send-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m4 4 17 8-17 8 3-8-3-8Z"/><path d="M7 12h14"/></svg>
                 </button>
                 <button class="button button-secondary" id="copyMessageButton" type="button">Copy prepared message</button>
+                <a class="button button-secondary" href="mailto:devangelsilva@gmail.com">Use email instead ↗</a>
               </div>
               <p class="form-status" id="formStatus" role="status" aria-live="polite" aria-atomic="true"></p>
             </form>
@@ -2228,6 +2939,8 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         <a href="#home">Home</a>
         <a href="#contact">Contact</a>
         <button id="shareProfile" type="button">Share</button>
+        <button id="printProfile" type="button">Print profile</button>
+        <a href="https://github.com/DanieleEvangelistaa/danieleevangelistaa.github.io" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         <span aria-hidden="true">© <span id="year">2026</span></span>
       </div>
     </div>
@@ -2260,7 +2973,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     siteUrl: "https://danieleevangelistaa.github.io/",
     orcid: "0000-0002-2755-0091",
     contactRequestTimeoutMs: 22000,
-    publicationCacheKey: "daniele-scholar-record-v8",
+    publicationCacheKey: "daniele-scholar-record-v9",
     publicationRefreshMs: 24 * 60 * 60 * 1000,
     publicationHeartbeatMs: 6 * 60 * 60 * 1000
   });
@@ -2297,7 +3010,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
   const themeMeta = document.querySelector('meta[name="theme-color"]');
   const applyTheme = (theme) => {
     root.dataset.theme = theme;
-    if (themeMeta) themeMeta.setAttribute("content", theme === "dark" ? "#071317" : "#edf4f1");
+    if (themeMeta) themeMeta.setAttribute("content", theme === "dark" ? "#0b1516" : "#f5f5ef");
     themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
   };
 
@@ -2492,7 +3205,10 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 
   publicationButtons.forEach((button) => button.addEventListener("click", () => {
     publicationFilter = button.dataset.publicationFilter;
-    publicationButtons.forEach((item) => item.classList.toggle("active", item === button));
+    publicationButtons.forEach((item) => {
+      item.classList.toggle("active", item === button);
+      item.setAttribute("aria-pressed", String(item === button));
+    });
     filterPublications();
   }));
   publicationSearch.addEventListener("input", filterPublications);
@@ -2614,7 +3330,8 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     url.searchParams.set("order", "desc");
     url.searchParams.set("mailto", SITE_CONFIG.contactEmail);
     const payload = await fetchJson(url.toString());
-    const items = payload && payload.message && Array.isArray(payload.message.items) ? payload.message.items : [];
+    if (!payload?.message || !Array.isArray(payload.message.items)) throw new Error("Crossref returned an incomplete response.");
+    const items = payload.message.items;
     return items.map(mapCrossrefRecord).filter((record) => record.title);
   };
 
@@ -2628,9 +3345,8 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     searchUrl.searchParams.set("tool", "daniele_evangelista_portfolio");
     searchUrl.searchParams.set("email", SITE_CONFIG.contactEmail);
     const searchPayload = await fetchJson(searchUrl.toString());
-    const ids = searchPayload && searchPayload.esearchresult && Array.isArray(searchPayload.esearchresult.idlist)
-      ? searchPayload.esearchresult.idlist
-      : [];
+    if (!searchPayload?.esearchresult || !Array.isArray(searchPayload.esearchresult.idlist)) throw new Error("PubMed search returned an incomplete response.");
+    const ids = searchPayload.esearchresult.idlist;
     if (!ids.length) return [];
 
     const summaryUrl = new URL("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi");
@@ -2640,32 +3356,46 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     summaryUrl.searchParams.set("tool", "daniele_evangelista_portfolio");
     summaryUrl.searchParams.set("email", SITE_CONFIG.contactEmail);
     const summaryPayload = await fetchJson(summaryUrl.toString());
-    const result = summaryPayload && summaryPayload.result ? summaryPayload.result : {};
-    const uids = Array.isArray(result.uids) ? result.uids : ids;
+    const result = summaryPayload?.result;
+    if (!result || !Array.isArray(result.uids) || ids.some((uid) => !result[uid] || result[uid].error || !result[uid].title)) throw new Error("PubMed summary returned an incomplete response.");
+    const uids = result.uids;
     return uids.map((uid) => result[uid] ? mapPubMedRecord(result[uid], uid) : null).filter(Boolean);
   };
 
   const mergeScholarlyRecords = (...groups) => {
-    const records = new Map();
-    groups.flat().forEach((record) => {
-      if (!record || !record.title) return;
-      const key = record.doi ? `doi:${record.doi}` : `title:${normaliseTitle(record.title)}`;
-      const existing = records.get(key);
+    const records = [];
+    const byDoi = new Map();
+    const byTitle = new Map();
+    const cleanSources = (value) => [...new Set(String(value || "").split("+").map((part) => part.trim()).filter(Boolean))];
+    groups.flat().forEach((input) => {
+      if (!input || !input.title) return;
+      const record = { ...input, doi: normaliseDoi(input.doi) };
+      const titleKey = normaliseTitle(record.title);
+      if (!titleKey) return;
+      const titleMatches = byTitle.get(titleKey) || [];
+      let existing = record.doi ? byDoi.get(record.doi) : null;
+      // A title alias may bridge DOI/no-DOI records, but must not collapse
+      // distinct DOIs (for example, an article and its correction).
+      if (!existing) existing = titleMatches.find((entry) => !entry.doi || !record.doi || entry.doi === record.doi);
       if (!existing) {
-        records.set(key, record);
-        return;
+        existing = { ...record, source: cleanSources(record.source).join(" + ") };
+        records.push(existing);
+      } else {
+        const previous = { ...existing };
+        // Retain populated metadata when another source omits a field.
+        Object.entries(record).forEach(([key, value]) => {
+          if (value !== null && value !== undefined && value !== "") existing[key] = value;
+        });
+        existing.source = [...new Set([...cleanSources(previous.source), ...cleanSources(record.source)])].join(" + ");
+        existing.doi = previous.doi || record.doi;
+        existing.pmid = previous.pmid || record.pmid;
+        existing.citedBy = Math.max(Number(previous.citedBy || 0), Number(record.citedBy || 0));
       }
-      records.set(key, {
-        ...existing,
-        ...record,
-        source: [...new Set(`${existing.source || ""}+${record.source || ""}`.split("+").filter(Boolean))].join(" + "),
-        doi: existing.doi || record.doi,
-        pmid: existing.pmid || record.pmid,
-        url: record.url || existing.url,
-        citedBy: Math.max(Number(existing.citedBy || 0), Number(record.citedBy || 0))
-      });
+      if (existing.doi) byDoi.set(existing.doi, existing);
+      if (!titleMatches.includes(existing)) titleMatches.push(existing);
+      byTitle.set(titleKey, titleMatches);
     });
-    return [...records.values()].sort((a, b) => (Number(b.year || 0) - Number(a.year || 0)) || a.title.localeCompare(b.title));
+    return records.sort((a, b) => (Number(b.year || 0) - Number(a.year || 0)) || a.title.localeCompare(b.title));
   };
 
   const inferPublicationTopics = (record) => {
@@ -2711,20 +3441,20 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     if (record.year) time.dateTime = String(record.year);
     const badge = document.createElement("span");
     badge.className = "live-record-badge";
-    badge.textContent = "Live record";
+    badge.textContent = "Database record";
     meta.append(source, time, badge);
 
     const title = document.createElement("h3");
     title.textContent = record.title;
     const authors = document.createElement("p");
     authors.className = "publication-authors";
-    authors.textContent = record.authors || "Author record matched through ORCID or PubMed.";
+    authors.textContent = record.authors || "Author information unavailable in source metadata.";
     const citation = document.createElement("p");
     citation.className = "publication-citation";
     citation.textContent = buildCitationText(record);
     const detail = document.createElement("p");
     detail.className = "publication-live-detail";
-    detail.textContent = `${record.source} metadata${record.citedBy > 0 ? ` · ${record.citedBy.toLocaleString("en-CA")} Crossref citation${record.citedBy === 1 ? "" : "s"}` : ""}`;
+    detail.textContent = `${record.source} search result${record.citedBy > 0 ? ` · ${record.citedBy.toLocaleString("en-CA")} Crossref citation${record.citedBy === 1 ? "" : "s"}` : ""}`;
     copy.append(meta, title, authors, citation, detail);
 
     const link = document.createElement("a");
@@ -2732,7 +3462,7 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     link.href = record.url || (record.doi ? `https://doi.org/${encodeURI(record.doi)}` : "#publications");
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.setAttribute("aria-label", `Open live scholarly record: ${record.title}`);
+    link.setAttribute("aria-label", `Open database record: ${record.title}`);
     link.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
 
     article.append(number, copy, link);
@@ -2740,22 +3470,25 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     return article;
   };
 
-  const markStaticCardVerified = (card, record) => {
-    card.dataset.liveVerified = "true";
+  const markStaticCardMatched = (card, record) => {
+    card.dataset.liveMatched = "true";
     card.dataset.year = card.querySelector("time")?.textContent?.match(/\d{4}/)?.[0] || String(record.year || 0);
     const meta = card.querySelector(".meta-row");
     if (meta && !meta.querySelector(".live-record-badge")) {
       const badge = document.createElement("span");
       badge.className = "live-record-badge";
-      badge.textContent = "Live verified";
+      badge.textContent = "Database match";
       meta.appendChild(badge);
     }
     const copy = card.querySelector(".publication-copy");
-    if (copy && !copy.querySelector(".publication-live-detail")) {
-      const detail = document.createElement("p");
-      detail.className = "publication-live-detail";
-      detail.textContent = `${record.source} match${record.citedBy > 0 ? ` · ${record.citedBy.toLocaleString("en-CA")} Crossref citation${record.citedBy === 1 ? "" : "s"}` : ""}`;
-      copy.appendChild(detail);
+    if (copy) {
+      let detail = copy.querySelector(".publication-live-detail");
+      if (!detail) {
+        detail = document.createElement("p");
+        detail.className = "publication-live-detail";
+        copy.appendChild(detail);
+      }
+      detail.textContent = `${record.source} metadata match${record.citedBy > 0 ? ` · ${record.citedBy.toLocaleString("en-CA")} Crossref citation${record.citedBy === 1 ? "" : "s"}` : ""}`;
     }
   };
 
@@ -2793,8 +3526,11 @@ html[data-theme="light"] .filter-button.active{color:#fff}
 
     const generated = [];
     records.forEach((record) => {
-      const matched = (record.doi && byDoi.get(record.doi)) || byTitle.get(normaliseTitle(record.title));
-      if (matched) markStaticCardVerified(matched, record);
+      const titleMatch = byTitle.get(normaliseTitle(record.title));
+      const titleDoi = normaliseDoi(titleMatch?.dataset.doi);
+      const matched = (record.doi && byDoi.get(record.doi)) ||
+        (titleMatch && (!record.doi || !titleDoi || titleDoi === normaliseDoi(record.doi)) ? titleMatch : null);
+      if (matched) markStaticCardMatched(matched, record);
       else generated.push(createLivePublicationCard(record));
     });
 
@@ -2829,65 +3565,96 @@ html[data-theme="light"] .filter-button.active{color:#fff}
     refreshPublicationsButton.classList.toggle("is-loading", loading);
   };
 
+  const scholarlySourceNames = ["Crossref", "PubMed"];
+
   const readPublicationCache = () => {
     try {
       const raw = localStorage.getItem(SITE_CONFIG.publicationCacheKey);
       if (!raw) return null;
       const parsed = JSON.parse(raw);
-      if (!parsed || !Array.isArray(parsed.records) || !Number.isFinite(Number(parsed.checkedAt))) return null;
-      return parsed;
+      if (!parsed || parsed.version !== 2 || !parsed.sources || typeof parsed.sources !== "object") return null;
+      const sources = {};
+      scholarlySourceNames.forEach((name) => {
+        const source = parsed.sources[name];
+        if (!source || !Array.isArray(source.records) || !Number.isFinite(source.checkedAt) || source.checkedAt <= 0) return;
+        const records = source.records.filter((record) => record && typeof record.title === "string" && record.title.trim())
+          .map((record) => ({ ...record, source: name }));
+        sources[name] = { records, checkedAt: source.checkedAt };
+      });
+      return Object.keys(sources).length ? { sources } : null;
     } catch (error) {
       return null;
     }
   };
 
-  const writePublicationCache = (records, checkedAt) => {
+  const writePublicationCache = (sources) => {
     try {
-      localStorage.setItem(SITE_CONFIG.publicationCacheKey, JSON.stringify({ records, checkedAt }));
+      localStorage.setItem(SITE_CONFIG.publicationCacheKey, JSON.stringify({ version: 2, sources }));
     } catch (error) {}
+  };
+
+  const combineSourceResults = (previousSources, results, checkedAt) => {
+    const sources = { ...previousSources };
+    const failedSources = [];
+    scholarlySourceNames.forEach((name, index) => {
+      const result = results[index];
+      if (result && result.status === "fulfilled") {
+        // A successful empty result is valid. Failed sources retain their own
+        // prior records and timestamp instead of losing their cached works.
+        sources[name] = {
+          records: result.value.map((record) => ({ ...record, source: name })),
+          checkedAt
+        };
+      } else {
+        failedSources.push(name);
+      }
+    });
+    const records = mergeScholarlyRecords(...scholarlySourceNames.map((name) => sources[name]?.records || []));
+    return { sources, records, failedSources };
   };
 
   let publicationSyncPromise = null;
 
   const synchronisePublications = (force = false) => {
     if (publicationSyncPromise) return publicationSyncPromise;
-
     publicationSyncPromise = (async () => {
       const cache = readPublicationCache();
-      const now = Date.now();
       if (cache) {
-        applyScholarlyRecords(cache.records);
-        setPublicationSyncState("success", `Live sources last checked ${formatSyncTime(cache.checkedAt)}.`);
-        if (!force && now - Number(cache.checkedAt) < SITE_CONFIG.publicationRefreshMs) return;
+        applyScholarlyRecords(mergeScholarlyRecords(...scholarlySourceNames.map((name) => cache.sources[name]?.records || [])));
+        const lastCheckedAt = Math.max(...Object.values(cache.sources).map((source) => source.checkedAt));
+        const earlierSources = scholarlySourceNames.filter((name) => !cache.sources[name] || cache.sources[name].checkedAt < lastCheckedAt);
+        const earlierNote = earlierSources.length ? ` ${earlierSources.join(" and ")} matches may be from an earlier check.` : "";
+        setPublicationSyncState(earlierSources.length ? "error" : "success",
+          `Database matches last checked ${formatSyncTime(lastCheckedAt)}.${earlierNote} New matches require author review.`);
+        if (!force && Date.now() - lastCheckedAt < SITE_CONFIG.publicationRefreshMs) return;
       }
-
-      setPublicationSyncState("loading", "Checking Crossref and PubMed for new scholarly records…");
+      setPublicationSyncState("loading", "Checking Crossref and PubMed for database matches…");
       const results = await Promise.allSettled([fetchCrossrefRecords(), fetchPubMedRecords()]);
-      const successfulGroups = results.filter((result) => result.status === "fulfilled").map((result) => result.value);
-      const records = mergeScholarlyRecords(...successfulGroups);
+      const now = Date.now();
+      const { sources, records, failedSources } = combineSourceResults(cache?.sources || {}, results, now);
+      applyScholarlyRecords(records);
+      if (Object.keys(sources).length) writePublicationCache(sources);
 
-      if (records.length) {
-        applyScholarlyRecords(records);
-        writePublicationCache(records, now);
-        const failedCount = results.filter((result) => result.status === "rejected").length;
-        setPublicationSyncState(
-          "success",
-          `${records.length.toLocaleString("en-CA")} live record${records.length === 1 ? "" : "s"} checked ${formatSyncTime(now)}${failedCount ? "; one source was temporarily unavailable" : ""}.`
-        );
-        if (force) showToast("Scholarly record refreshed");
+      if (failedSources.length === scholarlySourceNames.length) {
+        setPublicationSyncState("error", cache
+          ? "Database checks are unavailable. Previously cached matches and the complete CV record remain available."
+          : "Database checks are unavailable. The complete CV publication record remains available.");
+        if (force) showToast("Database check unavailable");
         return;
       }
 
-      if (cache) {
-        setPublicationSyncState("error", `Live sources are temporarily unavailable. Showing the cached record checked ${formatSyncTime(cache.checkedAt)} and the embedded CV record.`);
-      } else {
-        setPublicationSyncState("error", "Live sources are temporarily unavailable. The verified embedded CV publication record remains fully available.");
-      }
-      if (force) showToast("Live scholarly sources unavailable");
-    })().finally(() => {
+      const warning = failedSources.length
+        ? ` ${failedSources.join(" and ")} was unavailable; any previous matches from that source were retained.`
+        : "";
+      setPublicationSyncState(failedSources.length ? "error" : "success",
+        `${records.length.toLocaleString("en-CA")} database match${records.length === 1 ? "" : "es"} shown. Checked ${formatSyncTime(now)}.${warning} New matches require author review.`);
+      if (force) showToast(failedSources.length ? "Database check partially completed" : "Database check completed");
+    })().catch(() => {
+      setPublicationSyncState("error", "The database check could not be completed. The complete CV record remains available.");
+      if (force) showToast("Database check unavailable");
+    }).finally(() => {
       publicationSyncPromise = null;
     });
-
     return publicationSyncPromise;
   };
 
@@ -2953,8 +3720,8 @@ html[data-theme="light"] .filter-button.active{color:#fff}
   const contactReplyTo = document.getElementById("contactReplyTo");
   const contactReference = document.getElementById("contactReference");
   const contactSubmittedAt = document.getElementById("contactSubmittedAt");
-  const CONTACT_SUCCESS_MESSAGE = "Thanks! Your message was sent successfully. We will contact you shortly. Thanks!";
-  const CONTACT_ERROR_MESSAGE = "The message could not be sent. Please check your connection and try again.";
+  const CONTACT_SUCCESS_MESSAGE = "Your message was accepted by the contact service. Thank you for getting in touch.";
+  const CONTACT_ERROR_MESSAGE = "Delivery could not be confirmed. Your message is still here. Use email or copy the prepared message below; avoid resending if it may already have arrived.";
   const CONTACT_MINIMUM_COMPLETION_MS = 1400;
   const CONTACT_RATE_WINDOW_MS = 5 * 60 * 1000;
   const CONTACT_RATE_MAXIMUM = 4;
@@ -3142,6 +3909,11 @@ html[data-theme="light"] .filter-button.active{color:#fff}
         throw new Error(responseData.message || responseData.error || "The contact endpoint rejected the message.");
       }
 
+      const acknowledged = responseData && (
+        responseData.success === true || responseData.ok === true ||
+        ["success", "sent", "accepted"].includes(String(responseData.status || "").toLowerCase())
+      );
+      if (!acknowledged) throw new Error("The contact service did not confirm acceptance.");
       return responseData;
     } finally {
       window.clearTimeout(timeout);
@@ -3226,6 +3998,63 @@ html[data-theme="light"] .filter-button.active{color:#fff}
   };
   document.getElementById("shareProfile").addEventListener("click", shareProfile);
 
+  const publicationSort = document.getElementById('publicationSort');
+  const resultCount = document.getElementById('publicationResults');
+  const citationText = (card) => [
+    card.querySelector('.publication-authors')?.textContent.trim(),
+    card.querySelector('h3')?.textContent.trim(),
+    card.querySelector('.publication-citation')?.textContent.trim()
+  ].filter(Boolean).join(' ');
+  const enhancePublicationTools = () => {
+    [...publicationList.querySelectorAll('.publication-card')].forEach((card) => {
+      if (card.querySelector('.copy-citation')) return;
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'copy-citation';
+      button.textContent = 'Copy citation';
+      button.setAttribute('aria-label', `Copy citation: ${card.querySelector('h3')?.textContent}`);
+      button.addEventListener('click', () => copyText(citationText(card), 'Citation copied'));
+      card.querySelector('.publication-copy').appendChild(button);
+    });
+    const cards = [...publicationList.querySelectorAll('.publication-card')];
+    const visible = cards.filter(card => !card.hidden).length;
+    resultCount.textContent = `${visible} of ${cards.length} works shown`;
+  };
+  const sortPublicationCards = () => {
+    const cards = [...publicationList.querySelectorAll('.publication-card')];
+    const year = card => Number(card.dataset.year || card.querySelector('time')?.textContent.match(/\d{4}/)?.[0] || 0);
+    const title = card => card.querySelector('h3')?.textContent || '';
+    cards.sort((a,b) => publicationSort.value === 'title' ? title(a).localeCompare(title(b)) :
+      (publicationSort.value === 'oldest' ? year(a)-year(b) : year(b)-year(a)) || title(a).localeCompare(title(b)));
+    cards.forEach((card, i) => {
+      publicationList.appendChild(card);
+      card.querySelector('.publication-number').textContent = String(i + 1).padStart(2, '0');
+    });
+    enhancePublicationTools();
+  };
+  publicationSort.addEventListener('change', sortPublicationCards);
+  const publicationObserver = new MutationObserver(enhancePublicationTools);
+  publicationObserver.observe(publicationList, {childList:true, attributes:true, attributeFilter:['hidden']});
+  const filterObserver = new MutationObserver(enhancePublicationTools);
+  filterObserver.observe(publicationList, {subtree:true, attributes:true, attributeFilter:['hidden']});
+  sortPublicationCards();
+  document.getElementById('exportCitations').addEventListener('click', () => {
+    const cards = [...publicationList.querySelectorAll('.publication-card')].filter(card => !card.hidden);
+    if (!cards.length) { showToast('No publications match the current filters'); return; }
+    const data = cards.map(citationText).join('\n\n');
+    const blob = new Blob([data + '\n'], {type:'text/plain;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Daniele-Evangelista-selected-citations.txt';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    showToast(`${cards.length} citations exported`);
+  });
+  document.getElementById('printProfile').addEventListener('click', () => window.print());
+
   document.getElementById("year").textContent = String(new Date().getFullYear());
 
   if (finePointer && !reduceMotion) {
@@ -3274,3 +4103,4 @@ html[data-theme="light"] .filter-button.active{color:#fff}
   </script>
 </body>
 </html>
+
